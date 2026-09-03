@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KI lohnt sich dort, wo Prüfen und Irren billig bleiben · Quelle auf.</title>
+  <meta name="description" content="Wie KI beim Programmieren wirtschaftlich sinnvoll eingesetzt wird: nicht nach Codeanteil, sondern nach Prüfkosten, Fehlerfolgen und dem Engpass im Gesamtsystem.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="KI lohnt sich dort, wo Prüfen und Irren billig bleiben">
+  <meta property="og:description" content="Wie KI beim Programmieren wirtschaftlich sinnvoll eingesetzt wird: nicht nach Codeanteil, sondern nach Prüfkosten, Fehlerfolgen und dem Engpass im Gesamtsystem.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/">
+  <meta property="article:published_time" content="2026-08-27T09:10:08+02:00">
+  <meta property="article:modified_time" content="2026-08-27T10:07:58+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"KI lohnt sich dort, wo Prüfen und Irren billig bleiben","description":"Wie KI beim Programmieren wirtschaftlich sinnvoll eingesetzt wird: nicht nach Codeanteil, sondern nach Prüfkosten, Fehlerfolgen und dem Engpass im Gesamtsystem.","datePublished":"2026-08-27T09:10:08+02:00","dateModified":"2026-08-27T10:07:58+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Nach meinem Artikel über Mensch-KI-Pair-Programming ließ ich Claude den Text lesen. Claude stellte eine unangenehm praktische Gegenfrage: Was, wenn die Rollenverteilung, die Lernen und Verständnis maximiert, unter echtem Zeit- und Kostendruck gar nicht die wirtschaftlich sinnvollste ist? Vielleicht ist schnelles Generieren, Testen, Ausrollen und notfalls Zurückrollen manchmal günstiger – und vielleicht wandern die eingesparten Kosten nur unbemerkt in Review, Betrieb und spätere Wartung. Das klang plausibel. Gerade deshalb wollte ich wissen, ob es stimmt.</p>
+<p><strong>Meine Frage:</strong>
+Wie setze ich KI ökonomisch rational beim Programmieren ein – unter Zeitdruck, mit Budget-Limits, in bestehenden Teams und in Legacy-Systemen, die ohnehin nur teilweise verstanden werden?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>KI lohnt sich dort, wo Prüfen und Irren billig bleiben</h1>
+<p>Die kurze Antwort lautet: <strong>Setze KI dort stark ein, wo du ein Ergebnis günstig verlässlich prüfen kannst und ein durchgerutschter Fehler begrenzte Folgen hat. Führe sie enger, wenn belastbare Prüfung teuer ist oder ein Fehler spät sichtbar, weitreichend oder schwer rückgängig zu machen wäre.</strong></p>
+<p>Das klingt zunächst wie eine Risikoregel. Es ist aber vor allem eine Kostenregel.</p>
+<p>Eine vierstündige Aufgabe, die mit KI in 30 Minuten erledigt ist, kann sich auch dann lohnen, wenn anschließend zwei Stunden Review nötig werden. Zusätzliche Prüfung macht den Einsatz nicht automatisch unwirtschaftlich. Umgekehrt ist ein Patch, der nach 20 Minuten fertig aussieht, kein Gewinn, wenn er drei knappe Maintainer beschäftigt, eine Datenmigration beschädigt oder Monate später nur noch von der Person verstanden wird, die den Prompt geschrieben hat.</p>
+<p>Die entscheidende Zahl ist deshalb nicht die eingesparte Tippzeit. Es ist der Nettonutzen im ganzen relevanten Arbeits- und Betriebssystem.</p>
+<h2>Fünf Minuten schneller können 90 Minuten langsamer sein</h2>
+<p>Stellen wir uns einen Dienstagmorgen in einem älteren Abrechnungssystem vor. Ein Entwickler soll eine zusätzliche Rabattregel einbauen. Die Stelle im Code ist gefunden. Der Agent liefert nach wenigen Minuten einen plausiblen Patch, ergänzt Tests und erklärt, er habe alle Fälle berücksichtigt.</p>
+<p>Der eigentliche Engpass beginnt erst jetzt.</p>
+<p>Gilt der Rabatt vor oder nach Steuern? Was passiert bei einer rückwirkenden Stornierung? Darf ein alter Vertrag eine neue Tariflogik sehen? Die Antworten stehen teilweise in Code, teilweise in Daten und teilweise im Kopf einer Kollegin, die heute in einem anderen Projekt steckt. Die Tests zeigen, dass der Patch das tut, was in den Tests steht. Sie zeigen nicht, dass die Tests die richtige Geschäftsregel beschreiben.</p>
+<p>Hier hat die KI Codeproduktion beschleunigt. Ob sie die Aufgabe beschleunigt hat, ist noch offen.</p>
+<p>Das ist keine bloße Anekdote. Sie zeigt versteckte Evidenzkosten: Der Diff ist schnell erzeugt, aber die Begründung, warum er fachlich stimmt, kann teuer bleiben. Die Forschung misst tatsächlich sehr verschiedene Ausschnitte derselben Arbeit. Dazu drei Beispiele.</p>
+<p>In einem kontrollierten Experiment erledigten Entwickler mit Copilot eine klar abgegrenzte JavaScript-Aufgabe 55,8 Prozent schneller. Es ging um einen HTTP-Server mit eindeutiger Erfolgskontrolle. Integration in ein reales System, Teamreview, Betrieb und spätere Wartung lagen außerhalb des Versuchs. <a href="https://arxiv.org/abs/2302.06590">Peng et al., <em>The Impact of AI on Developer Productivity</em></a>, Abstract und Abschnitt <code>Results</code>. [claim-001]</p>
+<p>Drei randomisierte Feldexperimente bei Microsoft, Accenture und einem weiteren großen Unternehmen umfassten zusammen 4.867 Entwickler. Gepoolt stieg die Zahl erledigter Tasks mit KI-Codevervollständigung um 26,08 Prozent. Die einzelnen Experimente waren verrauscht; gemessen wurde vor allem erledigte Arbeit, nicht der langfristige Geschäftswert jedes Changes. <a href="https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/">Cui et al., <em>The Effects of Generative AI on High-Skilled Work</em></a>, Abstract. [claim-002]</p>
+<p>Dann gibt es den scheinbaren Gegenbeweis. METR ließ 16 erfahrene Open-Source-Maintainer 246 reale Aufgaben in großen Repositories bearbeiten, die sie im Durchschnitt seit fünf Jahren kannten. Mit frühen 2025er KI-Werkzeugen brauchten sie im Mittel 19 Prozent länger. Vorher erwarteten sie eine Beschleunigung; hinterher glaubten sie weiterhin, schneller gewesen zu sein. Ein späteres Update deutet auf bessere Effekte neuerer Werkzeuge, erlaubt wegen Selbstselektion und geändertem Studiendesign aber keine verlässliche aktuelle Zahl. <a href="https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf">Becker et al., <em>Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</em></a>, Abstract und Abschnitt 3; <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR, <em>We are Changing our Developer Productivity Experiment Design</em></a>, Ergebnis- und Limitationsabschnitte. [claim-003, claim-004]</p>
+<p>Diese Zahlen widersprechen sich nicht. Der Labortask hat ein klares Ende und ein billiges Prüfkriterium: Die Tests sagen, ob der Server funktioniert. Die Feldstudien zählen abgeschlossene Arbeit. METR misst die Zeit bis zum nach üblichem Projektprozess fertiggestellten Task in reifen, vertrauten Repositories.</p>
+<p>Die Messgrenze entscheidet über das Ergebnis.</p>
+<h2>Code ist Output. Produktivität ist ein Systemergebnis</h2>
+<p>Wenn ein Team mit KI doppelt so viele Pull Requests eröffnet, hat es zunächst doppelt so viele Pull Requests. Ob daraus mehr nutzbare Software entsteht, hängt davon ab, was danach knapp ist.</p>
+<p>Vielleicht ist Review der Engpass. Vielleicht wartet jede Änderung auf dieselbe Fachperson. Vielleicht laufen Tests 45 Minuten. Vielleicht kann nur das Betriebsteam erkennen, ob eine Änderung fachlich korrekt ist. Mehr Erzeugungskapazität schiebt dann mehr Arbeit in eine bereits volle Warteschlange.</p>
+<p>Ein 2025/2026 aktualisierter Preprint über Open-Source-Projekte liefert dafür einen Warnhinweis. Nach der Copilot-Einführung prüften Kernentwickler 6,5 Prozent mehr Code, während ihre eigene Codeproduktion um 19 Prozent sank. Die Nutzung wurde indirekt bestimmt und die Einführung war nicht randomisiert; daraus wird kein Naturgesetz. Aber der beobachtete Mechanismus ist wirtschaftlich wichtig: Der individuelle Gewinn des Autors kann als zusätzliche Arbeit bei knappen Reviewern auftauchen. <a href="https://arxiv.org/abs/2510.10165">Xu et al., arXiv:2510.10165</a>, Abstract. [claim-008]</p>
+<p>Die gefährlichste Fehlentscheidung ist dann nicht die falsche Zelle in einer späteren Matrix. Es ist die Annahme, mehr Pull Requests bedeuteten mehr Wert, obwohl Review, Tests oder Betrieb bereits der Engpass sind.</p>
+<p>Ein neuerer großer Preprint untersuchte 304.362 verifizierte KI-verfasste Commits aus 6.275 GitHub-Repositories. Bei jedem der fünf untersuchten Assistenten führten mehr als 15 Prozent der Commits mindestens einen neuen statisch erkennbaren Befund ein; 22,7 Prozent der verfolgten Befunde bestanden in der letzten untersuchten Version fort. Die große Zahl beeindruckt, braucht aber eine saubere Grenze: Statisch erkannte Code Smells, Bugs und Security-Befunde sind nicht automatisch Produktionsfehler oder bereits bezifferte Wartungskosten. Sie zeigen, dass Folgearbeit bestehen kann – nicht, was sie in jedem Projekt kostet. <a href="https://arxiv.org/abs/2603.28592">Liu et al., <em>Debt Behind the AI Boom</em></a>, Abstract und RQ2-Ergebnisse. [claim-018]</p>
+<p>DORA beschreibt dieselbe Systemperspektive aus Befragungsdaten. 2024 war stärkere KI-Nutzung mit besser eingeschätzter individueller Produktivität, Dokumentation und Reviewgeschwindigkeit verbunden, zugleich aber mit schlechterer Delivery-Stabilität und schlechterem Durchsatz. 2025 fasst DORA KI als Verstärker vorhandener organisatorischer Stärken und Schwächen. Das sind Assoziationen, keine saubere Kausalrechnung. Für die Praxis ist die Frage trotzdem brauchbar: <strong>Was verstärken wir gerade – Lieferung oder Warteschlange?</strong> <a href="https://dora.dev/research/2024/dora-report/">DORA, <em>2024 Accelerate State of DevOps Report</em></a>, AI-Ergebnisse; <a href="https://dora.dev/research/2025/dora-report/">DORA, <em>State of AI-assisted Software Development 2025</em></a>, Zusammenfassung. [claim-005, claim-006]</p>
+<p>SPACE, ein etablierter Rahmen für Entwicklerproduktivität, warnt schon grundsätzlich davor, Produktivität aus einer einzelnen Aktivitätsmetrik abzuleiten. Zufriedenheit, Leistung und Qualität, Aktivität, Zusammenarbeit sowie Effizienz und Flow sind verschiedene Dimensionen. Mehr Commits oder akzeptierte Vorschläge können nützliche Signale sein. Sie sind allein keine Gewinn-und-Verlust-Rechnung. <a href="https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/">Forsgren et al., <em>The SPACE of Developer Productivity</em></a>, Abstract. [claim-016]</p>
+<h2>Kosten wandern manchmal. Manchmal verschwinden sie tatsächlich</h2>
+<p>Es wäre nun leicht, aus jedem schnellen KI-Patch eine spätere Rechnung zu machen. Auch das gibt die Evidenz nicht her.</p>
+<p>Google setzte ein eng begrenztes ML-System ein, das Buildfehler reparierte. Die Vorschläge wurden gefiltert, vom Entwickler geprüft und liefen weiterhin durch Build, Tests, statische und dynamische Analyse sowie Code Review. In einem elfwöchigen kontrollierten Experiment sanken aktive Coding- und Shepherding-Zeit je Change um ungefähr zwei Prozent. Bei Rollbacks und neu auftretenden Sanitizer-Fehlern fand Google keinen messbaren Unterschied. <a href="https://research.google/blog/safely-repairing-broken-builds-with-ml/">Google Research, <em>Safely repairing broken builds with ML</em></a>, Abschnitte <code>The experiment</code>, <code>Productivity improvements</code> und <code>Maintaining safety</code>. [claim-009]</p>
+<p>Das ist kein aufregender Agent, der übers Wochenende eine Plattform baut. Es ist ein lokal begrenzter Schritt mit reichlich vorhandenen Signalen und einer bestehenden Kontrollstrecke. Gerade deshalb ist der Fall wertvoll: Er zeigt eine Situation, in der Erzeugung billiger wurde, ohne dass im beobachteten Fenster eine entsprechende Rechnung nach hinten wanderte.</p>
+<p>Die faire Schlussfolgerung lautet daher: <strong>Kostenverschiebung ist eine zu prüfende Systemwirkung, kein Naturgesetz.</strong> Wahrscheinlicher wird sie, wenn Erzeugung wächst, Review, Tests, Architekturwissen und Deploymentkapazität aber gleich bleiben. Unwahrscheinlicher wird sie, wenn die Aufgabe klein, das richtige Verhalten präzise und die Prüfung automatisiert ist.</p>
+<h2>Rollback ist nicht dasselbe wie Rückkehr</h2>
+<p>Claudes ursprünglicher Vorschlag lautete ungefähr: generieren, testen, ausrollen, beobachten, notfalls zurückrollen. Dieses Muster kann wirtschaftlich vernünftig sein. Nur ist es keine Eigenschaft des KI-Modells. Es ist eine Eigenschaft der Liefer- und Betriebsarchitektur.</p>
+<p>Google SRE beschreibt Canary-Releases als begrenzte, zeitlich beschränkte Exposition. Ein kleiner Teil des Traffics sieht die neue Version; beobachtbare Abweichungen sollen erkannt werden, bevor die gesamte Population betroffen ist. Der erwartete Schaden sinkt mit der Exposition – sofern die Signale den Fehler zeigen und die Rücknahme schnell funktioniert. <a href="https://sre.google/workbook/canarying-releases/">Google SRE Workbook, <em>Canarying Releases</em></a>, <code>What Is Canarying?</code> und <code>Minimizing Risk to SLOs and the Error Budget</code>. [claim-010]</p>
+<p>Ein Canary erkennt allerdings nur, was gemessen wird. Das ist meine Übertragung des SRE-Mechanismus auf fachliche Korrektheit: Wenn das Monitoring nur Latenz und Fehlerraten sieht, kann eine falsche Rabattberechnung vollkommen unauffällig bleiben.</p>
+<p>Aber ein Code-Rollback ist nur die Rückkehr zu einer alten Binärversion. Es holt keine versandte Zahlung zurück. Es stellt falsch transformierte Daten nicht automatisch wieder her. Es macht eine veröffentlichte Information nicht geheim und widerruft keinen externen API-Aufruf.</p>
+<p>Darum müssen vor dem schnellen Ausrollen sieben Dinge hinreichend wahr sein:</p>
+<ol>
+<li>Die Änderung ist klein und möglichst entkoppelt.</li>
+<li>Tests prüfen die Eigenschaften, auf die es tatsächlich ankommt.</li>
+<li>Produktion liefert schnelle fachliche, nicht nur technische Signale.</li>
+<li>Der betroffene Kreis ist begrenzt.</li>
+<li>Die Wirkungen sind wirklich rücknehmbar oder reparierbar.</li>
+<li>Zuständigkeit und Recovery-Ablauf sind vorbereitet.</li>
+<li>Der erwartete Verlust passt zum Risikobudget.</li>
+</ol>
+<p>Error Budgets machen diesen letzten Punkt explizit. Zuverlässigkeit wird nicht maximiert, sondern gegen Featurewert und Opportunitätskosten abgewogen. Hundert Prozent Zuverlässigkeit kann unbezahlbar sein. Null Vorab-Prüfung kann es ebenfalls sein. <a href="https://sre.google/sre-book/embracing-risk/">Google SRE Book, <em>Embracing Risk</em></a>, <code>Managing Risk</code> und <code>Risk Tolerance of Services</code>. [claim-011]</p>
+<h2>Spät gefundene Fehler können teurer werden – nur nicht immer um denselben Faktor</h2>
+<p>Das externe Research-Review erinnerte an eine alte Softwareökonomie-Grafik: Je später ein Fehler entdeckt wird, desto teurer kann seine Korrektur werden. Eine NASA-Auswertung stellte Boehms Zahlen mehreren späteren Schätzungen gegenüber. Die Faktoren streuen stark, aber die Richtung ist konsistent: Ein Requirementsfehler, der erst in Test oder Betrieb auffällt, zieht mehr Änderung, Abstimmung und Revalidierung nach sich. <a href="https://ntrs.nasa.gov/api/citations/20100036670/downloads/20100036670.pdf">NASA, <em>Error Cost Escalation Through the Project Life Cycle</em></a>, <code>Software Cost Factors</code>, Abbildung 1 und Tabelle 1. [claim-019]</p>
+<p>Die bekannte Versuchung ist, daraus <code>später kostet immer zehnmal so viel</code> zu machen. Das wäre nicht belastbar. Die Daten stammen überwiegend aus älteren, stärker phasengetrennten Projekten. Kleine Batches, automatisierte Tests und Continuous Delivery verändern die Kurve. Ein CSS-Fehler, der nach fünf Minuten im Canary auffällt, ist nicht automatisch teurer als eine Stunde zusätzliche Analyse vorab.</p>
+<p>Der Mechanismus bleibt trotzdem relevant. Je mehr bereits auf einer falschen Annahme aufbaut, desto mehr muss später entwirrt werden. Bei öffentlichen Schnittstellen, Datenverträgen, Berechtigungsmodellen und Architekturpfaden kann ein wenig Verständnis vor der Generierung billiger sein als sehr schnelle Korrektur danach.</p>
+<h2>Legacy ist keine Kostenklasse</h2>
+<p>Ein altes System kann gut getestet, beobachtbar und durch erfahrene Betreiber beherrscht sein. Ein neues System kann gekoppelt, ungetestet und irreversibel sein. <code>Legacy</code> allein sagt wenig über das wirtschaftlich sinnvolle Maß der Delegation.</p>
+<p>Für die konkrete Änderung sind andere Fragen wichtiger:</p>
+<ul>
+<li>Welche impliziten Regeln kennt das Modell nicht?</li>
+<li>Wie lokal ist der Change wirklich?</li>
+<li>Welche Tests unterscheiden <code>läuft</code> von <code>fachlich richtig</code>?</li>
+<li>Welche Zustände und externen Wirkungen verändert der Code?</li>
+<li>Wer kann einen Fehler erkennen und diagnostizieren?</li>
+<li>Was kostet es, Wirkung und Zustand wiederherzustellen?</li>
+</ul>
+<p>METRs Maintainer-Befund zeigt, dass KI in einem großen Bestandssystem trotz jahrelangen Wissens der Entwickler bremsen kann. Ein kleines Experiment mit 32 Personen zeigt zugleich, dass ein auf den bearbeiteten Code kontextualisiertes LLM-Interface bei Codeverständnisaufgaben stärker helfen konnte als Websuche. <a href="https://research.google/pubs/using-an-llm-to-help-with-code-understanding/">Google Research, <em>Using an LLM to Help With Code Understanding</em></a>, Abstract. [claim-014]</p>
+<p>Legacy erhöht also zwei Dinge gleichzeitig: den möglichen Wert schneller Erklärung und Suche – und das Risiko eines Patches, der lokal passend aussieht, aber eine unsichtbare Regel verletzt.</p>
+<p>Die KI sollte knappes Fachwissen deshalb nicht imitieren, sondern hebeln. Fachkundige benennen Invarianten, verdächtige Schnittstellen, fachliche Orakel und den Rückweg. Der Agent kann suchen, Varianten bilden, Testskelett und reversible Ausführung übernehmen. Das spart nicht zwingend Wissen. Es setzt es dort ein, wo es die Rechnung verändert.</p>
+<h2>Zwei Fragen sind nützlicher als ein Punktesystem</h2>
+<p>Aus den Quellen ergibt sich kein etablierter Score, der aus Teamgröße, Legacy-Anteil und Testabdeckung eine erlaubte Menge KI-Code berechnet. Die folgende Zweiteilung ist deshalb meine eigene Synthese.</p>
+<p><strong>Erste Frage: Was kostet verlässliche Evidenz für diese Änderung?</strong></p>
+<p>Billig ist sie bei einer kleinen, gut beschriebenen Änderung mit schnellen relevanten Tests und klarer fachlicher Abnahme. Teuer ist sie bei impliziten Anforderungen, schwachen Testorakeln, großem Kontext, seltenen Zuständen und Abhängigkeit von wenigen Fachkundigen.</p>
+<p><strong>Zweite Frage: Was kostet ein Fehler, der diese Evidenz passiert?</strong></p>
+<p>Billig ist er bei begrenzter Exposition, schneller Entdeckung, echtem Rückweg und tolerierbarem Schaden. Teuer ist er bei Datenmutation, externer Wirkung, großer Reichweite, langer Entdeckungslatenz und schwieriger Recovery.</p>
+<table>
+<thead>
+<tr>
+<th>Evidenzkosten</th>
+<th>Fehlerfolgen</th>
+<th>Wirtschaftlich plausible Nutzung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>niedrig</td>
+<td>niedrig</td>
+<td>Stark delegieren; klein ändern, automatisch prüfen, gestuft ausrollen</td>
+</tr>
+<tr>
+<td>niedrig</td>
+<td>hoch</td>
+<td>Viel erzeugen lassen; die billige starke Verifikation bleibt zwingend</td>
+</tr>
+<tr>
+<td>hoch</td>
+<td>niedrig</td>
+<td>Exploration zulassen; Perfektion begrenzen, Rückweg sichern</td>
+</tr>
+<tr>
+<td>hoch</td>
+<td>hoch</td>
+<td>Delegation enger führen; Änderung verkleinern oder zuerst Kontext, Tests und Recovery verbessern</td>
+</tr>
+</tbody>
+</table>
+<p>Das ist kein Freigabeautomat. Eintrittswahrscheinlichkeit, Häufigkeit und Exposition bleiben Teil der erwarteten Fehlerkosten. Und beide Achsen lassen sich verändern. Ein guter Contract-Test senkt Evidenzkosten. Ein Feature Flag begrenzt Exposition. Eine rückwärtskompatible Migration macht Recovery billiger. Ein kleinerer Change senkt oft beides.</p>
+<p>Der wirtschaftlich größte Hebel liegt deshalb häufig nicht darin, über 40 oder 60 Prozent KI-Anteil zu streiten. Er liegt darin, das System prüfbarer und seine Änderungen kleiner zu machen.</p>
+<h2>Was ich am Dienstagmorgen tatsächlich messen würde</h2>
+<p>Unter Zeit- und Budgetdruck braucht es keine perfekte Vollkostenrechnung. Es braucht eine Baseline und wenige Messpunkte, die nicht am ersten Commit enden.</p>
+<p>Für wiederkehrende Aufgabentypen würde ich mindestens erfassen:</p>
+<ul>
+<li>Zeit bis zu einer akzeptierten, nutzbaren Änderung – nicht bis zum ersten fertigen Diff;</li>
+<li>menschliche Review-, Korrektur- und fachliche Abnahmezeit;</li>
+<li>direkte Lizenz-, Modell- und Tokenkosten einschließlich verworfener Läufe;</li>
+<li>Änderungsgröße und Wartezeit bis zum Review;</li>
+<li>Rework- oder Fehländerungsrate;</li>
+<li>Zeit bis Erkennung und Wiederherstellung;</li>
+<li>bei kritischen Änderungen den tatsächlichen Geschäftsschaden.</li>
+</ul>
+<p>Direkte Tokenkosten gehören damit sichtbar in die Rechnung. Nicht weil sie zwangsläufig größer als Personalkosten werden, sondern weil agentische Schleifen aus Lesen, Planen, Ausführen, Prüfen und erneutem Prompten variabel sind. Ein pauschaler Sitzpreis kann diese Variable verdecken. Sinnvoll ist nicht <code>Tokens pro Entwickler</code>, sondern <strong>Kosten pro akzeptiertem Ergebnis</strong>.</p>
+<p>Auch die einfache Nutzenformel bleibt nur eine Denkstütze:</p>
+<blockquote>
+<p><strong>Nettonutzen der KI = Wert früherer Lieferung + tatsächlich eingesparte Arbeit − Werkzeug- und Nutzungskosten − zusätzliche Verifikation − erwartete Folge-, Recovery- und Wissenskosten.</strong></p>
+</blockquote>
+<p>Die Formel ist keine Buchhaltung. Sie macht nur sichtbar, an welchen Stellen Kosten und Erträge verschwinden oder doppelt gezählt werden können.</p>
+<p>Dabei darf der Wert früherer Lieferung nicht noch einmal als eingesparte Arbeitszeit verbucht werden. Und ein möglicher Fehler kostet nicht automatisch seinen maximalen Schaden. Erwartete Kosten hängen davon ab, ob der Fehler die Kontrollen passiert, wen er betrifft, wann er auffällt und was bis zur Wiederherstellung geschieht.</p>
+<h2>Die Antwort wird kleiner</h2>
+<p>Claude hatte mit dem Kern seines Einwands recht. Die Rollenverteilung, die maximales Verständnis erzeugt, ist nicht automatisch die wirtschaftlich beste. Manchmal ist es vollkommen rational, eine vierstündige Aufgabe in 30 Minuten generieren zu lassen, zwei Stunden zu prüfen und das begrenzte Restrisiko zu tragen.</p>
+<p>Aber <code>generate, test, deploy, observe, rollback</code> ist kein kostenloses Betriebsmodell, das zusammen mit dem Coding Agent geliefert wird. Es funktioniert nur, wenn Tests, Signale, Exposition und Recovery diese Verben tatsächlich wahr machen.</p>
+<p>Für den Dienstagmorgen bleibt deshalb keine große KI-Strategie, sondern eine kleinere Frage vor jedem Change:</p>
+<p><strong>Wie teuer ist es, hier verlässlich genug zu wissen, dass die Änderung stimmt – und was kostet uns der Fehler, den wir trotzdem übersehen?</strong></p>
+<p>Wenn beide Antworten klein sind, darf die KI viel schreiben. Wenn eine groß wird, muss nicht zwangsläufig der Mensch wieder jede Zeile tippen. Dann muss das Team zuerst die Änderung kleiner, die Evidenz billiger oder den Rückweg echter machen.</p>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-08-27T09:10:08+02:00">27.08.2026</time>. Zuletzt geändert <time datetime="2026-08-27T10:07:58+02:00">27.08.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

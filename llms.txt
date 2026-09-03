@@ -1,0 +1,9 @@
+# Quelle auf.
+
+> Fachartikel mit überprüfbaren Quellen von Benjamin Lam.
+
+Canonical site: https://benjamin-lam.github.io/quelle-auf/
+RSS: https://benjamin-lam.github.io/quelle-auf/feed.xml
+Sitemap: https://benjamin-lam.github.io/quelle-auf/sitemap.xml
+
+Articles are published as static HTML. Source notes and footnotes link to original public sources. Private research archives and model-review transcripts are not part of the public site.

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Was braucht „ChatGPT für die Firma“ wirklich? · Quelle auf.</title>
+  <meta name="description" content="Welche Technik Unternehmen für interne GenAI wirklich brauchen – und warum Arbeit, Informationsarten, Rechte, Provenance und Betrieb wichtiger sind als ein universeller Stack.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/wie-baut-man-chatgpt-fuer-die-firma-und-betreibt-es-fuer-1000-menschen/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Was braucht „ChatGPT für die Firma“ wirklich?">
+  <meta property="og:description" content="Welche Technik Unternehmen für interne GenAI wirklich brauchen – und warum Arbeit, Informationsarten, Rechte, Provenance und Betrieb wichtiger sind als ein universeller Stack.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/wie-baut-man-chatgpt-fuer-die-firma-und-betreibt-es-fuer-1000-menschen/">
+  <meta property="article:published_time" content="2026-08-30T18:45:29+02:00">
+  <meta property="article:modified_time" content="2026-08-30T18:45:29+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Was braucht „ChatGPT für die Firma“ wirklich?","description":"Welche Technik Unternehmen für interne GenAI wirklich brauchen – und warum Arbeit, Informationsarten, Rechte, Provenance und Betrieb wichtiger sind als ein universeller Stack.","datePublished":"2026-08-30T18:45:29+02:00","dateModified":"2026-08-30T18:45:29+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/wie-baut-man-chatgpt-fuer-die-firma-und-betreibt-es-fuer-1000-menschen/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<h1>Was braucht „ChatGPT für die Firma“ wirklich?</h1>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong></p>
+<p>Wer beruflich irgendetwas mit IT macht, kennt wahrscheinlich die Frage: „Kannst du mir kurz mit meinem Drucker helfen?“ Bei KI geht es mir inzwischen ähnlich. Ich benutze Modelle in der IDE, im Chatfenster und für Reviews. Viele Einzelteile verstehe ich gut genug, um sie vermutlich auch selbst bauen zu können. Aber auf die beiläufige Frage „Was brauchen wir eigentlich, um ChatGPT in unserer Firma einzusetzen?“ hätte ich trotzdem keine beiläufige Antwort.</p>
+<p>Denn eine Komponente zu installieren ist das eine. Ein System so zu betreiben, dass viele Menschen verlässlich damit arbeiten können, ist etwas anderes.</p>
+<p><strong>Meine Frage:</strong></p>
+<blockquote><p>Was braucht „ChatGPT für die Firma“ wirklich?</p></blockquote>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<p>Die kurze Antwort lautet: Man beginnt nicht mit RAG, einer Vektordatenbank oder einem Architekturdiagramm. Man beginnt mit der Arbeit, die jemand damit erledigen soll.</p>
+<p>„ChatGPT für die Firma“ kann nämlich mindestens vier Dinge bedeuten:</p>
+<ul>
+<li>ein fertiges Chatprodukt für allgemeine Assistenz;</li>
+<li>eine eigene Oberfläche vor einem Sprachmodell;</li>
+<li>eine Suche oder Frage-Antwort-Anwendung über Unternehmensdokumente;</li>
+<li>eine Fachanwendung, in der ein Modell einen einzelnen Arbeitsschritt übernimmt.</li>
+</ul>
+<p>Diese Systeme können ähnlich aussehen und technisch fast nichts miteinander gemeinsam haben. Der Chat ist nur eine mögliche Oberfläche. Das Modell ist nur eine Komponente. Der Unternehmensdienst ist das Ganze darum herum.</p>
+<h2>Der kleinste brauchbare Kern</h2>
+<p>Nehmen wir einen sehr kleinen Anwendungsfall. Ein Formular soll aus einer groben Notiz eine freundliche Kundenmail machen. Die Notiz wird übertragen, das Modell antwortet, das Ergebnis wird angezeigt. Dafür braucht man keinen Gesprächsverlauf, keine Dokumentensuche, keine Embeddings und keine Vektordatenbank. Vielleicht braucht man nicht einmal einen eigenen Chat.</p>
+<p>Ganz ohne Architektur geht es trotzdem nicht. Jemand muss entscheiden, welche Daten an den Modellanbieter gehen dürfen. Der Zugangsschlüssel muss sicher aufbewahrt werden. Der Aufruf braucht ein Zeitlimit und einen verständlichen Fehlerpfad. Es muss klar sein, ob Eingaben gespeichert oder protokolliert werden. Und jemand muss merken, wenn Qualität, Kosten oder Verfügbarkeit kippen.</p>
+<p>Das ist der kleinste gemeinsame Kern, den ich aus den Quellen ableite:</p>
+<ol>
+<li>eine klar begrenzte Aufgabe;</li>
+<li>ein kontrollierter Modellzugang;</li>
+<li>Anwendungscode, der Eingabe, Ausgabe und Fehler behandelt;</li>
+<li>bewusste Daten- und Sicherheitsgrenzen;</li>
+<li>eine überprüfbare Betriebsentscheidung.</li>
+</ol>
+<p>Alles Weitere muss ein konkretes Problem lösen. Sonst baut man Architektur aus Gewohnheit.</p>
+<h2>„Unser Wissen“ sind mehrere Probleme</h2>
+<p>Sobald jemand sagt, die KI müsse „unser Unternehmenswissen kennen“, wird die Sache interessanter. Dieser Satz kann sehr verschiedene Informationsarten meinen.</p>
+<p>Wer eine bestimmte Richtlinie, Produktnummer oder Vertragsvorlage sucht, braucht vielleicht klassische Volltextsuche. Sie findet exakte Begriffe gut und kann einfach einen Link zum Original liefern. Wer denselben Sachverhalt in anderen Worten beschreibt, profitiert möglicherweise von semantischer Suche: Textstellen werden als Zahlenvektoren repräsentiert und nach inhaltlicher Nähe gesucht. PostgreSQL dokumentiert Volltextsuche; die Erweiterung pgvector ergänzt Vektorsuche und beschreibt auch die Kombination beider Signale.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup></p>
+<p>Diese Kombination heißt meist Hybrid Search. Sie ist eine Strategie, kein Standard. Auch für die Zusammenführung der beiden Trefferlisten gibt es mehrere Methoden. Ob die Kombination besser ist, muss am eigenen Korpus und an echten Fragen gemessen werden.</p>
+<p>RAG kommt erst einen Schritt später. Retrieval-Augmented Generation bedeutet im Kern: Zuerst werden passende externe Informationen gesucht, dann erhält das Modell diese Informationen als Kontext für seine Antwort. Der ursprüngliche RAG-Beitrag beschreibt genau diese Verbindung von Retrieval und Generierung.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" role="doc-noteref">2</a></sup> Er schreibt nicht vor, dass das Retrieval zwingend mit Embeddings oder in einer besonderen Vektordatenbank stattfinden muss. Lexikalische Suche kann ebenfalls Kontext für eine generierte Antwort liefern.</p>
+<p>Und manchmal ist auch RAG das falsche Werkzeug. Ein aktueller Lagerbestand gehört nicht als gelegentlich aktualisierte Textpassage in einen Index. Das Modell sollte ihn über eine Fach-API abfragen. Soll es ein Ticket anlegen oder einen Urlaubsvorgang starten, braucht es einen kontrollierten Tool-Aufruf. Die Provider-Dokumentation beschreibt dafür eine klare Arbeitsteilung: Das Modell schlägt einen Aufruf mit strukturierten Argumenten vor; die Anwendung validiert ihn, prüft Berechtigungen und führt ihn aus.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" role="doc-noteref">3</a></sup></p>
+<p>Die hilfreiche Rückfrage lautet deshalb nicht „Welche Vektordatenbank nehmen wir?“, sondern:</p>
+<blockquote><p>Fehlt dem Modell Dokumenttext, ein exakter Fund, ein aktueller strukturierter Zustand – oder die Möglichkeit, etwas zu tun?</p></blockquote>
+<p>Erst dann kann man zwischen Suche, semantischem Retrieval, RAG, SQL und Tool/API sinnvoll wählen.</p>
+<h2>RAG ist keine Einkaufsliste</h2>
+<p>Rund um RAG werden Begriffe gern zu einer festen Lieferkette zusammengeschoben: Dokumente laden, in 500-Token-Stücke schneiden, Embeddings berechnen, Vektordatenbank anschließen, fertig.</p>
+<p>Das kann ein brauchbarer Prototyp sein. Ein Standard ist es nicht.</p>
+<p>Schon die passende Einheit hängt vom Material ab. Ein Gesetz, eine Tabelle, ein Handbuch und ein Supportticket haben andere Strukturen. Anbieter können automatisches Chunking und Standardwerte übernehmen, dokumentieren diese aber als Konfiguration ihrer Dienste.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" role="doc-noteref">4</a></sup> Die Qualität muss mit den eigenen Dokumenten und Fragen geprüft werden. Forschung zu RAG-Evaluation misst deshalb getrennt, ob der gefundene Kontext relevant ist und ob die Antwort tatsächlich darauf gestützt ist.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" role="doc-noteref">5</a></sup></p>
+<p>Auch Fine-Tuning löst ein anderes Problem. Es kann Verhalten, Format oder die Leistung bei einer eng umrissenen Aufgabe an gute Beispiele anpassen. Für Wissen, das häufig geändert, gezielt gelöscht und mit einer Fundstelle belegt werden soll, ist es kein guter Standardersatz für Suche oder Tools.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6" role="doc-noteref">6</a></sup> Die absolute Aussage „Fine-Tuning speichert kein Wissen“ wäre trotzdem falsch. Die saubere Unterscheidung ist praktischer: Geht es um gewünschtes Verhalten – oder um einen veränderlichen Informationsbestand?</p>
+<h2>Das schwierige Stück beginnt nach dem Upload</h2>
+<p>Ein Dokument in einen Index zu bekommen, ist heute erstaunlich einfach. Es dort verantwortlich zu betreiben, ist es nicht.</p>
+<p>Eine brauchbare Wissenskette sieht eher so aus:</p>
+<p><code>Quelle → Import → Version → Extraktion → Metadaten → Rechte → Suchindex → Fundstelle → Modellkontext → Antwort</code></p>
+<p>Daneben laufen weniger fotogene Wege:</p>
+<ul>
+<li>Ein Dokument ändert sich und muss neu verarbeitet werden.</li>
+<li>Ein Mitarbeiter wechselt die Abteilung und seine Rechte ändern sich.</li>
+<li>Eine Quelle wird gelöscht und soll auch aus Index, Cache und Ableitungen verschwinden.</li>
+<li>Ein Parser scheitert an einzelnen Dateien, ohne dass der gesamte Import rot wird.</li>
+<li>Ein neues Embedding-Modell oder eine neue Chunking-Regel verlangt einen reproduzierbaren Neuaufbau.</li>
+</ul>
+<p>Diese Kette ist meine Synthese aus den untersuchten Komponenten, kein externer Standard. Gerade deshalb ist sie wichtig: Die einzelnen Produkte zeigen jeweils nur einen Ausschnitt.</p>
+<p>Wer eine fertige Plattform oder einen verwalteten Retrieval-Dienst kauft, kann viel davon abgeben. Dann sollte die Einkaufsfrage jedoch nicht nur „Unterstützt ihr PDF?“ lauten. Interessanter sind Löschung, Rechte-Synchronisation, fehlgeschlagene Importe, Versionen, Export und Wiederaufbau. Ein verwalteter Dienst verschiebt die Betriebsarbeit. Er entfernt nicht die Verantwortung dafür, was in den Wissensraum hinein darf.</p>
+<h2>Berechtigungen folgen den Informationen, nicht der Kopfzahl</h2>
+<p>Identität wird in Gesprächen über Unternehmens-KI oft mit drei Buchstaben erledigt: SSO. Technisch sind mehrere Dinge zu trennen.</p>
+<p>OpenID Connect authentifiziert einen Menschen und transportiert Angaben über seine Identität.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7" role="doc-noteref">7</a></sup> SCIM ist ein IETF-Standards-Track-Protokoll, mit dem Accounts und Gruppen zwischen Systemen provisioniert und verwaltet werden können.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8" role="doc-noteref">8</a></sup> Beide entscheiden noch nicht, ob dieser Mensch die Gehaltsliste, den Betriebsratsordner oder nur das öffentliche Handbuch lesen darf. Das ist Autorisierung – etwa über Rollen, Attribute, ACLs oder andere Regeln.</p>
+<p>Die wichtigste Regel ist unabhängig vom gewählten Modell:</p>
+<blockquote><p>Nur Information, die ein Mensch sehen darf, darf als Kontext beim Modell landen.</p></blockquote>
+<p>Microsoft beschreibt Document-Level Access für Suchindizes als Filterung anhand von Identitäten oder Berechtigungsmetadaten.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9" role="doc-noteref">9</a></sup> Das Problem stammt also nicht erst aus der generativen KI. Enterprise Search musste Dokumentrechte schon vorher beachten.</p>
+<p>Die Generierung verschärft allerdings die Folgen eines Fehlers. Ein unberechtigter Treffer kann nicht nur als Suchresultat auftauchen. Er kann in eine flüssige Antwort einfließen, mit erlaubten Informationen vermischt werden und später kaum noch als Fremdkörper erkennbar sein. OWASP nennt bei Vektor- und Embedding-Systemen unter anderem unberechtigten Zugriff, Informationsabfluss zwischen Mandanten, Embedding-Inversion und vergiftete Wissensbestände.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10" role="doc-noteref">10</a></sup></p>
+<p>Ob Rechte in den Index kopiert oder bei jeder Anfrage im Quellsystem geprüft werden, ist eine Abwägung. Kopierte Rechte machen Retrieval schnell, können aber veralten. Live-Prüfung ist aktueller, erhöht jedoch Latenz und Abhängigkeit. Getrennte Datenräume können stark isolieren, erhöhen aber den Betriebsaufwand. Wichtig ist nicht, überall „ACL“ anzukreuzen. Wichtig ist ein definierter Vertrag: Woher kommt das Recht, wann wird eine Änderung wirksam und was passiert bei einem Fehler?</p>
+<p>Deshalb kann ein System für 15 Personen mit Personalakten anspruchsvoller sein als eines für 2.000 Menschen, die ausschließlich öffentliche Handbücher durchsuchen. Berechtigungen sind keine Enterprise-Zutat, die erst ab einer bestimmten Mitarbeiterzahl dazukommt.</p>
+<h2>Ein Quellenlink ist noch keine Provenance</h2>
+<p>Viele Systeme können unter einer Antwort Dateinamen oder Links anzeigen. Das ist nützlich. Es beantwortet aber noch nicht alle Fragen, die das Wort „Quelle“ verspricht.</p>
+<p>Hat das System genau diese Passage verwendet? Aus welcher Dokumentversion stammt sie? Welche Extraktion und welcher Indexstand lagen dazwischen? Gibt die generierte Aussage den Fund überhaupt korrekt wieder?</p>
+<p>Für echte Nachvollziehbarkeit muss die Anwendung Beziehungen zwischen Antwort, Kontextpassage, Fundstelle, Dokumentversion, Original und Verarbeitung erhalten. W3C PROV-DM bietet dafür ein allgemeines Vokabular: Entitäten, Aktivitäten, verantwortliche Akteure sowie Ableitungs- und Revisionsbeziehungen.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11" role="doc-noteref">11</a></sup> Das ist keine fertige RAG-Datenstruktur. Aber es zeigt, dass Provenance mehr ist als ein hübscher Fußnotenlink.</p>
+<p>Die praktische Konsequenz muss nicht sofort ein formales PROV-System sein. Sie kann klein beginnen: stabile Dokument- und Versions-IDs, gespeicherte Fundstellen, reproduzierbare Verarbeitung und ein Link zum Original. Nur sollte man eine Modellfußnote nicht mit einem Beweis verwechseln.</p>
+<h2>Provider-Abstraktion ist kein Ausweg aus dem Lock-in</h2>
+<p>Eine eigene Schnittstelle zwischen Anwendung und Modellanbieter ist sinnvoll. Sie hält API-Schlüssel, Request-Formate und Providerwechsel aus dem restlichen System heraus. Provider dokumentieren allerdings unterschiedliche Zustands-, Tool-, Aufbewahrungs- und Limitmodelle.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12" role="doc-noteref">12</a></sup></p>
+<p>Sie macht Modelle aber nicht beliebig austauschbar.</p>
+<p>Sobald eine Anwendung providergebundene Funktionen nutzt – etwa spezielle Tool-Aufrufe, strukturierte Ausgaben, Caching oder bestimmte Retrieval-Funktionen – wächst die Bindung wieder. Und selbst bei identischer Schnittstelle können sich Modelle bei Qualität, Latenz und Verhalten deutlich unterscheiden.</p>
+<p>Die Abstraktion löst deshalb nicht den Lock-in. Sie macht sichtbar, <strong>wo er entsteht</strong>.</p>
+<p>Die wichtigere Frage lautet nicht: Können wir morgen den Provider wechseln?</p>
+<p>Sondern: <strong>Welche Teile unseres Systems wollen wir bewusst von einem Anbieter abhängig machen?</strong></p>
+<h2>Was bereits beim kleinen System Betrieb ist</h2>
+<p>Die unspektakulären Regeln sind oft die wertvollsten. Zugangsdaten und andere Secrets gehören weder in Quellcode noch in Logzeilen. OWASP empfiehlt eine zentrale, kontrollierte Secret-Verwaltung und Rotation.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13" role="doc-noteref">13</a></sup> Aufrufe nach außen brauchen Zeitlimits und eine begrenzte Zahl von Wiederholungsversuchen. Bei Anbieterlimits ist nicht jeder sofortige Wiederholungsversuch hilfreich; Provider empfehlen Wiederholungen mit wachsendem Abstand und eine Planung gegen definierte Quoten.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14" role="doc-noteref">14</a></sup></p>
+<p>Logs brauchen Korrelation, Fehlerklassen und genug Kontext für eine Diagnose. Sie brauchen nicht automatisch den vollständigen Prompt, jedes gefundene Dokument und jede Antwort. OpenTelemetry standardisiert, wie Logeinträge transportiert und korreliert werden können.<sup id="fnref:15"><a class="footnote-ref" href="#fn:15" role="doc-noteref">15</a></sup> Es entscheidet nicht, welche sensiblen Inhalte eine Firma vervielfältigen darf. Technische Beobachtbarkeit ist keine Erlaubnis zum Mitschreiben.</p>
+<p>Sobald Zustand gespeichert wird, entstehen weitere Fragen: Wie lange? Wer kann löschen? Was ist der autoritative Bestand? Lässt sich die Datenbank wiederherstellen? Reicht bei einem Suchindex ein reproduzierbarer Neuaufbau oder braucht er ein Backup? Die PostgreSQL-Dokumentation trennt logische und physische Backupverfahren; die richtige Wahl hängt davon ab, welchen Zustand man tatsächlich erhalten muss.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16" role="doc-noteref">16</a></sup></p>
+<p>Auch das ist Betrieb – schon bevor der tausendste Mensch einen Account bekommt.</p>
+<h2>Was sich bei 1.000 Menschen wirklich ändert</h2>
+<p>Tausend Menschen sind keine Lastangabe. Vielleicht öffnen 40 von ihnen das Werkzeug einmal pro Woche. Vielleicht lassen 200 Personen gleichzeitig große Dokumentpakete auswerten. Vielleicht hängt ein kritischer Kundenprozess daran. Diese drei Fälle haben dieselbe Zahl von Konten und fast keine gemeinsame Betriebsarchitektur.</p>
+<p>Für die Planung werden deshalb andere Zahlen wichtig:</p>
+<ul>
+<li>aktive und gleichzeitig aktive Nutzer;</li>
+<li>Anfragen pro Zeit und Größe der Kontexte;</li>
+<li>Importvolumen und Änderungsrate der Quellen;</li>
+<li>Providerquoten, Wartezeiten und Kosten pro Arbeitsablauf;</li>
+<li>gewünschte Verfügbarkeit und akzeptable Einschränkungen im Störungsfall;</li>
+<li>Supportaufkommen, Rolloutgeschwindigkeit und Missbrauchsfälle.</li>
+</ul>
+<p>Aus diesen Messwerten folgen Warteschlangen, Lastbegrenzung, Kapazität, Budgets und vielleicht Hochverfügbarkeit. Nicht aus der runden Zahl 1.000. Auch Kubernetes ist keine automatische Antwort. Ein verwalteter Dienst kann die technische Skalierung übernehmen; eine einfache Anwendung kann auf wenigen Instanzen laufen; ein kleiner, aber kritischer Dienst kann sehr hohe Verfügbarkeit benötigen.</p>
+<p>Mit der Reichweite wächst außerdem die organisatorische Fläche. Wer besitzt den Dienst? Wer entscheidet bei Qualitätsproblemen? Wer beantwortet Nutzerfragen? Wer stoppt einen fehlerhaften Datenkonnektor? Wer kommuniziert einen Störungsfall? NIST ordnet Governance, Messung und Risikobehandlung über den gesamten Lebenszyklus ein und betont, dass nicht jede vorgeschlagene Maßnahme für jeden Akteur passt.<sup id="fnref:17"><a class="footnote-ref" href="#fn:17" role="doc-noteref">17</a></sup> Governance beginnt damit nicht erst bei 1.000 Menschen. Bei 1.000 wird nur sichtbarer, wenn sie vorher niemand übernommen hat.</p>
+<h2>Kaufen oder bauen ist die falsche Zweiteilung</h2>
+<p>Für viele Firmen ist ein fertiger Unternehmensdienst der vernünftigste Start. Oberfläche, Modellzugang, Administration und möglicherweise Suche oder Datenkonnektoren kommen aus einer Hand. Das spart Plattformbau. Es bindet das Unternehmen aber an Datenmodell, Funktionsgrenzen, Preise und Exportmöglichkeiten des Produkts.</p>
+<p>Dazwischen liegen viele Mischformen: eine selbst hostbare Oberfläche, verwaltete Modell- und Suchdienste, gekaufte Parser, ein bestehender Identitätsdienst, eine eigene Fachanwendung oder eine eigene Retrieval- und Rechte-Logik. „Eigenbau“ kann bedeuten, fünf Standarddienste bewusst zu verbinden – nicht, ein Sprachmodell zu trainieren.</p>
+<p>Die bessere Frage pro Schicht lautet:</p>
+<blockquote><p>Welche Fähigkeit kaufen wir ein, und welche Verantwortung bleibt danach bei uns?</p></blockquote>
+<p>Auch beim vollständig gekauften Dienst bleiben mindestens Problemwahl, Datenfreigabe, Rechte, Zielqualität, Nutzerbetrieb, Umgang mit Störungen sowie Ausstieg und Datenexport beim Unternehmen. Beim Eigenbau kommen Patches, Skalierung, Rufbereitschaft und Lebenszyklus der Komponenten dazu.</p>
+<h2>Die Antwort für das nächste Gespräch</h2>
+<p>Gibt es also einen belastbaren Blueprint für „ChatGPT in der Firma“?</p>
+<p>Für einzelne Bausteine ja. OIDC und SCIM lösen definierte Aufgaben rund um Identität. Suchmaschinen, relationale Datenbanken und Vektorindizes liefern bekannte Mechaniken. RAG, Tool-Aufrufe und Evaluation sind dokumentierte Muster und Methoden. Verwaltete Produkte können große Teile davon übernehmen.</p>
+<p>In den untersuchten Primärquellen habe ich aber keine universelle Gesamtarchitektur gefunden, die für jede Firma und jeden Anwendungsfall gilt. Das ist kein Beweis, dass niemand irgendwo eine solche Zeichnung veröffentlicht hat. Es ist ein Hinweis darauf, dass die gemeinsame Ebene woanders liegt.</p>
+<p>Mein Ergebnis ist deshalb kein Komponentenbild, sondern eine Folge von Rückfragen:</p>
+<ol>
+<li>Welche Arbeit soll am Dienstagmorgen leichter werden?</li>
+<li>Welche Information fehlt dafür – und wer darf sie sehen?</li>
+<li>Wie aktuell, löschbar und nachvollziehbar muss sie sein?</li>
+<li>Welchen Fehler können wir akzeptieren, und wie würden wir ihn bemerken?</li>
+<li>Welche Fähigkeit kaufen wir, welche integrieren wir und welche betreiben wir dauerhaft?</li>
+</ol>
+<p>Wer diese Fragen beantworten kann, muss keinen Suchindex an ein Whiteboard malen. Er kann aber erkennen, welche Entscheidung in einem Anbieter- oder Architekturgespräch gerade tatsächlich getroffen wird.</p>
+<p>Vielleicht ist das die unspektakuläre Antwort: Die Bausteine kann man kaufen oder installieren. Verantworten muss man ihre Übergänge.</p>
+<section class="footnotes" role="doc-endnotes" aria-label="Quellen">
+<h2>Quellen</h2>
+<ol>
+<li id="fn:1">PostgreSQL, „Controlling Text Search“; pgvector, README, Abschnitte „Hybrid Search“ und Filterung. <a href="https://www.postgresql.org/docs/current/textsearch-controls.html">PostgreSQL</a>, <a href="https://github.com/pgvector/pgvector">pgvector</a>. Die Dokumentation belegt Mechaniken und Optionen, keine universell beste Konfiguration. <a href="#fnref:1" aria-label="Zurück zu Quelle 1">↩</a></li>
+<li id="fn:2">Patrick Lewis et al., „Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks“, Abstract und Methodenbeschreibung. <a href="https://arxiv.org/abs/2005.11401">arXiv</a>. <a href="#fnref:2" aria-label="Zurück zu Quelle 2">↩</a></li>
+<li id="fn:3">OpenAI, „Function calling“, Ablauf zwischen Modell und Anwendung. <a href="https://developers.openai.com/api/docs/guides/function-calling">Dokumentation</a>. Die Seite beschreibt eine Provider-API, nicht alle denkbaren Tool-Architekturen. <a href="#fnref:3" aria-label="Zurück zu Quelle 3">↩</a></li>
+<li id="fn:4">OpenAI, Vector Store File API, Feld <code>chunking_strategy</code>; „File search“, Funktionsbeschreibung. <a href="https://developers.openai.com/api/reference/cli/resources/vector_stores/subresources/files/methods/create">API-Referenz</a>, <a href="https://developers.openai.com/api/docs/guides/tools-file-search">Guide</a>. Defaults sind Produktverhalten, keine neutralen Standards. <a href="#fnref:4" aria-label="Zurück zu Quelle 4">↩</a></li>
+<li id="fn:5">Shahul Es et al., „RAGAS: Automated Evaluation of Retrieval Augmented Generation“, Metriken für Context Relevance und Faithfulness. <a href="https://aclanthology.org/2024.eacl-demo.16/">ACL Anthology</a>. <a href="#fnref:5" aria-label="Zurück zu Quelle 5">↩</a></li>
+<li id="fn:6">OpenAI, „Supervised fine-tuning“, geeignete Aufgaben und Beispiele; AWS Prescriptive Guidance, „RAG vs. fine-tuning“, Vergleich nach Aktualität und Einsatzart. <a href="https://developers.openai.com/api/docs/guides/supervised-fine-tuning">OpenAI</a>, <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/rag-vs-fine-tuning.html">AWS</a>. Beide Quellen sind Anbieterperspektiven. <a href="#fnref:6" aria-label="Zurück zu Quelle 6">↩</a></li>
+<li id="fn:7">OpenID Foundation, „OpenID Connect Core 1.0“, Abschnitt 1. <a href="https://openid.net/specs/openid-connect-core-1_0-errata2.html">Spezifikation</a>. <a href="#fnref:7" aria-label="Zurück zu Quelle 7">↩</a></li>
+<li id="fn:8">IETF, RFC 7644, „System for Cross-domain Identity Management: Protocol“, Status und Abstract. <a href="https://www.rfc-editor.org/rfc/rfc7644.html">RFC</a>. <a href="#fnref:8" aria-label="Zurück zu Quelle 8">↩</a></li>
+<li id="fn:9">Microsoft Learn, „Document-level access control“ und „Use ACLs and RBAC scopes from Microsoft Entra ID“. <a href="https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview">Überblick</a>, <a href="https://learn.microsoft.com/en-us/azure/search/search-index-access-control-lists-and-rbac-push-api">ACL/RBAC-Implementierung</a>. Die Seiten dokumentieren Azure AI Search, nicht jede Suchplattform. <a href="#fnref:9" aria-label="Zurück zu Quelle 9">↩</a></li>
+<li id="fn:10">OWASP, „LLM08:2025 Vector and Embedding Weaknesses“, Abschnitte „Common Examples of Risks“ und „Prevention and Mitigation Strategies“. <a href="https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/">OWASP GenAI Security Project</a>. Die Seite ist eine Sicherheits-Taxonomie, kein vollständiges Autorisierungsdesign. <a href="#fnref:10" aria-label="Zurück zu Quelle 10">↩</a></li>
+<li id="fn:11">W3C, „PROV-DM: The PROV Data Model“, Abschnitte zu Entities, Activities, Agents, Derivation und Revision. <a href="https://www.w3.org/TR/prov-dm/">W3C Recommendation</a>. Das konkrete RAG-Schema ist eine Anwendung dieses allgemeinen Modells. <a href="#fnref:11" aria-label="Zurück zu Quelle 11">↩</a></li>
+<li id="fn:12">OpenAI, „Conversation state“ und „Your data“; Google, „Interactions API“. <a href="https://developers.openai.com/api/docs/guides/conversation-state">OpenAI Conversation State</a>, <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI Data Controls</a>, <a href="https://ai.google.dev/gemini-api/docs/interactions-overview">Google Interactions</a>. Die Unterschiede belegen keine vollständige Provideranalyse, aber reale Grenzen einer dünnen Fassade. <a href="#fnref:12" aria-label="Zurück zu Quelle 12">↩</a></li>
+<li id="fn:13">OWASP, „Secrets Management Cheat Sheet“, Lifecycle und zentrale Verwaltung. <a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html">Cheat Sheet</a>. <a href="#fnref:13" aria-label="Zurück zu Quelle 13">↩</a></li>
+<li id="fn:14">OpenAI, „Rate limits“, Limits und exponentielles Backoff. <a href="https://developers.openai.com/api/docs/guides/rate-limits">Dokumentation</a>. Konkrete Limits sind konto- und anbieterspezifisch. <a href="#fnref:14" aria-label="Zurück zu Quelle 14">↩</a></li>
+<li id="fn:15">OpenTelemetry, „Logs Data Model“, Log Records und Korrelation. <a href="https://opentelemetry.io/docs/specs/otel/logs/">Spezifikation</a>. <a href="#fnref:15" aria-label="Zurück zu Quelle 15">↩</a></li>
+<li id="fn:16">PostgreSQL, Kapitel „Backup and Restore“. <a href="https://www.postgresql.org/docs/current/backup.html">Dokumentation</a>. <a href="#fnref:16" aria-label="Zurück zu Quelle 16">↩</a></li>
+<li id="fn:17">NIST, „Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile“, Abschnitte 2 und 3, insbesondere Hinweise zur anwendungsabhängigen Auswahl der Maßnahmen. <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST AI 600-1</a>. Das Profil liefert Risikomanagementhilfen, keine fertige technische Zielarchitektur. <a href="#fnref:17" aria-label="Zurück zu Quelle 17">↩</a></li>
+</ol>
+</section>
+<footer class="article-meta"><p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-08-30T18:45:29+02:00">30.08.2026</time>.</p></footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

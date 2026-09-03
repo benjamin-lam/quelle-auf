@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wer fährt, entscheidet sich nicht an der Tastatur · Quelle auf.</title>
+  <meta name="description" content="Soll KI beim Pair Programming Driver oder Navigator sein? Die Forschung spricht für bewusste Rollenwechsel nach Lernziel, Kontext, Prüfbarkeit und Risiko.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/ist-ki-im-pair-programming-wirklich-der-bessere-fahrer-oder-waere-sie-al/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Wer fährt, entscheidet sich nicht an der Tastatur">
+  <meta property="og:description" content="Soll KI beim Pair Programming Driver oder Navigator sein? Die Forschung spricht für bewusste Rollenwechsel nach Lernziel, Kontext, Prüfbarkeit und Risiko.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/ist-ki-im-pair-programming-wirklich-der-bessere-fahrer-oder-waere-sie-al/">
+  <meta property="article:published_time" content="2026-08-26T22:09:47+02:00">
+  <meta property="article:modified_time" content="2026-08-26T22:09:47+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Wer fährt, entscheidet sich nicht an der Tastatur","description":"Soll KI beim Pair Programming Driver oder Navigator sein? Die Forschung spricht für bewusste Rollenwechsel nach Lernziel, Kontext, Prüfbarkeit und Risiko.","datePublished":"2026-08-26T22:09:47+02:00","dateModified":"2026-08-26T22:09:47+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/ist-ki-im-pair-programming-wirklich-der-bessere-fahrer-oder-waere-sie-al/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Gestern habe ich mir vorgestellt, meine KI würde nicht komplett ausfallen, sondern nur eine bestimmte Arbeit verweigern. Auf die Bitte, eine Funktion zur E-Mail-Validierung zu schreiben, würde sie antworten: „Nein. Schreib den Code selbst. Ich helfe dir beim Denken, bei Fragen, beim Review, bei Tests und bei der Fehlersuche – aber ich schreibe keine Zeile Code für dich.“ Das hat mich irritiert, weil meine Arbeit oft genau andersherum läuft: Ich beschreibe das Ziel, die KI schreibt, ich prüfe das Ergebnis. Die KI sitzt am Steuer, ich daneben.</p>
+<p><strong>Meine Frage:</strong>
+Ist KI im Pair Programming wirklich der bessere Fahrer – oder wäre sie als Beifahrer und Navigator nützlicher?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Wer fährt, entscheidet sich nicht an der Tastatur</h1>
+<p>Die kurze Antwort lautet: <strong>Die KI sollte weder dauerhaft Driver noch dauerhaft Navigator sein. Die Rollen sollten wechseln – und zwar nicht nach Stimmung, sondern nach Lernziel, Aufgabenbekanntheit, Prüfbarkeit und Risiko.</strong></p>
+<p>Bei einer kleinen, bekannten und gut testbaren Aufgabe darf die KI ruhig fast den gesamten Code schreiben. Eigenes Tippen ist kein Beweis für Verständnis. Wenn ich dagegen eine neue Bibliothek lerne, eine unklare Architektur erkunde oder einen Fehler in einem System suche, das ich kaum kenne, kann dieselbe Delegation genau die Arbeit entfernen, durch die mein mentales Modell erst entstehen würde – mein Verständnis von Zweck, Datenfluss, Abhängigkeiten und Fehlermodi.</p>
+<p>Die wichtigere Entdeckung der Recherche ist deshalb: Das Bild vom Fahrer und Navigator ist zu einfach. Es tut so, als seien Lenken und Schreiben dieselbe Tätigkeit.</p>
+<p>Bei einem Coding Agent sind sie das nicht mehr.</p>
+<h2>Zwei Menschen teilen mehr als eine Tastatur</h2>
+<p>Im klassischen Bild des Pair Programming sitzt der Driver an der Tastatur und beschäftigt sich mit dem nächsten konkreten Schritt. Der Navigator beobachtet, denkt voraus und achtet auf Fehler oder die größere Richtung.</p>
+<p>Schon bei zwei Menschen ist der Nutzen dieser Arbeitsweise nicht so eindeutig, wie die Metapher klingt. Eine Meta-Analyse von Pair-Programming-Experimenten fand im Mittel etwas bessere Qualität und kürzere Bearbeitungsdauer, aber auch höheren Gesamtaufwand. Die Ergebnisse unterschieden sich stark zwischen den Studien; Aufgabenkomplexität und Erfahrung spielten eine wichtige Rolle. Pair Programming war nicht einfach immer besser. <a href="https://www.ic.unicamp.br/~wainer/outros/systrev/30.pdf">Hannay et al., <em>The effectiveness of pair programming: A meta-analysis</em></a>, Abstract sowie Diskussion und Schlussfolgerung. [claim-001, claim-002]</p>
+<p>Und ein Sprachmodell ist nicht bloß der zweite Mensch ohne Kaffeetasse. Ein menschlicher Partner sieht dieselbe Arbeitssituation, kennt einen Teil der Vorgeschichte, kann ungefragt widersprechen und trägt soziale Verantwortung für das Ergebnis. Ein moderner Coding Agent kann durchaus von sich aus Vorschläge machen, nächste Schritte ausführen oder Rückfragen stellen. Er handelt dabei innerhalb des Auftrags und des Kontexts, die wir ihm zugänglich machen, und kann überzeugend falschliegen. Vor allem trägt er nicht die organisatorische Verantwortung, wenn sein Patch am nächsten Morgen den Betrieb beschäftigt.</p>
+<p><code>Navigator</code> ist deshalb keine Eigenschaft des Werkzeugs. Es ist eine Rolle, die ein konkreter Arbeitsablauf ihm zeitweise geben kann.</p>
+<h2>Die KI kann schreiben, während der Mensch lenkt</h2>
+<p>Eine Beobachtungsstudie mit GitHub Copilot liefert dafür eine passendere Unterscheidung. Die Forscher beobachteten 20 Programmierer bei Aufgaben in vier Sprachen und fanden zwei wiederkehrende Modi.</p>
+<p>Im <strong>Beschleunigungsmodus</strong> wusste der Mensch bereits, was als Nächstes geschehen sollte. Er hatte die Aufgabe in kleine Schritte zerlegt und nutzte Copilot, um bekannte Codeaktionen schneller auszuführen. Im <strong>Explorationsmodus</strong> war der Weg noch unklar. Copilot schlug APIs, Strukturen oder Lösungsansätze vor; der Mensch musste Alternativen vergleichen und gründlicher validieren. Die Teilnehmer wechselten innerhalb einer Aufgabe flüssig zwischen beiden Modi. <a href="https://shraddhabarke.github.io/raw/copilot.pdf">Barke, James und Polikarpova, <em>Grounded Copilot</em></a>, Abschnitt 4, insbesondere 4.1 und 4.2. [claim-003, claim-004]</p>
+<p>Das verschiebt die Frage.</p>
+<p>Wenn ich die Aufgabe zerlegt habe, eine Funktionssignatur vorgebe und weiß, welche Fälle die Tests abdecken müssen, kann die KI zwanzig Zeilen erzeugen. Sie schreibt, aber sie lenkt nicht unbedingt. Ich habe den Weg festgelegt und kann das Ergebnis günstig prüfen.</p>
+<p>Wenn ich dagegen nur sage <code>Mach das Login sicher</code>, kann die KI den Lösungsraum bestimmen, lange bevor die erste Zeile erscheint. Vielleicht tippe ich ihren Vorschlag anschließend sogar von Hand ab. Trotzdem hat sie gelenkt.</p>
+<p>Der Fahrersitz hängt also nicht daran, wer die Zeichen erzeugt. Er hängt daran, wer das Problem zerlegt, Annahmen auswählt und entscheidet, welche Evidenz genügt.</p>
+<h2>Manchmal ist die KI tatsächlich der bessere Codeproduzent</h2>
+<p>Die stärkste Gegenposition zum Gedankenexperiment ist gut belegt: Für manche Aufgaben wäre es Verschwendung, die KI künstlich vom Schreiben abzuhalten.</p>
+<p>In einem kontrollierten Experiment erledigten Entwickler mit Copilot eine abgegrenzte JavaScript-Aufgabe – einen HTTP-Server – 55,8 Prozent schneller als die Kontrollgruppe. <a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-ai-on-developer-productivity-evidence-from-github-copilot/">Peng et al., <em>The Impact of AI on Developer Productivity</em></a>, Abstract. [claim-005]</p>
+<p>Drei spätere Feldexperimente bei Microsoft, Accenture und einem weiteren großen Unternehmen umfassten zusammen 4.867 Entwickler. Gepoolt stieg die Zahl erledigter Tasks mit KI-Codevervollständigung um 26,08 Prozent; weniger erfahrene Entwickler zeigten höhere Nutzung und größere Gewinne. Das Ergebnis misst erledigte Arbeit, nicht tiefes Verständnis oder mehrjährige Wartbarkeit. Aber es ist ein kräftiges Gegenargument zur Idee, KI solle grundsätzlich nur Fragen stellen. <a href="https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/">Cui et al., <em>The Effects of Generative AI on High-Skilled Work</em></a>, Abstract. [claim-006]</p>
+<p>Auch Qualität muss nicht automatisch leiden. In GitHubs kontrollierter Python-Studie bestanden Copilot-Nutzer häufiger alle Tests; blinde Reviewer bewerteten Lesbarkeit, Zuverlässigkeit, Wartbarkeit und Prägnanz geringfügig besser. Das war ein einzelner synthetischer Webserver-Task und eine Untersuchung des Herstellers. Es ist keine Generalvollmacht. Es zeigt aber: Generierter Code kann in einem begrenzten, prüfbaren Setting schneller <strong>und</strong> brauchbar sein. <a href="https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/">GitHub, <em>Does GitHub Copilot improve code quality?</em></a>, Abschnitte zu Funktionalität, Review und Methodik. [claim-009]</p>
+<p>Die KI darf hier Driver heißen, wenn wir damit <code>Codeproduzent</code> meinen. Nur sollten wir nicht so tun, als habe sie damit auch Ziel, Qualitätsmaßstab und Verantwortung übernommen.</p>
+<h2>In einem vertrauten Repository kann derselbe Fahrer bremsen</h2>
+<p>Dann kommt ein zeitgebundener Gegenbefund. Er beschreibt frühe 2025er Werkzeuge in einem ungewöhnlich anspruchsvollen Umfeld, kein Urteil über alle heutigen Coding Agents.</p>
+<p>METR ließ 16 erfahrene Open-Source-Entwickler 246 reale Aufgaben in großen Repositories bearbeiten, zu denen sie im Durchschnitt seit fünf Jahren beitrugen. Mit frühen 2025er KI-Werkzeugen benötigten sie im Mittel 19 Prozent mehr Zeit. Vorher hatten sie eine Beschleunigung erwartet; hinterher glaubten sie weiterhin, schneller gewesen zu sein. <a href="https://metr.org/Early_2025_AI_Experienced_OS_Devs_Study-paper.pdf">Becker et al., <em>Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</em></a>, Abstract und Abschnitt 3. [claim-007]</p>
+<p>METR konnte eine spätere Untersuchung mit neueren Werkzeugen wegen Selbstselektion nicht zuverlässig auswerten; die Rohdaten deuteten schwach auf bessere Effekte. Der ältere Wert lässt sich deshalb nicht als aktuelle allgemeine Produktivitätszahl fortschreiben. <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR, <em>We are Changing our Developer Productivity Experiment Design</em></a>, Eröffnungsabschnitt. [claim-008]</p>
+<p>Der ältere Befund ist trotzdem interessant, weil er zwei Dinge trennt, die sich am Schreibtisch gleich anfühlen können: weniger tippen und früher fertig sein.</p>
+<p>In einem bekannten System hat der erfahrene Mensch bereits ein dichtes Modell aus Architektur, Konventionen und früheren Fehlern. Jeder KI-Vorschlag muss erst in dieses Modell übersetzt werden. Ein fast richtiger Patch erzeugt dann neue Arbeit: Kontext erklären, Diff lesen, Abweichung erkennen, Prompt korrigieren, Tests nachziehen. Der Bildschirm bewegt sich schnell. Die Aufgabe nicht unbedingt.</p>
+<p>Die Selbsteinschätzung der METR-Teilnehmer war in diesem Setting deutlich fehlkalibriert. Mehr lässt sich daraus nicht allgemein ableiten. Aber es genügt für eine praktische Frage: <strong>Messe ich gerade Durchsatz und Ergebnis – oder nur, wie leicht sich die Arbeit anfühlt?</strong></p>
+<h2>Verstehen entsteht nicht in den Fingern</h2>
+<p>Die Versuchung wäre nun, das Pendel zurückzuschwingen: Wer lernen will, muss alles selbst schreiben.</p>
+<p>Auch das hält die Forschung nicht aus.</p>
+<p>In einer dreiwöchigen Studie arbeiteten 69 junge Programmieranfänger mit oder ohne eine Codex-basierte Lernumgebung. Die KI-Gruppe erledigte mehr Aufgaben und erzielte höhere Scores. Unmittelbare Tests und ein Test nach einer Woche zeigten keinen signifikanten Nachteil beim manuellen Ändern von Code oder bei der Retention. Entscheidend war das Design: Auf Codegenerierung folgten Änderungsaufgaben. Die Lernenden mussten wieder in das Ergebnis hinein. <a href="https://arxiv.org/abs/2302.07427">Kazemitabaar et al., <em>Studying the effect of AI Code Generators on Supporting Novice Learners</em></a>, Abschnitte 4 bis 6. [claim-010]</p>
+<p>Eine kleine neuere Studie fand unter anderen Bedingungen das Gegenstück – und genau das ist der Punkt: Die Bedingungen entscheiden. Entwickler sollten eine ihnen unbekannte Python-Bibliothek lernen. Die Gruppe mit KI-Unterstützung erzielte bei einem unmittelbar anschließenden Wissenstest 17 Prozent niedrigere Werte; der kleine Zeitgewinn war statistisch nicht signifikant. In der qualitativen Auswertung waren vollständige Delegation und KI-geführtes Debugging mit schwachen Ergebnissen verbunden. Teilnehmer, die konzeptuelle Fragen stellten oder generierten Code aktiv erklären ließen und nachvollzogen, schnitten besser ab. Diese Nutzungsmuster sind Assoziationen, kein kausaler Beweis für eine bestimmte Prompttechnik. <a href="https://www.anthropic.com/research/AI-assistance-coding-skills">Shen und Tamkin, <em>How AI assistance impacts the formation of coding skills</em></a>, Ergebnisse, Interaktionsmuster und Limitationen. [claim-011, claim-012]</p>
+<p>Zusammen ergeben die Studien eine weniger romantische Regel: <strong>Nicht das Tippen erzeugt Verständnis, sondern die kognitive Arbeit, die der Ablauf vom Menschen verlangt.</strong></p>
+<p>Ein Mensch kann KI-Code verstehen, wenn er Annahmen prüft, Kontrollfluss rekonstruiert, Änderungen selbst vornimmt und Fehler erklärt. Ein Mensch kann selbst geschriebenen Code kaum verstehen, wenn er nur ein Tutorial abtippt. Die Tastatur ist ein möglicher Träger dieser Arbeit. Sie ist nicht ihr Messgerät.</p>
+<h2>Bei Security reicht ein überzeugender Navigator nicht</h2>
+<p>Verständnis und Codequalität sind außerdem nicht dasselbe.</p>
+<p>In einer 2023 veröffentlichten Studie mit sicherheitsbezogenen Programmieraufgaben produzierten Teilnehmer mit einem älteren Codex-Assistenten unsicherere Lösungen als die Vergleichsgruppe. Gleichzeitig waren sie eher überzeugt, sicheren Code geschrieben zu haben. Geringeres Vertrauen und aktivere Auseinandersetzung mit den Vorschlägen gingen mit besseren Ergebnissen einher. Die genauen Ergebnisse sind wegen des älteren Modells nicht ohne Weiteres auf heutige Werkzeuge übertragbar; das untersuchte Risiko plausibler Vorschläge mit versteckten Fehlern bleibt dennoch relevant. <a href="https://arxiv.org/abs/2211.03622">Perry et al., <em>Do Users Write More Insecure Code with AI Assistants?</em></a>, Abstract sowie Abschnitte zu Security-Ergebnissen und Vertrauen. [claim-013]</p>
+<p>Das widerspricht GitHubs positivem Qualitätstest nicht direkt. Zehn Unit-Tests für einen Webserver und subtile Sicherheitsfehler messen verschiedene Dinge. Eine KI kann Boilerplate zuverlässig ergänzen und zugleich bei Kryptografie, Berechtigungen oder Eingabevalidierung eine plausible falsche Annahme einbauen.</p>
+<p>Für solche Aufgaben ist <code>Navigator</code> allerdings ebenfalls zu freundlich. Ein Navigator kennt den Weg. Das Modell liefert eher eine zusätzliche Karte, deren Druckdatum gelegentlich fehlt. Es kann Threats sammeln, Gegenbeispiele suchen und Tests vorschlagen. Die Invarianten und die Freigabe sollten aber bei Menschen und unabhängigen technischen Prüfungen bleiben.</p>
+<h2>Wartbarkeit liefert bisher kein Verbotsschild</h2>
+<p>Was passiert mit dem nächsten Entwickler?</p>
+<p>Eine zweiphasige Studie mit 151 Teilnehmern, überwiegend professionelle Entwickler, ging dieser Frage direkter nach. In der ersten Phase entstanden Java-Lösungen mit oder ohne KI-Unterstützung. In der zweiten Phase mussten andere Teilnehmer diese Lösungen ohne KI weiterentwickeln. Bei Bearbeitungszeit und Codequalität zeigte sich kein signifikanter großer Unterschied. <a href="https://arxiv.org/abs/2507.00788">Borg et al., <em>Echoes of AI</em></a>, Abstract und Abschnitte zu RQ1/RQ2. [claim-014]</p>
+<p>Das Ergebnis ist kleiner, als beide Lager gern hätten. Es widerlegt die Behauptung, KI-mitentwickelter Code werde zwangsläufig sofort unwartbar. Es beweist nicht, dass jahrelange Agentennutzung keine Architektur- oder Wissensschuld erzeugt. Untersucht wurden ein kleines System und begrenzte Änderungen; kleine Effekte waren statistisch schwer zu erkennen.</p>
+<p>Langfristige Handlungsfähigkeit bleibt damit teilweise eine offene Designfrage. Gerade deshalb sollte sie nicht über den Anteil KI-generierter Zeilen beurteilt werden. Relevanter ist, ob das Team Anforderungen, Schnittstellen, Datenwege und Fehlermodi noch erklären und verändern kann.</p>
+<h2>Vier Fragen vor dem Rollenwechsel</h2>
+<p>Aus den Studien lässt sich kein etablierter Branchenstandard für Mensch-KI-Paare ablesen. Die folgende Entscheidungshilfe ist meine eigene Synthese.</p>
+<p><strong>1. Lerne ich gerade oder wende ich Bekanntes an?</strong></p>
+<p>Beim Lernen sollte die KI häufiger erklären, Rückfragen stellen, Beispiele kontrastieren und Hinweise geben. Sie darf auch Code erzeugen, wenn der Ablauf mich zwingt, ihn zu rekonstruieren oder zu verändern. Bei bekannter Routine darf sie mehr Implementierung übernehmen.</p>
+<p><strong>2. Kenne ich den Weg oder erkunde ich ihn?</strong></p>
+<p>Ist die Aufgabe bereits in kleine Schritte zerlegt, kann KI diese beschleunigen. Ist schon die Richtung unklar, sollte sie mehrere Wege mit Annahmen und Nachteilen zeigen, statt einen großen Patch als scheinbare Entscheidung zu liefern.</p>
+<p><strong>3. Wie günstig lässt sich das Ergebnis prüfen?</strong></p>
+<p>Klare Akzeptanzkriterien, Typen, kleine Diffs, Tests und Invarianten machen KI-Produktion attraktiv. Bei einer mechanischen Migration kann die Implementierung fast vollständig automatisiert sein. Wenn niemand präzise sagen kann, was richtiges Verhalten bedeutet, hilft zusätzliche Codegeschwindigkeit wenig.</p>
+<p><strong>4. Was kostet ein unbemerkter Fehler?</strong></p>
+<p>Bei einer reversiblen Darstellungskorrektur darf der Prozess leicht sein. Bei Authentifizierung, Datenmigration, Geld oder schwer rückgängig zu machenden Aktionen braucht es qualifizierte menschliche Prüfung und andere Evidenz als das Urteil desselben Modells, das den Code erzeugt hat.</p>
+<p>Nehmen wir die E-Mail-Validierung vom Anfang. Wenn ich die verwendete Bibliothek kenne, ist das Lernziel gering und der technische Schritt bekannt. Syntaxregeln lassen sich gut testen. Ob eine Adresse tatsächlich erreichbar ist und welche Sonderfälle das Produkt akzeptieren soll, beantwortet der Validator dagegen nicht. Auf einem unverbindlichen Kontaktformular ist ein Fehler meist reversibel; wird die Adresse zur Identität oder zur Wiederherstellung eines Kontos, steigt das Risiko. Das Ergebnis dieser vier Fragen lautet nicht <code>selbst tippen</code>, sondern: erst die Produktregel festlegen, dann darf die KI implementieren; Tests und Review müssen genau diese Grenze prüfen.</p>
+<p>Der stärkste Einwand gegen jede Zurückhaltung lautet: Was, wenn ich Spezifikation, Akzeptanzkriterien und Tests vollständig kontrolliere? Dann darf die KI auch die gesamte Implementierung übernehmen. Das ist kein Verlust von Handlungsfähigkeit. Die vier Fragen entscheiden nicht über den Anteil generierter Zeilen, sondern darüber, wo die kognitive Arbeit liegt.</p>
+<p>Daraus ergibt sich ein einfacher Arbeitszyklus:</p>
+<p><strong>Der Mensch rahmt. Die KI schlägt vor oder erzeugt. Der Mensch prüft begrifflich und ausführbar. Die KI sucht Gegenbeispiele. Der Mensch entscheidet.</strong></p>
+<p>Auch das ist kein neues Framework. Es ist nur eine Erinnerung daran, dass Rollen innerhalb einer Aufgabe wechseln dürfen.</p>
+<h2>Was vor dem Schreiben geklärt sein sollte</h2>
+<p>Zurück zur E-Mail-Validierung.</p>
+<p>Die ursprüngliche Frage, ob die KI das Schreiben verweigern sollte, war zu eng. Die bessere Frage ist, was ich beantworten können sollte, bevor sie schreibt. Ihre Antwort könnte lauten:</p>
+<blockquote>
+<p>Ich kann die Funktion schreiben. Sag mir vorher, welche Adressen du akzeptieren willst, wo die Validierung stattfindet und was bei Unsicherheit passieren soll. Danach zeige ich dir die Annahmen und die Tests, an denen du meinen Vorschlag prüfen kannst.</p>
+</blockquote>
+<p>Wenn ich diese Fragen beantworten kann, darf die KI den Code gern erzeugen. Wenn nicht, sollte sie nicht aus Prinzip schweigen. Sie sollte mir helfen, zuerst die richtigen Fragen zu klären.</p>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-08-26T22:09:47+02:00">26.08.2026</time>. Zuletzt geändert <time datetime="2026-08-26T22:09:47+02:00">26.08.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

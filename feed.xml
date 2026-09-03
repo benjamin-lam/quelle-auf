@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Quelle auf.</title>
+  <link>https://benjamin-lam.github.io/quelle-auf/</link>
+  <description>Fachartikel mit überprüfbaren Quellen.</description>
+  <language>de</language>
+  <lastBuildDate>Thu, 03 Sep 2026 09:47:14 +0200</lastBuildDate>
+  <item>
+    <title>Der Feed hat mehr als einen Regler</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/warum-kann-man-social-media-algorithmen-nicht-einfach-herunterregeln/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/warum-kann-man-social-media-algorithmen-nicht-einfach-herunterregeln/</guid>
+    <description>Wie Social-Media-Feeds aus Signalen, Vorhersagen, Zielgewichten, Regeln und Interface entstehen – und warum ein einfacher Schalter die nächste Zielentscheidung nicht ersetzt.</description>
+    <pubDate>Thu, 03 Sep 2026 09:47:14 +0200</pubDate>
+  </item>
+  <item>
+    <title>Digitale Mündigkeit ist kein Führerschein</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/was-muss-ein-15-jaehriger-koennen-um-digital-muendig-zu-sein/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/was-muss-ein-15-jaehriger-koennen-um-digital-muendig-zu-sein/</guid>
+    <description>Was ein 15-Jähriger 2026 digital können sollte – und warum Kompetenz allein weder Social-Media-Risiken noch die Verantwortung der Erwachsenen und Anbieter beseitigt.</description>
+    <pubDate>Wed, 02 Sep 2026 14:52:44 +0200</pubDate>
+  </item>
+  <item>
+    <title>Der Auftrag ist kleiner als das Schlüsselbund</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/darf-die-ki-alles-benutzen-worauf-sie-zugriff-hat/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/darf-die-ki-alles-benutzen-worauf-sie-zugriff-hat/</guid>
+    <description>Warum ein KI-Agent nicht alles verwenden sollte, was er technisch erreichen kann – und wie auftragsgebundene Rechte Lesen, Handeln und Weitergeben trennen.</description>
+    <pubDate>Wed, 02 Sep 2026 12:17:42 +0200</pubDate>
+  </item>
+  <item>
+    <title>Der sinnvolle KI-Baukasten ist kein neues Universal-Framework</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/ist-es-heute-schon-sinnvoll-einen-allgemeinen-baukasten-fuer-ki-anwendun/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/ist-es-heute-schon-sinnvoll-einen-allgemeinen-baukasten-fuer-ki-anwendun/</guid>
+    <description>Was bei KI bereits wiederverwendbar ist: schmale Protokolle, stabil erklärte Runtime-Kerne, Betriebsbaseline und Evaluation – ohne die Anwendungsform voreilig festzuschreiben.</description>
+    <pubDate>Sun, 30 Aug 2026 23:15:20 +0200</pubDate>
+  </item>
+  <item>
+    <title>Was braucht „ChatGPT für die Firma“ wirklich?</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/wie-baut-man-chatgpt-fuer-die-firma-und-betreibt-es-fuer-1000-menschen/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/wie-baut-man-chatgpt-fuer-die-firma-und-betreibt-es-fuer-1000-menschen/</guid>
+    <description>Welche Technik Unternehmen für interne GenAI wirklich brauchen – und warum Arbeit, Informationsarten, Rechte, Provenance und Betrieb wichtiger sind als ein universeller Stack.</description>
+    <pubDate>Sun, 30 Aug 2026 18:45:29 +0200</pubDate>
+  </item>
+  <item>
+    <title>Bremen und KI: Da passiert etwas. Aber was genau?</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/entsteht-in-bremen-gerade-ein-belastbares-ki-oekosystem-und-was-steckt-t/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/entsteht-in-bremen-gerade-ein-belastbares-ki-oekosystem-und-was-steckt-t/</guid>
+    <description>Bremen verbindet KI-Forschung, Verwaltung, Unternehmen, Förderung und Kapital. Was davon schon Struktur oder Markt ist – und was vorerst Schlagzeile bleibt.</description>
+    <pubDate>Fri, 28 Aug 2026 11:29:49 +0200</pubDate>
+  </item>
+  <item>
+    <title>Erfahrung hat kein Ablaufdatum. Einsatzbereitschaft schon.</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/wann-ist-man-als-entwickler-bei-einem-framework-oder-einer-plattform-fac/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/wann-ist-man-als-entwickler-bei-einem-framework-oder-einer-plattform-fac/</guid>
+    <description>Welche Teile von Framework-Expertise altern, warum Lesen allein nicht reicht und wie Entwickler ihre Rückkehr mit und ohne KI belastbar prüfen können.</description>
+    <pubDate>Thu, 27 Aug 2026 14:30:52 +0200</pubDate>
+  </item>
+  <item>
+    <title>KI lohnt sich dort, wo Prüfen und Irren billig bleiben</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/wie-setze-ich-ki-oekonomisch-rational-beim-programmieren-ein-unter-zeitd/</guid>
+    <description>Wie KI beim Programmieren wirtschaftlich sinnvoll eingesetzt wird: nicht nach Codeanteil, sondern nach Prüfkosten, Fehlerfolgen und dem Engpass im Gesamtsystem.</description>
+    <pubDate>Thu, 27 Aug 2026 09:10:08 +0200</pubDate>
+  </item>
+  <item>
+    <title>Wer fährt, entscheidet sich nicht an der Tastatur</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/ist-ki-im-pair-programming-wirklich-der-bessere-fahrer-oder-waere-sie-al/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/ist-ki-im-pair-programming-wirklich-der-bessere-fahrer-oder-waere-sie-al/</guid>
+    <description>Soll KI beim Pair Programming Driver oder Navigator sein? Die Forschung spricht für bewusste Rollenwechsel nach Lernziel, Kontext, Prüfbarkeit und Risiko.</description>
+    <pubDate>Wed, 26 Aug 2026 22:09:47 +0200</pubDate>
+  </item>
+  <item>
+    <title>Der nächste Review ist nicht automatisch mehr Kontrolle</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/welche-regeln-muessen-wir-uns-im-umgang-mit-ki-generiertem-code-auferleg/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/welche-regeln-muessen-wir-uns-im-umgang-mit-ki-generiertem-code-auferleg/</guid>
+    <description>Welche Grenzen KI-generierter Code braucht: kleine Changes, verschiedene Prüfarten, risikobasierte Evidenz und beherrschbarer Betrieb statt Review-Theater.</description>
+    <pubDate>Wed, 26 Aug 2026 19:59:05 +0200</pubDate>
+  </item>
+  <item>
+    <title>Gibt es ein OpenAPI für Coding Agents?</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/</guid>
+    <description>AGENTS.md ist der gemeinsame Ort für Coding-Agent-Kontext. Ein formaler, toolübergreifender Änderungsvertrag wie OpenAPI fehlt dagegen noch.</description>
+    <pubDate>Wed, 26 Aug 2026 18:24:31 +0200</pubDate>
+  </item>
+</channel></rss>

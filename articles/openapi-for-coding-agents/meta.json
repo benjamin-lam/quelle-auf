@@ -1,0 +1,14 @@
+{
+    "title": "Gibt es ein OpenAPI für Coding Agents?",
+    "description": "AGENTS.md ist der gemeinsame Ort für Coding-Agent-Kontext. Ein formaler, toolübergreifender Änderungsvertrag wie OpenAPI fehlt dagegen noch.",
+    "tags": [
+        "Spec-Driven Development",
+        "Coding Agents",
+        "Software Engineering"
+    ],
+    "date_published": "2026-08-26T18:24:31+02:00",
+    "date_modified": "2026-08-26T18:24:31+02:00",
+    "canonical": "https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/",
+    "slug": "openapi-for-coding-agents",
+    "author": "Benjamin Lam"
+}

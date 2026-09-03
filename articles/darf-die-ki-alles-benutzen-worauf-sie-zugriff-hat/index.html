@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Der Auftrag ist kleiner als das Schlüsselbund · Quelle auf.</title>
+  <meta name="description" content="Warum ein KI-Agent nicht alles verwenden sollte, was er technisch erreichen kann – und wie auftragsgebundene Rechte Lesen, Handeln und Weitergeben trennen.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/darf-die-ki-alles-benutzen-worauf-sie-zugriff-hat/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Der Auftrag ist kleiner als das Schlüsselbund">
+  <meta property="og:description" content="Warum ein KI-Agent nicht alles verwenden sollte, was er technisch erreichen kann – und wie auftragsgebundene Rechte Lesen, Handeln und Weitergeben trennen.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/darf-die-ki-alles-benutzen-worauf-sie-zugriff-hat/">
+  <meta property="article:published_time" content="2026-09-02T12:17:42+02:00">
+  <meta property="article:modified_time" content="2026-09-02T12:33:52+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Der Auftrag ist kleiner als das Schlüsselbund","description":"Warum ein KI-Agent nicht alles verwenden sollte, was er technisch erreichen kann – und wie auftragsgebundene Rechte Lesen, Handeln und Weitergeben trennen.","datePublished":"2026-09-02T12:17:42+02:00","dateModified":"2026-09-02T12:33:52+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/darf-die-ki-alles-benutzen-worauf-sie-zugriff-hat/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Ein Coding Agent kann für einen kleinen Auftrag technisch ein erstaunlich großes Schlüsselbund erhalten. Wenn ich sage „Bearbeite mal meine <code>about-me.html</code>“, meine ich diese Datei. Der Agent könnte aber womöglich das ganze Repository durchsuchen, Konfigurationen öffnen, auf Secrets stoßen, Netzwerkzugriffe ausführen oder Inhalte an externe Dienste senden. Dafür braucht es nicht einmal einen Angriff. Es genügt, dass technisch erlaubt und für diesen Auftrag erlaubt zwei verschiedene Dinge sind.</p>
+<p><strong>Meine Frage:</strong>
+Reichen klassische Zugriffsrechte in einer agentischen Welt noch aus – oder brauchen wir zusätzlich explizite Regeln dafür, wofür ein Agent vorhandene Zugriffe tatsächlich verwenden oder verändern darf?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Der Auftrag ist kleiner als das Schlüsselbund</h1>
+<p>Die kurze Antwort lautet: <strong>Nein, ein Agent sollte nicht automatisch alles benutzen, was sein Prozess erreichen kann. Aber dafür müssen wir Zugriffskontrolle nicht neu erfinden. Wir müssen bekannte Prinzipien für jeden einzelnen Auftrag enger und konsequenter durchsetzen.</strong></p>
+<p>Vor allem müssen wir drei Dinge auseinanderhalten:</p>
+<ol>
+<li>Welche Information darf der Agent überhaupt bekommen?</li>
+<li>Welche Handlung darf er damit ausführen?</li>
+<li>Wohin darf das Ergebnis oder die Information anschließend fließen?</li>
+</ol>
+<p>Diese Trennung wirkt zunächst pedantisch. Bei <code>about-me.html</code> entscheidet sie darüber, ob ein Lauf eine Datei bearbeitet oder nebenbei das gesamte technische Schlüsselbund seines Nutzers erbt.</p>
+<h2>Ein kleiner Satz kann sehr große Rechte auslösen</h2>
+<p>Nehmen wir den unspektakulären Fall.</p>
+<p>Ich bitte einen Coding Agent, einen Absatz in <code>about-me.html</code> zu ändern. Um den Stil zu treffen, liest er vielleicht die Datei und ein Stylesheet. Vielleicht sucht er nach einer wiederverwendeten Komponente. So weit, so plausibel.</p>
+<p>Die Laufzeit besitzt aber womöglich mehr: Leserechte für das ganze Repository, eine Shell, Git-Zugang, Umgebungsvariablen und Netzwerk. Dann könnte derselbe Agent auch die Deployment-Konfiguration lesen, einen API-Schlüssel in einer <code>.env</code>-Datei finden oder die Änderung direkt veröffentlichen.</p>
+<p>Dass er all das technisch darf, beantwortet noch nicht, ob er es für diesen Auftrag braucht.</p>
+<p>Genau hier hilft eine erste Korrektur meiner Ausgangshypothese. Klassische Zugriffskontrolle fragt nicht bloß: <code>Wer darf welche Datei öffnen?</code></p>
+<p>Das NIST-Prinzip des geringsten Privilegs gilt ausdrücklich auch für Prozesse, die im Namen von Nutzern handeln. Sie sollen nur die Zugriffe erhalten, die für ihre zugewiesenen Aufgaben notwendig sind. Die Aufgabe steckt also schon im alten Prinzip. <a href="https://csrc.nist.gov/CSRC/media/Projects/risk-management/800-53%20Downloads/800-53r5/SP_800-53_v5_1-derived-OSCAL.pdf">NIST, <em>SP 800-53 Rev. 5.1</em>, Kontrolle AC-6, Suchanker „necessary to accomplish assigned organizational tasks“</a>. Der Katalog sagt allerdings nicht automatisch, welche Dateien ein offener Agentenauftrag morgen benötigen wird. [claim-001]</p>
+<p>Auch attributbasierte Zugriffskontrolle kann nicht nur Person und Objekt, sondern die verlangte Operation und Umgebungsbedingungen in eine Entscheidung einbeziehen. <a href="https://csrc.nist.gov/pubs/sp/800/162/upd2/final">NIST, <em>SP 800-162</em>, Abstract, Suchanker „subject, object, requested operations“</a>. [claim-002]</p>
+<p>Die Informatik war also nicht naiv, bis Sprachmodelle eine Shell bekamen.</p>
+<p>Das neue Problem ist praktischer: Ein Agent wählt Zwischenschritte selbst. Sein Auftrag ist offen formuliert, seine Werkzeugkette entsteht während des Laufs, seine technischen Grundrechte wurden aber häufig viel früher und viel gröber vergeben.</p>
+<h2>Lesen, verändern und weitergeben sind nicht dasselbe</h2>
+<p>Eine Datei lesen zu dürfen ist keine Erlaubnis, ihren Inhalt überallhin zu tragen.</p>
+<p>NIST behandelt deshalb Zugriff und Informationsfluss als verschiedene Kontrollen. Zugriff regelt, wer Information erhalten darf. Flow Control regelt, wohin sie innerhalb oder zwischen Systemen gelangen darf. Als Mechanismen nennt der Kontrollkatalog unter anderem Labels, geschützte Verarbeitungsräume, Filter und getrennte Informationsflüsse. <a href="https://csrc.nist.gov/CSRC/media/Projects/risk-management/800-53%20Downloads/800-53r5/SP_800-53_v5_1-derived-OSCAL.pdf">NIST, <em>SP 800-53 Rev. 5.1</em>, AC-4 und PT-2, Suchanker „regulates where information can travel“</a>. Die PII-Tags aus PT-2 sind ein konkretes Datenschutzbeispiel, kein fertiges Modell für jeden Quelltext. [claim-006, claim-007]</p>
+<p>Für unseren kleinen Auftrag entstehen damit mehrere Übergänge:</p>
+<pre><code class="language-text">Datei lesen
+→ Inhalt in den Modellkontext geben
+→ daraus einen Patch erzeugen
+→ Datei verändern
+→ Änderung committen oder deployen
+→ Information an ein externes Ziel senden
+</code></pre>
+<p>Jeder Pfeil kann eine andere Entscheidung brauchen.</p>
+<p>Vielleicht darf der Agent <code>about-me.html</code> und das lokale Stylesheet lesen. Vielleicht darf er einen Patch erzeugen, aber nicht direkt schreiben. Vielleicht darf er schreiben und Tests ausführen, aber weder pushen noch deployen. Vielleicht darf ein Modellprovider den Inhalt verarbeiten, ein beliebiger Webdienst aber nicht.</p>
+<p>Ein einziges Recht namens <code>Repository-Zugriff</code> ist dafür keine brauchbare Beschreibung.</p>
+<p>Bei personenbezogenen Daten ist diese Unterscheidung zudem nicht nur eine technische Vorliebe. Die DSGVO verlangt in ihrem Anwendungsbereich Zweckbindung und Beschränkung auf das Notwendige. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679">EU, <em>Datenschutz-Grundverordnung</em>, Artikel 5 Absatz 1 Buchstaben b und c</a>. Das macht noch nicht jede Repository-Frage zum Datenschutzfall. Es zeigt aber sehr deutlich: Erreichbarkeit und erlaubte Verwendung sind rechtlich nicht automatisch dasselbe. [claim-005]</p>
+<h2>„Für diesen Zweck“ ist noch keine Policy</h2>
+<p>Nun könnte man dem Agenten einfach sagen: <code>Benutze nur Informationen, die für die Aufgabe nötig sind.</code></p>
+<p>Als Arbeitsanweisung ist das sinnvoll. Als Sicherheitsgrenze ist es schwach.</p>
+<p>Der Satz lässt offen, wer entscheidet, was nötig ist. Der Agent selbst könnte überzeugend erklären, warum er zur Anpassung einer persönlichen Seite erst das Repository, dann die Deployment-Konfiguration und schließlich einen externen Dienst prüfen müsse. Das kann stimmen. Es kann auch bloß der bequemste gefundene Weg sein.</p>
+<p>Ein Auftrag wird technisch erst belastbar, wenn aus ihm prüfbare Grenzen werden:</p>
+<ul>
+<li>welche Ressourcen gelesen werden dürfen;</li>
+<li>welche Operationen auf welcher Ressource erlaubt sind;</li>
+<li>welche Werkzeuge und Parameter zulässig sind;</li>
+<li>an welche Ziele Daten fließen dürfen;</li>
+<li>wie lange die Rechte gelten;</li>
+<li>welche Zustandsänderungen eine Bestätigung brauchen.</li>
+</ul>
+<p>Feingranulare Autorisierung ist ebenfalls kein unbeschriebenes Blatt. RFC 9396 kann in OAuth statt eines groben Scope strukturierte Autorisierungsdetails übertragen – etwa Lesen für eine Ressource und Schreiben für eine andere. <a href="https://datatracker.ietf.org/doc/html/rfc9396">IETF, <em>RFC 9396: OAuth 2.0 Rich Authorization Requests</em>, Abschnitte 1 bis 3, Suchanker „read access to directory A and write access to file X“</a>. Der Standard betrifft definierte APIs. Er kontrolliert nicht automatisch ein lokales Dateisystem und beweist auch nicht, dass eine aus natürlicher Sprache abgeleitete Berechtigung dem Willen des Menschen entspricht. [claim-004]</p>
+<p>Auch fortlaufende Nutzungskontrolle ist älter als agentische KI. Das UCON-Modell beschrieb bereits 2005 Entscheidungen vor und während einer Nutzung, Verpflichtungen, Bedingungen und veränderliche Attribute. <a href="https://profsandhu.com/cs6393_s16/UCON-2005.pdf">Zhang et al., <em>Formal Model and Policy Specification of Usage Control</em>, Abstract und Abschnitt 3.1</a>. Es löst nicht die Bedeutungsunschärfe eines Prompts. Aber es widerlegt die bequeme Erzählung, Regeln für Verwendung seien eine völlig neue Erfindung. [claim-011]</p>
+<h2>Das Modell darf nicht sein eigener Türsteher sein</h2>
+<p>Wenn dieselbe Modellinstanz eine Aktion plant, ihre Notwendigkeit beurteilt und anschließend selbst freigibt, ist aus einer Policy ein Selbstgespräch geworden.</p>
+<p>Die harte Grenze muss deshalb außerhalb des Modells liegen: in einem Tool-Broker, einer Sandbox, dem Dateisystem, einer API, einer Egress-Kontrolle oder einem Autorisierungsdienst. Diese Komponenten können bei jedem relevanten Übergang erneut prüfen, ob Ressource, Operation und Ziel zum Lauf passen.</p>
+<p>Konkrete Empfehlungen dazu gibt es bereits.</p>
+<p>OWASP nennt zu große Funktionalität, zu große Berechtigungen und zu große Autonomie als getrennte Ursachen von <code>Excessive Agency</code>. Die Empfehlungen sind entsprechend nüchtern: weniger Werkzeuge, engere Rechte, nachgelagerte Autorisierung und menschliche Freigaben für folgenreiche Aktionen. <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">OWASP, <em>LLM06:2025 Excessive Agency</em>, „Prevention and Mitigation Strategies“, Suchanker „minimum necessary“ und „Complete mediation“</a>. Das ist Praxisleitlinie, kein Beweis, dass diese Maßnahmen jedes Fehlverhalten verhindern. [claim-008, claim-009]</p>
+<p>Wie eine stärkere Trennung aussehen kann, zeigt CaMeL. Der Forschungsprototyp hängt Herkunfts- und Capability-Metadaten an Werte – also Metadaten über die Herkunft und eine eng begrenzte Berechtigung. Ein separater Interpreter prüft bei Tool-Aufrufen, ob der Datenfluss zur Policy passt. Im AgentDojo-Benchmark löste die geschützte Architektur 77 Prozent der Aufgaben unter ihren Sicherheitsgarantien; ein ungeschütztes Vergleichssystem kam auf 84 Prozent. <a href="https://css.csail.mit.edu/6.5660/2026/readings/camel.pdf">Debenedetti et al., <em>Defeating Prompt Injections by Design</em>, Abstract und Abschnitte 4 sowie 8</a>. [claim-010]</p>
+<p>Diese Zahlen bedeuten nicht <code>77 Prozent sicher</code>. Sie beschreiben gelöste Benchmark-Aufgaben unter dem gewählten Schutzmodell. CaMeL ist ein Forschungsprototyp und nennt erhebliche Grenzen: Integrationsaufwand, Drittanbieter, Side Channels, Policy-Pflege und Freigabemüdigkeit.</p>
+<p>Eine Grenze ist für unsere Frage besonders wichtig. CaMeL schützt nicht vor reinen Text-zu-Text-Manipulationen, die keine Folgen für Kontroll- oder Datenflüsse haben. Wenn ein Modell eine E-Mail falsch zusammenfasst, ohne dadurch private Daten abfließen zu lassen, liegt das außerhalb des Schutzversprechens. Die falsche Zusammenfassung ist dann ein Integritätsproblem, für das der kontrollierte Datenfluss keinen Angriffspunkt liefert. <a href="https://css.csail.mit.edu/6.5660/2026/readings/camel.pdf">Debenedetti et al., Abschnitt 3.3, Suchanker „cannot defend against text-to-text attacks“</a>. [claim-014]</p>
+<p>Damit wird <code>nicht verwenden</code> präziser. Ein System kann hart verhindern, dass eine unnötige Datei in den Kontext gelangt. Es kann einen Tool-Aufruf, einen Schreibvorgang oder ein Ziel blockieren. Eine rein interne semantische Verwendung bereits geladener Information ist dagegen keine ähnlich klare Systemaktion.</p>
+<p>Das ist eine praktische Grenze der beobachtbaren Übergänge. Kein Beweis, dass niemals eine bessere Technik existieren kann.</p>
+<h2>Eine auftragsgebundene Hülle statt eines neuen Weltmodells</h2>
+<p>Aus den Quellen ergibt sich kein einzelner Standard, der all diese Teile als fertige Agentenarchitektur definiert. Die folgende Hülle ist deshalb meine Synthese:</p>
+<pre><code class="language-text">bestätigter Auftrag
+→ erlaubte Datenräume
+→ erlaubte Operationen
+→ erlaubte Tools und Parameter
+→ erlaubte Ziele
+→ Freigaben, Laufzeit und Widerruf
+→ Provenienz und Audit
+</code></pre>
+<p>Für <code>Bearbeite about-me.html</code> könnte sie so klein beginnen:</p>
+<ul>
+<li>Lesen: <code>about-me.html</code> und ausdrücklich nötige lokale Stilressourcen.</li>
+<li>Schreiben: nur einen Patch oder genau diese Datei.</li>
+<li>Suchen: zunächst in einem begrenzten Projektbereich.</li>
+<li>Secrets: nicht bereitstellen; Treffer an der Tool-Grenze blockieren oder redigieren.</li>
+<li>Netzwerk: aus, sofern der Auftrag kein festgelegtes Ziel braucht.</li>
+<li>Shell: lieber spezifische Lese-, Patch- und Testwerkzeuge als ein allgemeines Terminal.</li>
+<li>Folgen: Tests und Vorschau erlaubt; Push, Deployment oder externe Nachricht separat bestätigen.</li>
+<li>Laufzeit: kurzlebige Rechte, danach Widerruf.</li>
+<li>Nachweis: gelesene Quellen und benutzte Senken protokollieren, ohne Secrets ins Log zu kopieren.</li>
+</ul>
+<p>Die Liste versucht nicht, jeden nötigen Schritt vorab zu erraten. Sie setzt einen engen Anfang. Wenn der Agent eine weitere Datei oder Aktion begründet braucht, kann der Mensch oder eine vorgelagerte Policy die Hülle sichtbar erweitern. Behauptet der Agent etwa, er brauche zum Verständnis noch die Konfiguration, ist das kein automatischer Anspruch auf Zugriff. Es ist eine sichtbare Erweiterungsanfrage.</p>
+<p>Auch die Hülle braucht Pflege. Was heute eine passende Standardregel ist, kann nach einem Umbau des Systems zu eng, zu weit oder schlicht veraltet sein. Offen bleibt zudem, wie viel Struktur ein Werkzeug sinnvoll vorschlagen kann und welche Grenzen der Mensch selbst bestätigen muss.</p>
+<p>Das ist der entscheidende Unterschied: Zusätzliche Autorität wird für diesen Lauf vergeben. Sie wird nicht stillschweigend aus dem großen Schlüsselbund des Nutzers geerbt.</p>
+<h2>Vielleicht reicht Least Privilege doch</h2>
+<p>Das stärkste Gegenargument lautet: Ein Agent ist sicherheitstechnisch nur ein weiterer Prozess. Gib ihm eine eigene Identität, eine Sandbox und minimale Rechte. Fertig.</p>
+<p>Dieser Einwand trifft einen wichtigen Teil der Ausgangshypothese. Wir brauchen keine metaphysisch neue Kategorie namens Zweck. Least Privilege, attributbasierte Entscheidungen, Nutzungskontrolle und Informationsflusskontrolle bringen die Grundideen bereits mit.</p>
+<p>Nur verschiebt <code>minimale Rechte</code> die Frage: minimal für wen und für welchen Zeitraum?</p>
+<p>Ein Nutzer kann das ganze Repository bearbeiten dürfen. Ein installierter Coding Agent kann grundsätzlich mehrere Werkzeuge benötigen. Der einzelne Lauf <code>Bearbeite about-me.html</code> braucht trotzdem nur einen Bruchteil davon. Wird Least Privilege lediglich pro Nutzer oder Installation vergeben, bleibt es für den konkreten Auftrag zu grob.</p>
+<p>Die zusätzliche Arbeit liegt daher nicht in einem neuen Sicherheitsgesetz. Sie liegt darin, bekannte Prinzipien pro Lauf zu instanziieren und über dynamische Toolketten zu erhalten.</p>
+<p>Der stärkste praktische Einwand lautet dabei: Was, wenn diese Instanziierung mehr kostet als das Risiko? Für jede kleine Textänderung eine Policy von Hand zu schreiben, wäre keine Sicherheitsarchitektur, sondern Bürokratie mit YAML. Die Hülle muss deshalb aus sicheren Standardprofilen, konkreten Werkzeugen und wiederverwendbaren Regeln entstehen; menschliche Rückfragen gehören an echte Grenzübergänge. Wie eng ein Lauf eingehegt werden muss, hängt auch von seinen möglichen Folgen ab. Eine lokale Vorschau braucht weniger Zeremonie als ein Deployment, eine Zahlung oder der Versand vertraulicher Daten.</p>
+<p>Dass diese Integration noch nicht fertig ist, zeigt ein NIST/NCCoE-Konzeptpapier vom Februar 2026. Es fragt unter anderem, wie Least Privilege bei nicht vollständig vorhersehbaren Agentenaktionen bestimmt wird, wie Autorität für eine konkrete Aktion nachgewiesen wird und wie Datenflussprovenienz Entscheidungen unterstützen kann. <a href="https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf">NIST NCCoE, <em>Accelerating the Adoption of Software and AI Agent Identity and Authorization</em>, „Challenge Overview“ und „Areas of Interest“</a>. Das Dokument ist ein Entwurf für ein mögliches Demonstrationsprojekt, kein Standard; seine öffentliche Kommentierungsfrist endete am 2. April 2026, und reine LLM- sowie RAG-Architekturen sind ausdrücklich nicht Teil seines Projektumfangs. [claim-012]</p>
+<h2>Die Antwort wird am Ende kleiner</h2>
+<p>Darf die KI also alles benutzen, worauf sie Zugriff hat?</p>
+<p>Nein. Aber <code>wofür</code> sollte nicht als Gedankenlesen über die Absicht eines Modells verstanden werden.</p>
+<p>Die brauchbare Frage lautet: <strong>Welche Daten, Aktionen und Ziele hat dieser konkrete Lauf bestätigt bekommen – und welche unabhängige Systemgrenze setzt das tatsächlich durch?</strong></p>
+<p>Bei einer Änderung an <code>about-me.html</code> muss die Antwort nicht mit einem neuen weltweiten Policy-Standard beginnen. Sie kann sehr klein anfangen:</p>
+<p>Warum bekommt dieser Lauf für diese eine Datei überhaupt das ganze Schlüsselbund?</p>
+<h2>Quellen</h2>
+<ul>
+<li>
+<p>National Institute of Standards and Technology, <em>Security and Privacy Controls for Information Systems and Organizations</em>, NIST SP 800-53 Revision 5.1, besonders AC-4, AC-6 und PT-2. <a href="https://csrc.nist.gov/CSRC/media/Projects/risk-management/800-53%20Downloads/800-53r5/SP_800-53_v5_1-derived-OSCAL.pdf">Originalquelle</a>. Kontrollkatalog zu Least Privilege, Informationsflüssen und autorisierter Verarbeitung; keine fertige Agentenarchitektur.</p>
+</li>
+<li>
+<p>National Institute of Standards and Technology, <em>Guide to Attribute Based Access Control (ABAC) Definition and Considerations</em>, NIST SP 800-162, aktualisiert am 02.08.2019, Abstract. <a href="https://csrc.nist.gov/pubs/sp/800/162/upd2/final">Originalquelle</a>. Belegt, dass Operation und Umgebung in Zugriffsentscheidungen einfließen können; löst weder Zweckbestimmung noch Verwendung nach dem Zugriff.</p>
+</li>
+<li>
+<p>Europäische Union, <em>Datenschutz-Grundverordnung</em>, Verordnung (EU) 2016/679, Artikel 5 Absatz 1 Buchstaben b und c. <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679">Originalquelle</a>. Zweckbindung und Datenminimierung gelten für personenbezogene Daten im Anwendungsbereich der Verordnung, nicht pauschal für jede Datei und jedes Agentensystem.</p>
+</li>
+<li>
+<p>IETF, <em>OAuth 2.0 Rich Authorization Requests</em>, RFC 9396, Mai 2023, besonders Abschnitte 1 bis 3. <a href="https://datatracker.ietf.org/doc/html/rfc9396">Originalquelle</a>. Standards-Track-Baustein für feingranulare API-Autorisierung; kein allgemeines Dateisystemmodell und keine automatische Übersetzung natürlicher Sprache in verlässliche Rechte.</p>
+</li>
+<li>
+<p>Xinwen Zhang, Francesco Parisi-Presicce, Ravi Sandhu und Jaehong Park, <em>Formal Model and Policy Specification of Usage Control</em>, <em>ACM Transactions on Information and System Security</em> 8(4), November 2005, besonders Abstract und Abschnitt 3.1. <a href="https://profsandhu.com/cs6393_s16/UCON-2005.pdf">Zugängliche Autorenfassung</a>. Formalisiert fortlaufende Nutzungskontrolle in allgemeinen Informationssystemen; nicht für LLM-Agenten entwickelt.</p>
+</li>
+<li>
+<p>OWASP GenAI Security Project, <em>LLM06:2025 Excessive Agency</em>, Abschnitte „Common Examples of Risks“ und „Prevention and Mitigation Strategies“, abgerufen am 02.09.2026. <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/">Originalquelle</a>. Praxisleitlinie zu minimalen Werkzeugen, Rechten, menschlichen Freigaben und vollständiger Vermittlung; kein formaler Wirksamkeitsnachweis.</p>
+</li>
+<li>
+<p>Edoardo Debenedetti et al., <em>Defeating Prompt Injections by Design</em>, 2025, besonders Abstract sowie Abschnitte 3.3, 4, 8 und 9. <a href="https://css.csail.mit.edu/6.5660/2026/readings/camel.pdf">Originalquelle</a>. CaMeL ist ein Forschungsprototyp mit 77 Prozent gelösten AgentDojo-Aufgaben unter den beschriebenen Garantien; Text-zu-Text-Manipulationen, Side Channels, Integration und Policy-Pflege bleiben begrenzt oder außerhalb des Schutzmodells.</p>
+</li>
+<li>
+<p>National Cybersecurity Center of Excellence, <em>Accelerating the Adoption of Software and AI Agent Identity and Authorization</em>, Draft Concept Paper, Februar 2026, „Challenge Overview“ und „Areas of Interest“. <a href="https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf">Originalquelle</a>. Problemsammlung für ein mögliches Demonstrationsprojekt, kein Standard; reine LLM- und RAG-Architekturen liegen außerhalb des Projektumfangs.</p>
+</li>
+</ul>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-09-02T12:17:42+02:00">02.09.2026</time>. Zuletzt geändert <time datetime="2026-09-02T12:33:52+02:00">02.09.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

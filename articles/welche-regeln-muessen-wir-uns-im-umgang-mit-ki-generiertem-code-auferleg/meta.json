@@ -1,0 +1,16 @@
+{
+    "title": "Der nächste Review ist nicht automatisch mehr Kontrolle",
+    "description": "Welche Grenzen KI-generierter Code braucht: kleine Changes, verschiedene Prüfarten, risikobasierte Evidenz und beherrschbarer Betrieb statt Review-Theater.",
+    "tags": [
+        "KI",
+        "Softwareentwicklung",
+        "Code Review",
+        "DevOps",
+        "Software Assurance"
+    ],
+    "date_published": "2026-08-26T19:59:05+02:00",
+    "date_modified": "2026-08-26T19:59:05+02:00",
+    "canonical": "https://benjamin-lam.github.io/quelle-auf/articles/welche-regeln-muessen-wir-uns-im-umgang-mit-ki-generiertem-code-auferleg/",
+    "slug": "welche-regeln-muessen-wir-uns-im-umgang-mit-ki-generiertem-code-auferleg",
+    "author": "Benjamin Lam"
+}

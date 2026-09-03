@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gibt es ein OpenAPI für Coding Agents? · Quelle auf.</title>
+  <meta name="description" content="AGENTS.md ist der gemeinsame Ort für Coding-Agent-Kontext. Ein formaler, toolübergreifender Änderungsvertrag wie OpenAPI fehlt dagegen noch.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Gibt es ein OpenAPI für Coding Agents?">
+  <meta property="og:description" content="AGENTS.md ist der gemeinsame Ort für Coding-Agent-Kontext. Ein formaler, toolübergreifender Änderungsvertrag wie OpenAPI fehlt dagegen noch.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/">
+  <meta property="article:published_time" content="2026-08-26T18:24:31+02:00">
+  <meta property="article:modified_time" content="2026-08-26T18:24:31+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Gibt es ein OpenAPI für Coding Agents?","description":"AGENTS.md ist der gemeinsame Ort für Coding-Agent-Kontext. Ein formaler, toolübergreifender Änderungsvertrag wie OpenAPI fehlt dagegen noch.","datePublished":"2026-08-26T18:24:31+02:00","dateModified":"2026-08-26T18:24:31+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/openapi-for-coding-agents/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Ich habe einen Artikel über Spec-Driven Development gelesen und mich gefragt, ob es für Coding Agents inzwischen ein etabliertes „How to Spec“ gibt – nicht bloß einen besseren Prompt oder eine Repository-Anweisung, sondern ein Format für Anforderungen, Constraints, Verhalten, Schnittstellen, Akzeptanz und Verifikation.</p>
+<p><strong>Meine Frage:</strong>
+Existiert mit Stand heute eine etablierte, möglichst tool- und anbieterübergreifende Spezifikationssprache, ein Standard oder ein ausreichend formalisiertes Format, mit dem Softwareanforderungen für Coding Agents beschrieben werden können – vergleichbar mit OpenAPI für APIs?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Gibt es ein OpenAPI für Coding Agents?</h1>
+<p>Die erste Datei, die ein Coding Agent in einem fremden Repository lesen sollte, ist selten die, die man ihm in den Chat kopiert hat. Es ist die Datei neben dem Code. Darin steht dann: so startest du die Tests, diese Tabelle bitte nicht anfassen, die Migration nur in dieser Reihenfolge, und wenn du unsicher bist, frag lieber einmal zu viel.</p>
+<p>Lange sah das nach einer privaten Gewohnheit aus. Jede Agenten-Umgebung hatte ihren eigenen Zettel am Kühlschrank. Inzwischen hat dieser Zettel einen gemeinsamen Namen: <code>AGENTS.md</code>.</p>
+<p>Die kurze Antwort auf die Frage nach einem OpenAPI für Coding Agents lautet deshalb: <strong>Ja, für Projektkontext und Arbeitsanweisungen gibt es mit AGENTS.md inzwischen einen weit verbreiteten, offenen gemeinsamen Nenner. Nein, für einen formalen, maschinenprüfbaren Vertrag über eine konkrete Softwareänderung gibt es noch kein direktes Pendant zu OpenAPI.</strong> Eine Anweisung steuert Arbeit; ein Vertrag beschreibt überprüfbar, was am Ende wahr sein muss.</p>
+<p>Das ist weniger unbefriedigend, als es zunächst klingt. Es räumt nur mit einer Verwechslung auf.</p>
+<h2>Ein Agent braucht zuerst Orientierung, nicht gleich eine Ontologie</h2>
+<p>Die <a href="https://agents.md/index">AGENTS.md-Initiative</a> und ihr <a href="https://github.com/agentsmd/agents.md">offizielles Projekt-Repository</a> beschreiben die Datei als offenes Format, das Coding Agents projektbezogene Hinweise gibt. Ihre Beispiele sind erstaunlich unglamourös: Installations- und Testbefehle, Code-Stil, Sicherheitsregeln, Grenzen. Gerade deshalb funktionieren sie. Auch die <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Linux Foundation</a> nennt AGENTS.md einen Gründungsbeitrag der Agentic AI Foundation und berichtet von mehr als 60.000 Open-Source-Projekten sowie Unterstützung durch zahlreiche Werkzeuge. [c-09, c-10]</p>
+<p>AGENTS.md ist damit eine de-facto-Konvention mit institutioneller Einbettung, keine formale Sprache mit Pflichtfeldern oder Konformitätssuite.</p>
+<p>Das ist ein echter Fortschritt. Ein Team muss seine wichtigste Arbeitsanweisung nicht mehr in <code>CLAUDE.md</code>, <code>copilot-instructions.md</code> und einem Chat-Absatz in drei Varianten pflegen. Ein Agent, der die Konvention versteht, findet einen vorhersehbaren Ort. Verschachtelte Dateien können dabei den Kontext eines Teilprojekts präzisieren.</p>
+<p>Aber Markdown bleibt Markdown. Die Datei kann sagen: „Führe vor dem Commit <code>pnpm test</code> aus.“ Sie kann nicht aus sich heraus beweisen, welche Änderung fachlich geschuldet ist, ob eine Datenmigration vollständig ist oder ob zwei Agenten dieselbe Anforderung gleich auslegen. Sie liefert Kontext und Leitplanken; sie ist keine formale Spezifikation mit verbindlichem Datenmodell.</p>
+<p>Der Unterschied klingt pedantisch, ist aber praktisch: Eine Anweisung steuert Arbeit. Ein Vertrag beschreibt überprüfbar, was am Ende wahr sein muss.</p>
+<h2>OpenAPI hat es leichter, weil sein Gegenstand klein ist</h2>
+<p>OpenAPI ist nicht deshalb so erfolgreich, weil YAML eine besonders erwachsene Textdatei wäre. Die <a href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a> beschreibt einen eng umrissenen Gegenstand: eine sprachunabhängige Schnittstellenbeschreibung für HTTP-APIs. Endpunkte, Operationen, Nachrichten und Schemas liegen innerhalb eines klaren Rahmens. [c-01]</p>
+<p>Das erlaubt Werkzeugen, aus derselben Beschreibung Server-Stubs, Clients, Dokumentation und Prüfungen abzuleiten. Die wichtige Leistung ist nicht das Dateiformat allein, sondern die gemeinsame Bedeutung seiner Felder.</p>
+<p>Eine Anforderung an einen Coding Agent ist breiter. „Füge eine Freigabe für Rechnungen hinzu“ kann Rollen, UI, API, Datenhistorie, Benachrichtigungen, Rechte, Fehlermeldungen und das ausdrücklich Unveränderte meinen. Dazu kommt der Bestandscode: Welche Tabelle gibt es schon? Welche Bibliothek darf nicht ersetzt werden? Darf der Agent eine Migration ausführen oder nur vorbereiten? Das sind unterschiedliche Arten von Information – und sie werden heute selten in einem gemeinsamen Schema beschrieben.</p>
+<h2>Die Bauteile lagen schon vor dem Agenten auf dem Tisch</h2>
+<p>Es wäre trotzdem falsch, die Lage als leeres Feld zu erzählen. Das Requirements Engineering hat seit Langem brauchbare Teilverträge. Jedes der folgenden Formate löst einen Teil des Problems; keines löst es allein.</p>
+<p><a href="https://www.omg.org/spec/ReqIF/1.2/">ReqIF 1.2</a> ist eine formale OMG-Spezifikation mit maschinenlesbaren normativen Dokumenten für den Austausch von Anforderungen. [c-02] Für Organisationen, die Anforderungen zwischen Werkzeugen und Firmen übergeben, ist das keine Fußnote, sondern die naheliegende Antwort. Es regelt jedoch nicht, wie ein Coding Agent den Bestandscode untersucht oder einen Diff sicher ausführt.</p>
+<p><a href="https://alistairmavin.com/ears/">EARS</a> hilft beim nächsten Stück: Eine Anforderung bekommt eine feste Satzstruktur aus Vorbedingungen, Auslöser, System und Reaktion. [c-03] Das zwingt einen Satz wie „Die App soll vernünftig reagieren“ in eine Form, über die man streiten und testen kann. Es löst aber noch nicht die Frage, welche Dateien dafür geändert werden müssen.</p>
+<p><a href="https://cucumber.io/docs/gherkin/reference/">Gherkin</a> übernimmt eher die Abnahme. Seine Szenarien sind ausführbare Spezifikationen, sobald ihre Schritte an projektspezifische Step Definitions gebunden sind. [c-04] Das ist sehr nützlich für „gegeben, wenn, dann“. Die Bindung an echten Code ist zugleich seine Grenze: Das Szenario sagt nicht vollständig, wie Architektur und Implementierung entstehen sollen.</p>
+<h2>Die neuen Formate liegen auf anderen Ebenen</h2>
+<p>Neben AGENTS.md entstehen weitere offene Formate. Die <a href="https://agentskills.io/specification">Agent-Skills-Spezifikation</a> beschreibt einen wiederverwendbaren Skill als Verzeichnis mit <code>SKILL.md</code>, YAML-Metadaten und Markdown-Anweisungen. [c-11] Das standardisiert Fähigkeiten, nicht die Produktanforderung für eine einzelne Änderung.</p>
+<p>Der IETF-Entwurf <a href="https://www.ietf.org/archive/id/draft-schemacommons-aaif-00.html">AAIF</a> geht weiter in Richtung portabler Agenten-Definitionen: Ziele, Werkzeuge, Laufzeitpolitik und andere Eigenschaften sollen zwischen konformen Laufzeiten transportierbar werden. Der Entwurf sagt selbst klar, dass Internet-Drafts Arbeit im Werden sind. [c-12] Auch das ist nicht dasselbe wie ein Änderungsvertrag für ein konkretes Repository, aber es zeigt: Die Schichten beginnen, Namen zu bekommen.</p>
+<p>Parallel bauen Werkzeuge eigene Arbeitsabläufe. Spec Kit führt von „Specify“ über Planung und Aufgaben bis zur Umsetzung; Kiro erzeugt <code>requirements.md</code>, <code>design.md</code> und <code>tasks.md</code>; OpenSpec ordnet Proposal, Specs, Design und Tasks in einem eigenen Schema. [c-05, c-06, c-07] Das sind hilfreiche Gerüste. Ihre Gemeinsamkeit ist bisher vor allem, dass sie Dateien neben den Code legen – nicht, dass ein anderes Werkzeug alle Bedeutungen verlässlich übernehmen könnte.</p>
+<h2>Die sinnvolle Zwischenlösung ist absichtlich mehrteilig</h2>
+<p>Meine eigene Synthese ist daher keine Forderung nach einer riesigen Superdatei. Sie ist ein praktischer Vorschlag, kein Standard:</p>
+<ul>
+<li><code>AGENTS.md</code> für Kontext, Befehle, Grenzen und lokale Arbeitsregeln.</li>
+<li>Klare Anforderungen, bei Bedarf in EARS-Form, für das gewünschte Verhalten.</li>
+<li>Gherkin oder normale automatisierte Tests für die überprüfbare Abnahme.</li>
+<li>ReqIF, wenn Anforderungen zwischen professionellen Requirements-Management-Werkzeugen ausgetauscht werden müssen.</li>
+<li>Ein lokaler Spec-Workflow, wenn Design- und Aufgabenschritte für das Team sichtbar bleiben sollen.</li>
+</ul>
+<p>Das ist nicht elegant im Sinne von „eine Datei, die alles löst“. Es ist aber ehrlich über die verschiedenen Fragen. Wer mit AGENTS.md beginnt, gewinnt bereits etwas Wesentliches: Der Agent weiß eher, wo er ist und was er nicht tun soll. Wer eine belastbare Änderung beauftragen will, braucht zusätzlich einen Vertrag über Verhalten und Nachweis.</p>
+<p>Vielleicht entsteht daraus einmal ein formaler Standard. Im Moment wäre die vernünftigere Forderung kleiner: nicht den gemeinsamen Zettel mit dem Bauplan verwechseln – und beide so schreiben, dass ein Mensch ihn noch prüfen kann.</p>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-08-26T18:24:31+02:00">26.08.2026</time>. Zuletzt geändert <time datetime="2026-08-26T18:24:31+02:00">26.08.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

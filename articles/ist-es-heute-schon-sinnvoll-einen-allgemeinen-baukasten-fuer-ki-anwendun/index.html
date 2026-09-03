@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Der sinnvolle KI-Baukasten ist kein neues Universal-Framework · Quelle auf.</title>
+  <meta name="description" content="Was bei KI bereits wiederverwendbar ist: schmale Protokolle, stabil erklärte Runtime-Kerne, Betriebsbaseline und Evaluation – ohne die Anwendungsform voreilig festzuschreiben.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/ist-es-heute-schon-sinnvoll-einen-allgemeinen-baukasten-fuer-ki-anwendun/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Der sinnvolle KI-Baukasten ist kein neues Universal-Framework">
+  <meta property="og:description" content="Was bei KI bereits wiederverwendbar ist: schmale Protokolle, stabil erklärte Runtime-Kerne, Betriebsbaseline und Evaluation – ohne die Anwendungsform voreilig festzuschreiben.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/ist-es-heute-schon-sinnvoll-einen-allgemeinen-baukasten-fuer-ki-anwendun/">
+  <meta property="article:published_time" content="2026-08-30T23:15:20+02:00">
+  <meta property="article:modified_time" content="2026-08-30T23:15:20+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Der sinnvolle KI-Baukasten ist kein neues Universal-Framework","description":"Was bei KI bereits wiederverwendbar ist: schmale Protokolle, stabil erklärte Runtime-Kerne, Betriebsbaseline und Evaluation – ohne die Anwendungsform voreilig festzuschreiben.","datePublished":"2026-08-30T23:15:20+02:00","dateModified":"2026-08-30T23:15:20+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/ist-es-heute-schon-sinnvoll-einen-allgemeinen-baukasten-fuer-ki-anwendun/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Meine Vergangenheit in der Webentwicklung ist stark von Wiederverwendung geprägt. Wenn etwas mehrfach gebraucht wird, liegt der Gedanke nahe, daraus ein Framework, eine Bibliothek oder einen anderen Baustein zu machen. Bei KI-Systemen meldet sich derselbe Reflex: Warum Modellzugang, Retrieval, Tools, Rechte, Logging, Evaluation und Provider immer wieder neu zusammensetzen? Gleichzeitig frage ich mich, ob wir damit bereits Lösungen abstrahieren, bevor wir die eigentlichen Anwendungsformen gut genug verstanden haben.</p>
+<p><strong>Meine Frage:</strong>
+Ist es heute schon sinnvoll, einen allgemeinen Baukasten für KI-Anwendungen zu entwickeln – und wenn ja, was ist bereits stabil genug, um darin standardisiert zu werden?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Der sinnvolle KI-Baukasten ist kein neues Universal-Framework</h1>
+<p>Die kurze Antwort lautet: <strong>Als allgemeine Zielarchitektur: nein. Als dünne, organisationsspezifische Werkbank auf vorhandenen Standards und Frameworks: ja.</strong> Nicht ausreichend begründet ist ein eigener allgemeiner Baukasten, der Agenten, Retrieval, Memory und Provider noch einmal zu einer gemeinsamen Anwendungsform erklärt.</p>
+<p>Mit Baseline ist dabei der verbindliche Mindestbestand gemeint, den produktive Projekte für Sicherheit, Prüfung und Betrieb mitbringen sollen. Nicht die Anwendung wird vereinheitlicht, sondern das, was die Organisation bei jeder Anwendung zuverlässig wissen und beherrschen muss.</p>
+<p>Der Unterschied liegt nicht nur zwischen groß und klein. Er liegt zwischen zwei Arten von Wiederverwendung.</p>
+<p>Die erste standardisiert Probleme, die fast jedes produktive System ohnehin lösen muss: Wer darf welches Werkzeug aufrufen? Wo liegen Secrets? Was kostet ein Lauf? Was ist passiert? Wie wird eine Änderung getestet, freigegeben und im Fehlerfall gestoppt?</p>
+<p>Die zweite standardisiert eine Vorstellung davon, wie eine KI-Anwendung grundsätzlich auszusehen hat: Chat vorne, Retrieval in der Mitte, Agentenschleife darum, Memory daneben, mehrere Provider darunter. Genau dort wird der Baukasten leicht vom Werkzeug zur Vorgabe.</p>
+<h2>Das Web ist keine Reifeuhr</h2>
+<p>Der Vergleich mit der Webentwicklung legt eine einfache Geschichte nahe. Websites, Shops und CMS wiederholten sich lange genug, irgendwann entstanden daraus Frameworks und Standardsoftware. Generative KI sei dagegen noch jung. Also müssten wir nur warten, bis ihre Anwendungsformen ähnlich klar sind.</p>
+<p>So einfach ist es nicht.</p>
+<p>Auch Webframeworks waren frühe, begrenzte Wetten auf bestimmte wiederkehrende Probleme. Sie mussten nicht erst das gesamte Web verstehen. Entscheidend war, dass ihre jeweilige Grenze tragfähig genug war.</p>
+<p>David Parnas beschrieb Modularität schon 1972 nicht als möglichst vollständige Sammlung gemeinsamer Funktionen. Eine gute Zerlegung versteckt Entwurfsentscheidungen, begrenzt das Wissen zwischen Modulen und erlaubt, Teile auszutauschen, ohne das ganze System neu zusammenzusetzen. Das ist für KI die nützlichere Lehre aus der Webentwicklung.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup></p>
+<p>Die Frage lautet deshalb nicht: Ist GenAI alt genug für Frameworks?</p>
+<p>Sie lautet: <strong>Welche konkrete Verantwortung wiederholt sich häufig genug, lässt sich prüfen und austauschen – und welche Abstraktion macht nur ihre heutige Form zur Vorschrift?</strong></p>
+<h2>„Baukasten“ nennt mindestens fünf verschiedene Arten der Wiederverwendung</h2>
+<p>Wer von einem KI-Baukasten spricht, kann sehr verschiedene Dinge meinen. Mit Runtime ist hier die Laufzeitschicht gemeint, die Modellaufrufe, Tools und Workflows tatsächlich ausführt. Ein Golden Path ist ein kuratierter, empfohlener Weg zum Projektstart. Die Recherche ergibt für diese Arten der Wiederverwendung nicht dieselbe Antwort.</p>
+<table>
+<thead>
+<tr>
+<th>Art</th>
+<th>Was wiederverwendet wird</th>
+<th>Urteil heute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infrastruktur</td>
+<td>Identität, Secrets, State, Queues, Workflows, Timeouts, Deployment</td>
+<td>stabil; vorhandene Lösungen nutzen</td>
+</tr>
+<tr>
+<td>Protokolle</td>
+<td>Tools und Kontext mit MCP, Agentenkommunikation mit A2A</td>
+<td>sinnvoll; schmal und versioniert integrieren</td>
+</tr>
+<tr>
+<td>Runtime</td>
+<td>Modellaufruf, Tool Loop, Provideranschlüsse, Graph-Ausführung</td>
+<td>Frameworks bieten stabil erklärte Kern-APIs; Eignung konkret prüfen</td>
+</tr>
+<tr>
+<td>Baseline und Projektpfad</td>
+<td>Telemetrie, Evals, Policies, Audit, Projektstart, Freigaben</td>
+<td>sinnvoll, wenn organisationsspezifisch und abweichbar</td>
+</tr>
+<tr>
+<td>Anwendungsarchitektur</td>
+<td>Chat, RAG-Form, Memory-Semantik, Autonomie, Multi-Agent-Topologie</td>
+<td>nicht allgemein genug belegt</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Trennung ist die wichtigste Antwort der Recherche. Das Ökosystem ist nicht leer. Es standardisiert längst verschiedene Arten von Dingen.</p>
+<p><a href="https://docs.dapr.io/developing-applications/building-blocks/">Dapr</a> kapselt beispielsweise alte verteilte Systemprobleme wie State, Pub/Sub, Workflows, Secrets und Konfiguration. <a href="https://docs.haystack.deepset.ai/docs/pipelines">Haystack</a> standardisiert Komponenten und ihre Ausführung als verzweigte oder zyklische Pipeline. <a href="https://backstage.io/docs/features/software-templates/">Backstage Software Templates</a> standardisieren, wie ein kuratierter Projektstart erzeugt wird. Keiner dieser Ansätze entscheidet allein, welche KI-Anwendung fachlich richtig ist.</p>
+<p>Diese Unterscheidung ist nicht akademisch. Sie entscheidet, ob der Baukasten hilft oder behindert. Das klingt nach einer Wortklauberei, bis man den falschen Baukasten warten muss.</p>
+<h2>Anschlüsse werden stabiler als Anwendungen</h2>
+<p>MCP ist inzwischen eine ernstzunehmende Protokollgrenze zwischen Anwendungen und Tools oder Kontextquellen. Die Spezifikation definiert Hosts, Clients, Server, Ressourcen, Prompts, Tools und das Aushandeln unterstützter Fähigkeiten. Sie sagt zugleich ausdrücklich, dass sie Zustimmung, Berechtigung und Datenschutz nicht erzwingen kann. Das muss die umgebende Anwendung tun.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" role="doc-noteref">2</a></sup></p>
+<p>Damit ist der Anschluss eines Tools standardisierbar. Die Erlaubnis, dass dieses Tool eine Rechnung storniert, einen Datensatz versendet oder eine Datei überschreibt, ist es nicht auf dieselbe Weise.</p>
+<p>A2A verschiebt die Grenze noch ein Stück weiter. Die im März 2026 veröffentlichte Version 1.0 beschreibt Discovery, Nachrichten, Tasks und Ergebnisübermittlung zwischen eigenständigen Agentensystemen. Die erste Recherche hatte Multi-Agent-Systeme deshalb zu pauschal auf die instabile Seite sortiert. <strong>Die Kommunikation zwischen Agenten kann bereits standardisiert werden.</strong><sup id="fnref:3"><a class="footnote-ref" href="#fn:3" role="doc-noteref">3</a></sup></p>
+<p>Was A2A nicht beantwortet: Braucht die Anwendung überhaupt mehrere Agenten? Wer darf delegieren? Welcher Agent kennt welchen Zustand? Wann muss ein Mensch zustimmen? Was geschieht, wenn zwei Systeme widersprüchliche Ergebnisse liefern?</p>
+<p>Das Protokoll ist stabiler als die Organisation, die es verbindet. In dieser Hinsicht hat HTTP schließlich auch nicht festgelegt, welche Website gebaut werden sollte.</p>
+<h2>Selbst Runtimes sind nicht mehr bloß Experiment</h2>
+<p>Ein zweiter Einwand gegen die vorsichtige Ausgangsthese ist ebenfalls berechtigt: Einige Agenten-Projekte erklären ihre Runtime-Kerne inzwischen für stabil.</p>
+<p>Microsoft veröffentlichte im April 2026 sein Agent Framework 1.0 für .NET und Python mit stabil erklärten APIs und langfristigem Support. Pydantic AI v2 beschreibt den einfachen Agentenloop – Modell aufrufen, Tool ausführen, Ergebnis zurückgeben – als gesetzten Kern.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" role="doc-noteref">4</a></sup></p>
+<p>Die Details dieser Quellen sind fast interessanter als das 1.0-Schild. Microsoft trennt stabile Kernfunktionen von weiter als Preview geführten Fähigkeiten. Pydantic hält den Core bewusst klein und verschiebt Memory, Guardrails, Dateisystemzugriff und weitere Fähigkeiten in einen schneller beweglichen Harness. Das minimale Fenster bis zu einer neuen Major-Version verkürzte das Projekt auf drei Monate, ausdrücklich weil sich das Feld schnell verändert.</p>
+<p>Das ist kein Widerspruch. Ein kleiner Kern kann stabil sein, während sein Rand in Bewegung bleibt.</p>
+<p>Für einen eigenen Baukasten ist das allerdings eher ein Kill-Kriterium als eine Einladung. Wer Modellzugang, Provider, Agentenloop, Tools und Workflow noch einmal kapselt, baut wahrscheinlich etwas nach, das bereits existiert. Ein Eigenbau braucht einen Zweck, den diese Frameworks nicht liefern.</p>
+<p>Ein solcher Zweck könnte sein:</p>
+<ul>
+<li>die Zugriffsentscheidung mit dem eigenen Rollenmodell zu verbinden;</li>
+<li>Datenklassifikation und zulässige Provider durchzusetzen;</li>
+<li>Modell- und Toolaufrufe gemeinsam zu auditieren;</li>
+<li>Kostenbudgets und Zeitlimits zentral zu erzwingen;</li>
+<li>Evaluationen in Release-Gates einzubauen;</li>
+<li>einen geprüften Projektstart mit Dokumentations- und Incident-Pflichten zu erzeugen.</li>
+</ul>
+<p>„Bei uns gibt es nur eine API“ ist noch kein Zweck. Manchmal bedeutet es nur, dass alle Unterschiede nun hinter derselben Tür stehen.</p>
+<p>Eine zusätzliche interne Schicht kann trotzdem gerade deshalb sinnvoll sein, weil sie eine volatile Framework- oder Providerentscheidung verbirgt. Das wäre eine Informationsgrenze im Sinne von Parnas. Der Kill-Test ist daher nicht bloß, ob etwas doppelt implementiert wird. Er lautet: <strong>Versteckt die Schicht eine wechselhafte Entscheidung hinter einem kleinen, prüfbaren und nachweislich nützlichen Vertrag – oder versteckt sie nur Unterschiede?</strong></p>
+<h2>Der wertvollste gemeinsame Baustein kann absichtlich unvollständig sein</h2>
+<p>Nehmen wir Evaluation. Ein gemeinsamer Eval-Harness, also ein Testrahmen, kann Fälle versionieren, Konfigurationen ausführen, Ergebnisse archivieren, Baselines vergleichen und einen Release blockieren. Das ist gut wiederverwendbar.</p>
+<p>Der Harness kann aber nicht allgemein bestimmen, was ein guter Fall ist. Bei einer Dokumentensuche kann ein falsches Zitat entscheidend sein. Bei einer Formulierungshilfe vielleicht Ton und Auslassung. Bei einer Agentenaktion geht es zusätzlich darum, ob eine Wirkung erlaubt, reversibel und korrekt protokolliert war.</p>
+<p>Das freiwillige <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST GenAI Profile</a> beschreibt genau diese Rückbindung an Task und Einsatzkontext: empirisch testen, Grenzen dokumentieren, unter realitätsnahen Bedingungen prüfen, im Betrieb beobachten, Feedback und Incidents behandeln. Es liefert keine universelle Punktzahl und keinen Testsatz für alle Anwendungen.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" role="doc-noteref">5</a></sup></p>
+<p>Die wiederverwendbare Form lautet also nicht <code>evaluate(prompt)</code>. Sie lautet eher:</p>
+<blockquote>
+<p>Hier ist der gemeinsame Runner. Dieses Team muss die fachlichen Fälle, Fehlertypen, Grenzwerte, Freigaberollen und Eskalationswege liefern.</p>
+</blockquote>
+<p>Evaluation und Telemetrie folgen damit demselben Muster: Die gemeinsame Mechanik ist wiederverwendbar, ihre fachliche Bedeutung bleibt kontextspezifisch. Dauer und Tokenverbrauch wiederholen sich. Fachliche Qualität nicht. OpenTelemetry hat dafür bereits GenAI-Konventionen, bezeichnet sie aber noch als aktiv entwickelt. Das ist ein guter Grund für zentrale Beobachtbarkeit und zugleich für eine Versionsgrenze um die konkrete Semantik.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6" role="doc-noteref">6</a></sup></p>
+<h2>Die falsche Abstraktion erkennt man an ihren Sonderfällen</h2>
+<p>Sandi Metz beschreibt ein bekanntes Muster: Zwei Fälle sehen gleich aus und werden abstrahiert. Der dritte passt beinahe. Also bekommt die Abstraktion einen Parameter und einen bedingten Pfad. Nach einigen Runden verhält sich die ehemals gemeinsame Idee je nach Fall anders.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7" role="doc-noteref">7</a></sup></p>
+<p>Bei einem KI-Baukasten sind die Warnzeichen leicht zu erkennen:</p>
+<ul>
+<li>ein universelles <code>Agent</code>-Objekt, dessen Flags Toolwahl, Memory, Streaming, Freigaben und Multi-Agent-Verhalten steuern;</li>
+<li><code>provider == ...</code>-Zweige in der fachlichen Kernabstraktion;</li>
+<li>eine gemeinsame RAG-Pipeline, obwohl Chunking, Aktualität, Ranking und Zitierpflicht je Anwendung anders sind;</li>
+<li>generische Evals ohne benannten fachlichen Fehler;</li>
+<li>ein Chatfenster als Standardoberfläche, obwohl der Arbeitsprozess einen Diff, eine Vorschau, eine Queue oder nur einen einmaligen Vorschlag braucht;</li>
+<li>optionale Fähigkeiten, die fast niemand verwendet, aber jedes Team verstehen, aktualisieren und absichern muss.</li>
+</ul>
+<p>Dann droht der Baukasten, Komplexität nicht mehr zu reduzieren, sondern sie an einer Stelle zu sammeln, an der sie schlechter zu sehen ist.</p>
+<p>Die bessere Gegenprobe ist praktisch: Kann eine Komponente ersetzt werden? Gibt es einen dokumentierten Ausgang? Können Teams eine neue Providerfunktion verwenden, bevor die zentrale Abstraktion sie übersetzt hat? Wird der gemeinsame Kern mit jeder Anwendung kleiner und klarer – oder größer und bedingter?</p>
+<h2>Nicht zu standardisieren hat ebenfalls einen Preis</h2>
+<p>Das stärkste Gegenargument gegen Zurückhaltung lautet: Warten erzeugt Doppelarbeit.</p>
+<p>Ohne gemeinsamen Pfad integriert jedes Team Provider, Telemetrie, Berechtigungen und Evaluation selbst. Änderungen an Protokollen und APIs müssen mehrfach nachvollzogen werden. Manche Anwendungen protokollieren Toolaufrufe, andere nur Modellantworten. Manche haben ein Kostenlimit, andere entdecken es auf der Rechnung. Ein unfertiger gemeinsamer Standard kann dann besser sein als fünf unverbundene Einzellösungen.</p>
+<p>Dabei sind nicht alle Kosten gleich. Eine Providerintegration kann einmalig sein; die Pflege von Berechtigungen, Telemetrie und Migrationen bleibt dauerhaft. Eine gemeinsame Schicht verursacht ihrerseits laufende Wartung. Sie lohnt sich nur, wenn die vermiedene Doppelarbeit und die gemeinsam durchgesetzten Regeln diese Kosten überwiegen.</p>
+<p>Das Gegenargument trägt.</p>
+<p>Deshalb wäre die Forderung falsch, erst nach Jahren und vielen identischen Anwendungen zu standardisieren. Ein „gut genug“ entworfener Golden Path kann heute vernünftig sein, wenn mindestens diese Bedingungen gelten:</p>
+<ol>
+<li>Er benennt, welches wiederkehrende Problem er zentral löst.</li>
+<li>Seine Verantwortung, sein prüfbarer Vertrag und seine Fehlerwirkung sind benannt.</li>
+<li>Er trennt stabilen Kern und beweglichen Rand.</li>
+<li>Er versioniert Abhängigkeiten und rechnet mit Migration.</li>
+<li>Er erlaubt begründete Abweichung, ohne dass ein Team die gesamte Baseline verliert.</li>
+</ol>
+<p>Stabilität bedeutet dann nicht Unveränderlichkeit. Sie bedeutet, dass Änderung beherrschbar ist.</p>
+<h2>Ein Baukasten kann den Blick verengen – bewiesen ist das nicht</h2>
+<p>Ein kuratierter Katalog kann verändern, was leicht erreichbar ist. Wenn dort <code>Chatbot</code>, <code>RAG Assistant</code> und <code>Multi-Agent Workflow</code> stehen, erscheinen diese Formen normal. Eine andere Arbeitsoberfläche kann dann mit mehr Rechtfertigungsaufwand beginnen.</p>
+<p>Das macht einen Baukasten zu einer stillen Ontologie: Er sagt Teams nicht nur, wie sie etwas bauen können, sondern auch, aus welchen Dingen eine KI-Anwendung angeblich besteht.</p>
+<p>Die Recherche hat allerdings keine Studie gefunden, die zeigt, dass KI-Golden-Paths dadurch tatsächlich Innovation verhindern. Die Transformationsgefahr bleibt eine plausible Warnung, kein Befund.</p>
+<p>Gegen eine pauschale Abwertung inkrementeller Anwendungen sprechen zudem reale Ergebnisse. In einer Feldstudie mit 5.172 Beschäftigten im Kundensupport stieg die Zahl gelöster Fälle pro Stunde mit einem KI-Assistenten im Mittel um rund 15 Prozent. Weniger erfahrene beziehungsweise niedriger qualifizierte Beschäftigte profitierten stärker. Die Autoren beschränken das Ergebnis ausdrücklich auf eine Firma, einen Beruf und ein relativ stabiles Produkt- und Fragenset.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8" role="doc-noteref">8</a></sup></p>
+<p>Ein BCG/HBS-Experiment mit 758 Beratern zeigte gleichzeitig eine unregelmäßige Leistungsgrenze: Bei bestimmten Aufgaben waren Teilnehmende mit KI schneller und besser bewertet; bei scheinbar ähnlichen Aufgaben außerhalb dieser Grenze konnte die Leistung sinken.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9" role="doc-noteref">9</a></sup></p>
+<p>Die vernünftige Folgerung ist nicht, bekannte Prozesse entweder zu automatisieren oder auf die große neue Arbeitsform zu warten. Organisationen können beides tun:</p>
+<ul>
+<li>Wiederholte, messbare Anwendungen bekommen einen Produktionspfad mit stärkeren Standards.</li>
+<li>Exploration bekommt einen leichteren Pfad mit weniger Architekturannahmen und einem frühen Test der tatsächlichen Wirkung.</li>
+</ul>
+<p>Ein erfolgreicher Versuch wird nicht deshalb zum Framework, weil er erfolgreich war. Erst Wiederholung zeigt, was an ihm wirklich gemeinsam ist.</p>
+<h2>Was heute in das gemeinsame Repository gehört</h2>
+<p>Die folgende Trennung ist meine Synthese aus den Quellen, kein veröffentlichter Industriestandard.</p>
+<p><strong>Technisch oder protokollarisch bereits stabilisierbar sind:</strong></p>
+<ul>
+<li>bestehende Infrastruktur für Identität, Secrets, State, Workflows, Messaging, Timeouts und Deployment;</li>
+<li>schmale, versionierte Protokollgrenzen für Tools, Kontext und Agentenkommunikation;</li>
+<li>Zugriffsentscheidungen außerhalb des Modells und explizite Freigaben für folgenreiche Aktionen;</li>
+<li>Audit-, Telemetrie-, Kosten- und Zeitlimit-Mechanik.</li>
+</ul>
+<p><strong>Organisatorisch sinnvoll zu vereinheitlichen sind:</strong></p>
+<ul>
+<li>ein Testrahmen für versionierte Fälle, Vergleiche und Release-Gates – nicht die fachlichen Fälle und Grenzwerte selbst;</li>
+<li>Projektgeneratoren und Schnittstellen zur Durchsetzung eigener Regeln;</li>
+<li>Monitoring, Feedback, menschliche Übersteuerung und Incident-Prozesse;</li>
+<li>ein Entscheidungsprotokoll vom Problem über Wirkung und Risiko zur ausgewählten Komposition.</li>
+</ul>
+<p><strong>Noch nicht als allgemeine Zielarchitektur belegt sind:</strong></p>
+<ul>
+<li>Chat als Standardoberfläche;</li>
+<li>ein universelles Memory-Modell;</li>
+<li>eine feste RAG-Pipeline mit allgemeinen Defaults;</li>
+<li>ein gemeinsamer Autonomiegrad;</li>
+<li>eine Multi-Agent-Topologie – im Unterschied zum bereits standardisierbaren Kommunikationsprotokoll;</li>
+<li>domänenübergreifende Qualitätsmetriken und Freigabeschwellen;</li>
+<li>ein vollständiges gemeinsames Objektmodell, das angeblich jede Providerfähigkeit ohne Sonderfälle abbildet.</li>
+</ul>
+<p>Damit fällt die Entscheidung kleiner aus als der ursprüngliche Entwicklerreflex.</p>
+<p><strong>Wenn ihr einen Baukasten baut, lasst ihn eine Werkbank sein, keinen Bauplan.</strong> In die Werkbank gehören Anschlüsse, Schutzvorrichtungen, Messmittel und ein ordentlicher Platz für Nachweise. Welche Anwendung darauf entsteht, sollte erst dann zum Standard werden, wenn reale Anwendungen ihre gemeinsame Form oft genug gezeigt haben.</p>
+<hr />
+<div class="footnotes" role="doc-endnotes"><hr /><ol><li class="footnote" id="fn:1" role="doc-endnote"><p>David L. Parnas, „On the Criteria To Be Used in Decomposing Systems into Modules“, <em>Communications of the ACM</em>, 1972, Abschnitte „Expected Benefits of Modular Programming“ und „What Is Modularization?“. <a href="https://www.cs.lafayette.edu/~gexia/cs301/resources/parnas.html">Original</a>. Unterstützt das Kriterium der Informations- und Verantwortungsgrenze, nicht die Güte eines heutigen KI-Frameworks.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:1" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:2" role="doc-endnote"><p>Model Context Protocol, Spezifikation 2026-07-28, Abschnitte „Overview“, „Key Details“ und „Security and Trust &amp; Safety“. <a href="https://modelcontextprotocol.io/specification/2026-07-28">Original</a>. Unterstützt Protokollumfang und die ausdrückliche Grenze der Sicherheitsdurchsetzung.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:2" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:3" role="doc-endnote"><p>A2A Protocol, <a href="https://a2a-protocol.org/latest/specification/">Spezifikation</a> und <a href="https://github.com/a2aproject/A2A/releases/tag/v1.0.0">Release 1.0.0 vom 12. März 2026</a>, insbesondere „Agent Discovery“, „Core Operations“ und „Task Update Delivery Mechanisms“. Unterstützt Interoperabilität und Release-Status, nicht eine universelle Orchestrierung oder die Reife aller SDKs.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:3" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:4" role="doc-endnote"><p>Microsoft, <a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/">„Microsoft Agent Framework Version 1.0“</a>, 3. April 2026, Abschnitte „What's in version 1.0“ und Preview-Liste; Pydantic, <a href="https://pydantic.dev/articles/pydantic-ai-v2">„Pydantic AI v2“</a>, 23. Juni 2026, Abschnitte „The Harness and a leaner core“ und „A word on the version policy“. Offizielle Aussagen zu API-Status und Versionierung, kein unabhängiger Qualitätsvergleich.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:4" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:5" role="doc-endnote"><p>NIST, <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em>, NIST AI 600-1, Juli 2024, S. 27, 33–36, 42–47 und 51–52. <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">Original-PDF</a>. Das freiwillige Profil unterstützt kontextbezogene Evaluation und Betrieb, nicht universelle Tests oder eine Architektur.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:5" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:6" role="doc-endnote"><p>OpenTelemetry, <a href="https://opentelemetry.io/blog/2026/genai-observability/">„GenAI Observability with OpenTelemetry“</a>, 14. Mai 2026, Abschnitte „Exporting GenAI telemetry“ und „Beyond this demo“; Suchanker „under active development“. Unterstützt wiederkehrende Signale und deren noch bewegliche Semantik.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:6" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:7" role="doc-endnote"><p>Sandi Metz, <a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">„The Wrong Abstraction“</a>, 20. Januar 2016, nummerierte Folge ab „Programmer A sees duplication“. Practitioner-Heuristik, keine GenAI-Studie.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:7" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:8" role="doc-endnote"><p>Erik Brynjolfsson, Danielle Li und Lindsey R. Raymond, <a href="https://academic.oup.com/qje/article/140/2/889/7990658">„Generative AI at Work“</a>, <em>The Quarterly Journal of Economics</em> 140(2), 2025, Abstract, „Main Effects: Productivity“ und Conclusion. Ein Unternehmen und Beruf; nicht als allgemeine Produktivitätszahl zu lesen.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:8" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:9" role="doc-endnote"><p>Harvard Business School, <a href="https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/">„Navigating the Jagged Technological Frontier“</a>, 21. September 2023, „Key Findings“ und „Shifting the Debate“, Zusammenfassung des Experiments mit 758 BCG-Beratern. Institutionelle Zusammenfassung einer GPT-4-Studie; keine allgemeine Architektur-Evidenz.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:9" role="doc-backlink">↩</a></p></li></ol></div>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-08-30T23:15:20+02:00">30.08.2026</time>. Zuletzt geändert <time datetime="2026-08-30T23:15:20+02:00">30.08.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>
