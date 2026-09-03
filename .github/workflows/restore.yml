@@ -1,0 +1,39 @@
+name: Restore public site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.restore/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify restore archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .restore/part-11
+          cat .restore/part-* | base64 --decode > /tmp/quelle-auf.zip
+          unzip -t /tmp/quelle-auf.zip
+
+      - name: Restore publication tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          unzip -q /tmp/quelle-auf.zip -d .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Restore public Quelle auf site from clean archive'
+          git push origin HEAD:main
