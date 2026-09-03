@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Was von Webentwicklung bleibt, wenn KI fast alles bauen kann · Quelle auf.</title>
+  <meta name="description" content="KI kann bekannte Webanwendungen schneller baubar machen. Die schwierige Arbeit könnte sich zu Absicht, Autorität, Daten, dynamischen Oberflächen und überprüfbaren Wirkungen verschieben.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/was-bleibt-von-webentwicklung-wenn-ki-fast-alles-bauen-kann/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Was von Webentwicklung bleibt, wenn KI fast alles bauen kann">
+  <meta property="og:description" content="KI kann bekannte Webanwendungen schneller baubar machen. Die schwierige Arbeit könnte sich zu Absicht, Autorität, Daten, dynamischen Oberflächen und überprüfbaren Wirkungen verschieben.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/was-bleibt-von-webentwicklung-wenn-ki-fast-alles-bauen-kann/">
+  <meta property="article:published_time" content="2026-09-03T22:33:48+02:00">
+  <meta property="article:modified_time" content="2026-09-03T22:33:48+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Was von Webentwicklung bleibt, wenn KI fast alles bauen kann","description":"KI kann bekannte Webanwendungen schneller baubar machen. Die schwierige Arbeit könnte sich zu Absicht, Autorität, Daten, dynamischen Oberflächen und überprüfbaren Wirkungen verschieben.","datePublished":"2026-09-03T22:33:48+02:00","dateModified":"2026-09-03T22:33:48+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/was-bleibt-von-webentwicklung-wenn-ki-fast-alles-bauen-kann/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Ich höre beim Spazierengehen wieder Michael Crichtons <em>Beute</em> und denke an meine Anfänge als Entwickler zurück. Damals war schon das Bauen eine seltene Fähigkeit. Heute kann eine KI aus einer Beschreibung in Stunden ein Grundgerüst mit Datenmodell, API, Oberfläche, Tests und Deployment-Konfiguration herstellen. Mich beschäftigt, ob damit nur eine alte Knappheit verschwindet – oder ob wir zu sehr damit beschäftigt sind, bekannte Anwendungen schneller zu bauen, um neue Formen überhaupt zu sehen.</p>
+<p><strong>Meine Frage:</strong>
+Welche grundlegenden Annahmen der Webentwicklung sollten wir im Zeitalter von KI neu hinterfragen – und welche neuen Formen von Webanwendungen werden dadurch heute bereits möglich?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Was von Webentwicklung bleibt, wenn KI fast alles bauen kann</h1>
+<p>Die Frage beginnt mit einer Behauptung, die größer ist als die vorhandene Evidenz: dass KI fast alles bauen kann.</p>
+<p>Als Arbeitserfahrung ist das gut nachvollziehbar. Das leere Repository verliert seinen Schrecken. Eine Anmeldung, ein Datenmodell, eine API und die ersten Tests entstehen in einer Geschwindigkeit, die vor wenigen Jahren noch ungewöhnlich gewesen wäre. Aber daraus folgt weder, dass das fertige Produkt funktioniert, noch dass jeder dasselbe Produkt bauen kann.</p>
+<p>Selbst die nüchternere Frage, ob KI Entwickler generell schneller macht, hat keine einheitliche Antwort. Ein Feldexperiment mit 4.867 Entwicklern fand für einen frühen Code-Assistenten im Mittel 26,08 Prozent mehr abgeschlossene Pull Requests pro Entwicklerwoche. Der Standardfehler lag bei 10,3 Prozent; die einzelnen Unternehmensexperimente waren verrauscht. Eine randomisierte <a href="https://metr.org/blog/2026-02-24-uplift-update/">Studie von METR</a> fand bei erfahrenen Open-Source-Entwicklern zunächst sogar 19 Prozent längere Bearbeitungszeiten. Spätere Daten hielt METR wegen Selbstselektion nur für sehr schwache Evidenz zur Größe eines möglichen Zugewinns. Das <a href="https://economics.mit.edu/sites/default/files/inline-files/draft_copilot_experiments.pdf">MIT-Arbeitspapier</a> und METR messen verschiedene Werkzeuge, Menschen und Aufgaben. Keines von beiden misst, ob ein Webprodukt nach zwei Jahren noch sicher, verständlich und betreibbar ist.</p>
+<p>Die Studien sagen damit weder, dass KI Webentwicklung allgemein beschleunigt, noch beantworten sie die Commodity-Frage. Für die weitere Suche genügt eine kleinere Ausgangsbeobachtung: Bestimmte Implementierungsarbeit kann mit KI erheblich leichter oder schneller werden. Ob sie auch die schwierigen Entscheidungen billiger macht, ist eine andere Frage.</p>
+<p>Um diese Entscheidungen zu sehen, hilft ein gewöhnlicher Vorgang mehr als eine Zukunftsvision. Stellen wir uns eine Anwendung für Dienstreisen vor. Heute würde sie wahrscheinlich aus Suchmaske, Ergebnisliste, Buchungsformular und einer kleinen Verwaltung bestehen. Genau dieser Ablauf lässt sich Schicht für Schicht anders denken.</p>
+<h2>Die Oberfläche muss nicht mehr der einzige Eingang sein</h2>
+<p>In der klassischen Anwendung klickt ein Mensch auf „Verbindungen suchen“, trägt Bahnhöfe und Zeiten ein, wählt eine Fahrt und bestätigt die Buchung. Der Server kennt die verfügbaren Züge. Die Oberfläche führt den Menschen durch die richtige Reihenfolge.</p>
+<p>Die Anwendung könnte dieselben Fähigkeiten zusätzlich als benannte Werkzeuge anbieten: <code>findConnections</code>, <code>holdFare</code>, <code>bookTrip</code>, <code>cancelBooking</code>. Jedes Werkzeug hätte strukturierte Eingaben, ein Ergebnis und möglichst eine klare Angabe seiner Seiteneffekte – also eine Angabe dessen, was sich außerhalb des Aufrufs ändert: Geld fließt, ein Platz wird reserviert, eine Buchung wird storniert. Ein Assistent könnte dann aus „Buche mir für Dienstag eine Verbindung nach Hamburg, aber nichts vor sieben“ einen Werkzeugaufruf vorbereiten.</p>
+<p><a href="https://webmachinelearning.github.io/webmcp/">WebMCP</a> beschreibt genau diese Nähe zur laufenden Seite. Eine Website kann JavaScript-Funktionen als strukturierte Werkzeuge registrieren; ein Agent kann sie im Kontext der Seite und ihrer bestehenden Sitzung aufrufen. Das ist mehr als ein Bot, der anhand von Pixeln errät, welcher Button wohl der richtige ist.</p>
+<p>Es ist aber noch kein neues Fundament des Webs. WebMCP ist am 3. September 2026 ein Bericht einer W3C Community Group und ausdrücklich kein W3C-Standard. Chromium hat ein <a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/gmYffo5WOE8/m/7Rx2_OOfBAAJ">Experiment angekündigt</a>; eine geplante Auslieferung und breite Browserunterstützung folgen daraus nicht.</p>
+<p>Auch die Grundidee ist älter. <a href="https://spec.openapis.org/oas/v3.2.0.html">OpenAPI</a> macht HTTP-Schnittstellen seit Jahren für Menschen und Computer beschreibbar. Noch näher lag Web Intents: Eine Webanwendung sollte eine Aktion samt Daten anstoßen, der Browser passende Dienste vermitteln und der Nutzer einen davon auswählen. Die <a href="https://www.w3.org/TR/web-intents/">W3C-Spezifikation von 2013</a> blieb eine Working Group Note ohne Interoperabilitätstests. Chrome hatte experimentelle Unterstützung bereits ausgeliefert und <a href="https://lists.w3.org/Archives/Public/public-web-intents/2012Nov/0000.html">deaktivierte sie mit Version 24</a> wieder. In der damaligen Mitteilung ist von weiterem Entwicklungsbedarf an API und User Experience die Rede.</p>
+<p>Web Intents beweist nicht, dass WebMCP scheitern wird. Es ist das nützlichere Warnschild: Eine technisch plausible Browserfunktion wird nicht allein dadurch gut, dass sie Aktionen maschinenlesbar macht.</p>
+<p>Was sich mit Sprachmodellen tatsächlich ändert, ist die Vermittlung. Ein Mensch muss nicht mehr die richtige Aktion oder Schnittstelle kennen. Ein Modell kann eine unscharfe Bitte einer strukturierten Fähigkeit zuordnen – und zwar im aktuellen Zustand einer bereits geöffneten Anwendung. Genau dadurch entsteht allerdings das nächste Problem.</p>
+<h2>Je näher eine Oberfläche an Produktion kommt, desto weniger beliebig darf sie sein</h2>
+<p>Nach der Suche muss die Reiseanwendung ein Ergebnis zeigen. Vielleicht reichen drei Verbindungen und ein Preis. Vielleicht braucht die Nutzerin zusätzlich eine Sitzplatzauswahl, eine Begründung für die Reiserichtlinie oder eine Warnung, dass der letzte Anschluss knapp ist.</p>
+<p>Eine feste Oberfläche muss all diese Wege vorab kennen. Eine dynamische Oberfläche könnte nur die Elemente zusammensetzen, die für den aktuellen Vorgang nötig sind. „Generiert“ klingt dabei freier, als die belastbareren Entwürfe tatsächlich sind.</p>
+<p><a href="https://github.com/a2ui-project/a2ui">A2UI</a> lässt einen Agenten eine deklarative JSON-Beschreibung liefern. Der Client rendert daraus Komponenten aus einem vorab erlaubten Katalog. Der Agent liefert damit nicht einfach beliebigen ausführbaren Oberflächencode, sondern Beschreibungen für Komponenten, die der Host erlaubt. Er kann vorhandene, geprüfte Bausteine neu anordnen. Das Projekt bezeichnet sich als frühe öffentliche Vorschau; seine Versionsnummer ist kein Nachweis für breite Nutzung, Barrierefreiheit oder vollständige Sicherheit.</p>
+<p><a href="https://modelcontextprotocol.io/seps/1865-mcp-apps-interactive-user-interfaces-for-mcp">MCP Apps</a> löst ein anderes Problem. Ein entferntes Werkzeug kann eine interaktive HTML-Ressource an einen kompatiblen KI-Host liefern. Der Host zeigt sie in einem Sandbox-Iframe; strukturierte Nachrichten laufen über JSON-RPC. Die Erweiterung ist im MCP-Projekt finalisiert, aber optional. „Final“ bedeutet hier weder Browserstandard noch universelle Host-Unterstützung.</p>
+<p>Die Unterscheidung ist praktisch. A2UI beschreibt, wie ein Host aus erlaubten Komponenten eine Oberfläche zusammensetzt. MCP Apps beschreibt, wie ein entferntes Werkzeug eine eingebettete Oberfläche mitbringt. WebMCP wiederum registriert Werkzeuge in einer laufenden Webseite. Drei Abkürzungen, drei verschiedene Systemgrenzen.</p>
+<p>Meine Synthese daraus lautet: Je näher eine dynamische Oberfläche an den Betrieb rückt, desto weniger darf „generativ“ heißen, dass alles jedes Mal neu erfunden wird. Komponentenkataloge, Sandboxes, Schemas und erlaubte Nachrichten machen die Idee weniger magisch. Und eher überprüfbar.</p>
+<p>Ob solche wechselnden Oberflächen für Menschen verlässlich verständlich und barrierefrei bleiben, ist in den untersuchten Quellen nicht belegt. Eine sauber geprüfte Schaltfläche kann in einer unvorhersehbaren Komposition immer noch am falschen Ort, mit dem falschen Kontext oder vor dem falschen Folgeschritt erscheinen. Der Aufwand verschwindet nicht. Er zieht vom Zeichnen einzelner Screens in die Regeln ihrer Zusammensetzung.</p>
+<h2>Der heikle Moment ist nicht „Die KI versteht mich“, sondern „Jetzt tut sie es“</h2>
+<p>Bei einer Reisesuche ist ein Fehler lästig. Bei <code>bookTrip</code> oder <code>cancelBooking</code> verändert er die Welt außerhalb des Modells. Geld fließt. Ein Platz ist weg. Eine Erstattung kann ausgeschlossen sein.</p>
+<p>Die Brücke zwischen Bitte und Buchung ist ein Sprachmodell, das eine natürlichsprachliche Anweisung einer registrierten Fähigkeit zuordnet. Aus „Buche mir einen Zug nach Hamburg“ muss ein konkreter Aufruf von <code>bookTrip</code> mit konkreten Parametern werden. Dabei entsteht der Fehlerraum.</p>
+<p>Hier hilft es, sechs Fragen nicht in das eine Wort „Berechtigung“ zu pressen:</p>
+<ol>
+<li>Welcher technische Agent stellt die Anfrage?</li>
+<li>Für welchen Menschen oder welches System handelt er?</li>
+<li>Welche Autorität wurde konkret delegiert?</li>
+<li>Welchen Zweck behauptet die Anfrage?</li>
+<li>Welche Wirkung löst das Werkzeug tatsächlich aus?</li>
+<li>Welche Kette bleibt später prüfbar?</li>
+</ol>
+<p>Die aktuelle <a href="https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization">MCP-Autorisierungsspezifikation</a> regelt optionale Autorisierung auf Transportebene. Sie verwendet etablierte OAuth-Bausteine, ordnet Token einer Ressource zu und beschreibt kleine Berechtigungsumfänge sowie nachträgliche Freigaben für weitergehende Aktionen. Das ist wichtig. Es sagt aber nur, ob ein Client auf eine geschützte Ressource zugreifen darf.</p>
+<p>Auch die Trennung von Akteur und vertretenem Nutzer ist keine Erfindung der Agentenzeit. <a href="https://www.rfc-editor.org/rfc/rfc8693.html">RFC 8693</a> unterscheidet seit 2020 Delegation von Impersonation und kann den handelnden Akteur getrennt von der Partei darstellen, in deren Auftrag er handelt. Der Standard liefert einen Baustein für „A handelt für B“. Er beantwortet nicht, ob A die Bitte von B richtig verstanden hat.</p>
+<p>Das ist der zentrale neue Architekturkonflikt: Ein Sprachmodell arbeitet mit Wahrscheinlichkeiten. Eine Buchung ist deterministisch. Zwischen „Ich glaube, der Nutzer meint diese Verbindung“ und „Dann kaufe ich sie jetzt“ braucht es mehr als einen gültigen Token.</p>
+<p>Je nach Wirkung können Systeme deshalb lesen, vorschlagen, vormerken und ausführen als unterschiedliche Rechte behandeln. Sie können vor irreversiblen Schritten eine konkrete Vorschau zeigen, Bestätigung verlangen, Grenzen für Preis und Zeitraum setzen, Wiederholungen erkennen und Aktionen auditierbar machen. Diese Regeln sind keine fertige Lösung aus einer einzelnen Spezifikation. Sie sind Entwicklungsarbeit.</p>
+<h2>Muss der Anbieter selbst der primäre Speicherort sein?</h2>
+<p>Unsere Reiseanwendung weiß vielleicht, dass ich Ruhebereiche bevorzuge, eine BahnCard besitze und für Hotelrechnungen eine bestimmte Kostenstelle brauche. Heute lägen diese Informationen wahrscheinlich im Konto des Reiseanbieters. Das ist bequem. Es koppelt die Daten aber an genau diese Anwendung.</p>
+<p>Der frühe Entwurf für <a href="https://www.w3.org/TR/lws10-core/">Linked Web Storage</a> beschreibt stattdessen Webclients, die auf extern gespeicherte Ressourcen zugreifen. Ein Grant kann unter anderem Aktion, Empfänger, Ziel, Zweck, Client, Format, Ressourcentyp und Zeit einschränken. Mehrere Werkzeuge könnten damit – zumindest im Entwurf – auf dieselben vom Nutzer gewählten Daten zugreifen, ohne jeweils einen eigenen vollständigen Datensilo anzulegen.</p>
+<p>Die wichtigste Grenze steht im Dokument selbst: Der Abschnitt zur Portabilität zwischen Speicheranbietern ist im archivierten Working Draft noch nicht ausgearbeitet. Ein externer Speicher ist nicht automatisch portabel, nur weil er außerhalb der Anwendung liegt.</p>
+<p>Auch hier ist KI nicht der Ursprung. Das <a href="https://www.inkandswitch.com/essay/local-first/local-first.pdf">Local-first-Paper von 2019</a> verband schon vor dem aktuellen KI-Boom Offline-Arbeit, Zusammenarbeit, lokale Primärkopien und Nutzerkontrolle. Die Autoren fanden damals keine Technik, die alle formulierten Ideale erfüllte, und hielten zentrale Dienste etwa für Banking oder E-Commerce weiterhin für sinnvoll.</p>
+<p>KI kann die alte Frage dringlicher machen. Wenn ich in kurzer Zeit viele kleine Werkzeuge erzeuge, wird „jedes Werkzeug baut seinen eigenen Datensilo“ schnell absurd. Ein gemeinsamer Datenbestand könnte wertvoller werden als die einzelne, vielleicht nur für einen Nachmittag gebaute Oberfläche. Das ist eine eigene Ableitung, kein durch LWS oder Local-first belegter Markttrend.</p>
+<p>Und sie hat ihren Preis. Jemand muss festlegen, welches Datenformat gilt, wie Konflikte zusammengeführt werden, wie ein verlorenes Gerät wiederhergestellt wird und was eine Anwendung nach Entzug ihres Zugriffs noch in Caches oder Backups hält. Datenhoheit ist keine Checkbox. Sie ist eine Betriebsarchitektur.</p>
+<h2>Das Modell kann im Browser laufen, aber Datenschutz läuft nicht von allein mit</h2>
+<p>Ein Teil der Reiseanwendung könnte ohne Inferenzdienst auskommen. Ein lokales Modell könnte Belege klassifizieren, Freitext in strukturierte Reisewünsche übersetzen oder eine Richtlinie zusammenfassen.</p>
+<p><a href="https://github.com/mlc-ai/web-llm">WebLLM</a> ist eine Open-Source-Implementierung für Sprachmodelle im Browser über WebGPU. Chrome dokumentiert außerdem eine <a href="https://developer.chrome.com/docs/ai/prompt-api">Prompt API</a> mit einem lokal heruntergeladenen Modell. Nach dem Download kann diese Implementierung offline arbeiten; die Prompts werden laut Chrome bei der lokalen Ausführung nicht an Dritte gesendet.</p>
+<p>Das ist heute implementiert, aber nicht universell verfügbar. Chrome nennt erhebliche Anforderungen an freien Speicher, Arbeitsspeicher oder Grafikspeicher; mobile Plattformen werden nicht allgemein unterstützt. WebLLM hängt ebenfalls von WebGPU, Modellgröße, Download und Geräteleistung ab.</p>
+<p>Vor allem bedeutet lokale Inferenz nicht automatisch lokale Datenverarbeitung im Gesamtsystem. Die umgebende Webanwendung kann Eingaben oder Ergebnisse weiterhin an einen Server senden. Sie kann Telemetrie speichern. Ein anderes Werkzeug kann später auf denselben Zustand zugreifen. Der Ort des Modells ist eine Systemeigenschaft unter mehreren, kein Datenschutzsiegel.</p>
+<h2>Software muss nicht in jedem Detail fertig geliefert werden</h2>
+<p>Vielleicht möchte die Buchhaltung nach dem ersten Monat eine neue Regel: Bahnfahrten unter vier Stunden sollen ohne zusätzliche Begründung vorgeschlagen werden. Heute landet daraus ein Ticket im Backlog. In einer veränderbaren Anwendung könnte eine Fachperson die Regel näher an ihrer eigenen Sprache formulieren, testen und für das Team freigeben.</p>
+<p><a href="https://www.inkandswitch.com/essay/malleable-software/">Ink &amp; Switch</a> zeigt mit Potluck, Embark und Patchwork Prototypen für solche veränderbaren Regeln, Ansichten und Werkzeuge. KI könnte beim Entwurf editierbarer Detektoren oder Regeln helfen. Dieselbe Forschungsgruppe nennt allerdings Versionierung, Zusammenarbeit, Qualität und Einbettung als offene Probleme und warnt davor, Programmieren werde allein durch KI mühelos.</p>
+<p>Der belastbare Stand ist deshalb nicht: Jeder Nutzer wird Entwickler. Der Stand ist: Es gibt Forschungsprototypen, in denen die Grenze zwischen Benutzen und Verändern durchlässiger wird. Ob Nichtprogrammierer solche Systeme zuverlässig warten können, ist ungeprüft.</p>
+<p>Vielleicht liegt die sinnvollere Arbeitsteilung ohnehin woanders. Fachleute beschreiben eine Regel und prüfen Beispiele. Entwickler bauen Typen, Grenzen, Tests, Freigaben, Migrationen und einen Weg zurück. Die Software wird an einer Stelle formbarer und braucht an einer anderen Stelle mehr Struktur.</p>
+<h2>KI erfindet diese Ideen nicht. Sie bringt sie in eine neue Reihenfolge</h2>
+<p>Maschinenlesbare Dienste, delegierte Autorität, lokale Daten, dynamische Oberflächen und End-User Programming haben lange Vorgeschichten. Einige Vorläufer sind Standards geworden. Andere blieben Forschung. Web Intents gelangte sogar in Chrome und verschwand wieder.</p>
+<p>Das ist kein Einwand gegen den gesamten Gestaltungsraum. Es verschiebt nur die interessante Frage. Nicht: Welche Webbausteine hat KI aus dem Nichts erschaffen? Sondern: Welche alten Bausteine werden anders kombinierbar, wenn natürliche Sprache vor ihnen liegt?</p>
+<p>Im Reisebeispiel könnte ein Mensch ein Ziel beschreiben. Ein Modell wählt eine von der Anwendung angebotene Fähigkeit. Das Werkzeug arbeitet im aktuellen Sitzungskontext. Ein Host zeigt eine aus geprüften Komponenten zusammengesetzte Oberfläche. Persönliche Präferenzen liegen außerhalb des Anbieters. Eine kleine Klassifikation läuft lokal.</p>
+<p>Für fast jeden Satz dieses Ablaufs gibt es heute eine Spezifikation, Implementierung oder einen Prototyp. Für die sichere, interoperable und verbreitete Gesamtkette gibt es in den untersuchten Quellen keinen Beleg.</p>
+<p>Die Kombination ist also ein Entwurfsraum, noch keine neue Normalität.</p>
+<p>Vielleicht ist das noch kein neues Web, sondern zunächst eine neue Steuerungs- und Darstellungsschicht vor weitgehend klassischen Datenmodellen, APIs und Geschäftsregeln.</p>
+<h2>Was sollten wir tatsächlich neu hinterfragen?</h2>
+<p>Die Recherche trägt fünf vorsichtige Öffnungen. Sie sind nicht überall gleich reif:</p>
+<table>
+<thead>
+<tr>
+<th>Bisherige Voreinstellung</th>
+<th>Mögliche Alternative</th>
+<th>Stand 3. September 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Die GUI ist der einzige Weg in die Anwendung.</td>
+<td>Die Seite bietet zusätzlich strukturierte Werkzeuge für Agenten an.</td>
+<td>WebMCP: Entwurf und Chromium-Experiment; nicht breit etabliert.</td>
+</tr>
+<tr>
+<td>Die Oberfläche wird vollständig vorab festgelegt.</td>
+<td>Ein Host komponiert sie aus erlaubten Komponenten oder bettet eine Tool-UI ein.</td>
+<td>A2UI: frühe Vorschau; MCP Apps: optionale MCP-Erweiterung.</td>
+</tr>
+<tr>
+<td>Der Anbieter speichert alle Anwendungsdaten selbst.</td>
+<td>Clients greifen mit begrenzten Rechten auf externe oder lokale Daten zu.</td>
+<td>Local-first: Forschungsprinzip mit Prototyperfahrung; LWS: früher, unvollständiger Working Draft.</td>
+</tr>
+<tr>
+<td>KI-Ausführung ist ein Serverdienst.</td>
+<td>Geeignete Modelle und Aufgaben laufen im Browser.</td>
+<td>Implementiert, aber browser-, modell- und hardwareabhängig.</td>
+</tr>
+<tr>
+<td>Software wird fertig ausgeliefert und nur benutzt.</td>
+<td>Fachleute verändern begrenzte Regeln oder Ansichten.</td>
+<td>Forschungsprototypen; Zuverlässigkeit und Betrieb offen.</td>
+</tr>
+</tbody>
+</table>
+<p>Die Tabelle zeigt Reifegrade dessen, was existiert. Sie behauptet nicht, dass eine der Alternativen bereits Mainstream oder sicher bewährt ist.</p>
+<p>„Neu hinterfragen“ heißt nicht „überall ersetzen“. Eine feste Oberfläche ist oft besser, weil sie Handlungen sichtbar, erlernbar und testbar macht. Ein zentraler Server kann Zusammenarbeit, Missbrauchsschutz und Recovery vereinfachen. Ein serverseitiges Modell ist oft besser, weil das Endgerät zu klein ist. Und fertige Software ist oft eine Wohltat, weil nicht jeder Mensch nebenbei sein eigenes Werkzeug warten möchte.</p>
+<h2>Was von Webentwicklung bleibt</h2>
+<p>Wenn KI das bekannte Grundgerüst schneller herstellt, verliert ein Teil des Handwerks seine bisherige Knappheit. Daraus folgt nicht, dass nur noch „Ideen“ zählen. Ideen ohne saubere Zustände, Rechte und Rückwege sind in Software erstaunlich billig.</p>
+<p>Was bleibt, ist sehr konkrete Arbeit:</p>
+<ul>
+<li>Fähigkeiten so beschreiben, dass ihre Semantik und ihre Seiteneffekte stimmen.</li>
+<li>Lesen, Vorschlagen, Vormerken und Ausführen als verschiedene Autoritäten behandeln.</li>
+<li>Maßgebliche Daten, Kopien, Konflikte, Löschung und Recovery entscheiden.</li>
+<li>Dynamische Varianten zugänglich, vorhersehbar und testbar halten.</li>
+<li>Beobachten, was ein Agent tatsächlich getan hat, nicht nur, was er tun wollte.</li>
+<li>Entscheiden, welche Teile lokal laufen und welche Informationen das Gerät trotzdem verlassen.</li>
+<li>Generierte Änderungen versionieren, migrieren, zurücknehmen und im Team verantworten.</li>
+</ul>
+<p>Die Quellen beweisen nicht, dass genau diese Arbeit ökonomisch der neue Wertkern der Branche wird. Das ist meine Synthese aus den sichtbaren Systemgrenzen. Sie kann sich als falsch erweisen, wenn Modelle nicht nur Code, sondern auch Domänenentscheidungen, Betrieb und Haftungsfragen zuverlässig übernehmen – oder wenn die beschriebenen neuen Formen außerhalb von Demos nie angenommen werden.</p>
+<p>Vorläufig bleibt eine kleinere Antwort: Webentwicklung verschwindet nicht. Bestimmte erste Implementierungen können weniger selten werden. Dafür wird deutlicher, wo eine Anwendung aus einer plausiblen Vermutung eine wirkliche Handlung macht – und wer dafür die Grenzen baut.</p>
+<h2>Quellen</h2>
+<ul>
+<li>Cui, Demirer, Jaffe, Musolff, Peng, Salz: <a href="https://economics.mit.edu/sites/default/files/inline-files/draft_copilot_experiments.pdf"><em>The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers</em></a>, Arbeitspapier vom 10. Februar 2025. Maßgeblich: Abstract und gepoolte Schätzung von 26,08 Prozent bei 10,3 Prozent Standardfehler. Grenze: abgeschlossene Pull Requests, nicht Produktqualität oder Lebenszyklus.</li>
+<li>METR: <a href="https://metr.org/blog/2026-02-24-uplift-update/"><em>We are Changing our Developer Productivity Experiment Design</em></a>, 24. Februar 2026. Maßgeblich: Rückblick auf die 19-Prozent-Verlangsamung und Abschnitte zu Selection Effects. Grenze: spätere Rohdaten erlauben laut Autoren keine belastbare allgemeine Effektgröße.</li>
+<li>W3C Web Machine Learning Community Group: <a href="https://webmachinelearning.github.io/webmcp/"><em>WebMCP</em></a>, Draft Community Group Report, Stand 3. September 2026. Maßgeblich: Abstract, Tool Registration und Security Considerations. Grenze: kein W3C-Standard und kein Adoptionsbeleg.</li>
+<li>Chromium blink-dev: <a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/gmYffo5WOE8/m/7Rx2_OOfBAAJ"><em>Intent to Experiment: WebMCP</em></a>, 15. Mai 2026. Maßgeblich: Experimentstatus und Signale anderer Browser. Grenze: Absichtserklärung, keine Zusage für Auslieferung oder Interoperabilität.</li>
+<li>OpenAPI Initiative: <a href="https://spec.openapis.org/oas/v3.2.0.html"><em>OpenAPI Specification 3.2.0</em></a>, 19. September 2025. Maßgeblich: Introduction. Grenze: beschreibt HTTP-Schnittstellen, nicht den laufenden Zustand einer Seite oder menschliche Absicht.</li>
+<li>W3C: <a href="https://www.w3.org/TR/web-intents/"><em>Web Intents</em></a>, Working Group Note vom 23. Mai 2013. Maßgeblich: Abstract, Status und Introduction. Grenze: keine Interoperabilitätstests; anderes Auswahlmodell als WebMCP.</li>
+<li>Greg Billock / W3C public-web-intents: <a href="https://lists.w3.org/Archives/Public/public-web-intents/2012Nov/0000.html"><em>Status of web intents in Chrome</em></a>, 1. November 2012. Maßgeblich: Mitteilung zur Deaktivierung in Chrome 24. Grenze: keine veröffentlichten Versuchsdaten oder vollständige Ursachenanalyse.</li>
+<li>A2UI Project: <a href="https://github.com/a2ui-project/a2ui"><em>A2UI: Agent-to-User Interface</em></a>, Repository-Stand 3. September 2026. Maßgeblich: Status, deklaratives Format und erlaubter Komponentenkatalog. Grenze: Projektdokumentation, keine unabhängige Adoption- oder UX-Evidenz.</li>
+<li>Model Context Protocol: <a href="https://modelcontextprotocol.io/seps/1865-mcp-apps-interactive-user-interfaces-for-mcp"><em>SEP-1865: MCP Apps – Interactive User Interfaces for MCP</em></a>, Final SEP, archiviert am 3. September 2026. Maßgeblich: Architecture, <code>ui://</code>, Sandbox und Host-Kommunikation. Grenze: optional innerhalb des MCP-Ökosystems.</li>
+<li>Model Context Protocol: <a href="https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization"><em>Authorization</em></a>, Spezifikation vom 28. Juli 2026. Maßgeblich: Purpose and Scope, Protocol Requirements und Scope Selection. Grenze: Transportautorisierung, kein Beleg für korrekt verstandene Absicht.</li>
+<li>IETF / RFC Editor: <a href="https://www.rfc-editor.org/rfc/rfc8693.html"><em>RFC 8693: OAuth 2.0 Token Exchange</em></a>, Standards Track, Januar 2020. Maßgeblich: Abschnitt 1.1, Delegation vs. Impersonation. Grenze: keine KI-spezifische Absichts- oder Wirkungsprüfung.</li>
+<li>W3C: <a href="https://www.w3.org/TR/lws10-core/"><em>Linked Web Storage Protocol 1.0</em></a>, Working Draft vom 21. August 2026. Maßgeblich: Access Grants, Constraints und Portability. Grenze: früher Entwurf; Provider-Portabilität noch nicht spezifiziert.</li>
+<li>Kleppmann et al.: <a href="https://www.inkandswitch.com/essay/local-first/local-first.pdf"><em>Local-First Software: You Own Your Data, in spite of the Cloud</em></a>, ACM Onward! 2019. Maßgeblich: Ideale, CRDT-Diskussion und Limitations. Grenze: Forschungsagenda und Prototyperfahrung, kein Universalmodell.</li>
+<li>MLC AI: <a href="https://github.com/mlc-ai/web-llm"><em>WebLLM</em></a>, Repository-Stand 3. September 2026, sowie Chrome for Developers: <a href="https://developer.chrome.com/docs/ai/prompt-api"><em>Prompt API</em></a>, aktualisiert am 26. August 2026. Maßgeblich: Browser-Inferenz und Geräteanforderungen. Grenze: Projekt- und Herstellerdokumentation, keine unabhängige Geräteabdeckung.</li>
+<li>Ink &amp; Switch: <a href="https://www.inkandswitch.com/essay/malleable-software/"><em>Malleable software: Restoring user agency in a world of locked-down apps</em></a>, 5. Juni 2025. Maßgeblich: Prototypen und Open Questions. Grenze: Forschungsprogramm, keine kontrollierte Evidenz für zuverlässige Nutzung durch Nichtprogrammierer.</li>
+</ul>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-09-03T22:33:48+02:00">03.09.2026</time>. Zuletzt geändert <time datetime="2026-09-03T22:33:48+02:00">03.09.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>
