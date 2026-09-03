@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '.restore/**'
+      - '.restore2/**'
   workflow_dispatch:
 
 permissions:
@@ -18,20 +18,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify restore archive
+      - name: Wait for complete restore archive
         shell: bash
         run: |
           set -euo pipefail
-          test -f .restore/part-11
-          cat .restore/part-* | base64 --decode > /tmp/quelle-auf.zip
-          unzip -t /tmp/quelle-auf.zip
+          if [ ! -f .restore2/part-07 ]; then
+            echo 'Restore archive not complete yet.'
+            exit 0
+          fi
+          cat .restore2/part-* | base64 --decode > /tmp/quelle-auf.tar.xz
+          xz -t /tmp/quelle-auf.tar.xz
 
       - name: Restore publication tree
+        if: ${{ hashFiles('.restore2/part-07') != '' }}
         shell: bash
         run: |
           set -euo pipefail
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          unzip -q /tmp/quelle-auf.zip -d .
+          tar -xJf /tmp/quelle-auf.tar.xz -C .
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
