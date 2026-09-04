@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE INTERNET KNOWS — Satirisches Medienexperiment</title>
+<meta name="description" content="Eine absichtlich trashige Fake-Informationsseite über Quellen, Wiederholungen und Glaubwürdigkeit. Satirisches Medienexperiment.">
+<style>
+:root{
+  --ink:#101010;
+  --paper:#d8d0b8;
+  --red:#ee2b22;
+  --acid:#9df02f;
+  --yellow:#ffd72b;
+  --blue:#31d8ff;
+  --orange:#ff8a1c;
+  --white:#fffdf3;
+  --shadow:#050505;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 18% 7%, rgba(255,255,255,.05), transparent 22rem),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0 1px, transparent 1px 4px),
+    #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body:before{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none; z-index:99;
+  opacity:.18;
+  background-image:
+    repeating-radial-gradient(circle at 12% 31%, #fff 0 1px, transparent 1px 3px);
+  mix-blend-mode:soft-light;
+}
+a{color:inherit}
+.top-strip{
+  background:#050505;
+  border-bottom:3px solid var(--yellow);
+  padding:.35rem .7rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.72rem;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+.top-strip .satire{color:var(--yellow)}
+.wrap{max-width:1080px;margin:auto}
+.cover{
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.16), rgba(0,0,0,.55)),
+    radial-gradient(circle at 67% 28%, rgba(255,60,22,.26), transparent 16rem),
+    linear-gradient(140deg,#2a2a2a,#080808 62%);
+  border-bottom:8px solid var(--red);
+}
+.mast{
+  padding:.75rem .75rem 0;
+  text-align:center;
+}
+.kicker{
+  font-weight:900;
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.logo{
+  margin:.15rem 0 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size:clamp(4.1rem, 18vw, 11rem);
+  line-height:.76;
+  letter-spacing:-.04em;
+  color:var(--red);
+  text-shadow:
+    3px 3px 0 #000,
+    -2px -2px 0 rgba(255,255,255,.15);
+  transform:scaleX(.92);
+}
+.tagline{
+  margin:.35rem 0 0;
+  color:var(--yellow);
+  font-weight:900;
+  font-style:italic;
+  text-transform:uppercase;
+  font-size:clamp(.9rem,2.5vw,1.3rem);
+}
+.issue{
+  position:absolute; right:.8rem; top:8.7rem;
+  width:72px;height:72px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--yellow); color:#111;
+  border:5px solid var(--red);
+  font-family:Impact, sans-serif;
+  transform:rotate(9deg);
+  box-shadow:0 4px 0 #000;
+  text-align:center;font-size:.78rem;line-height:1;
+}
+.cover-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.65rem;
+  padding:.8rem;
+}
+.hero{
+  position:relative;
+  min-height:56vh;
+  border:4px solid #d5d5cb;
+  box-shadow:7px 7px 0 #000;
+  overflow:hidden;
+  background:#202020;
+}
+.hero svg{width:100%;height:100%;position:absolute;inset:0}
+.hero-copy{
+  position:absolute; inset:auto .7rem .65rem .7rem;
+  z-index:3;
+  text-shadow:2px 2px 0 #000,0 0 10px #000;
+}
+.hero-copy .eyebrow{
+  color:var(--acid);font-family:Impact,sans-serif;
+  font-size:clamp(1.8rem,8vw,4rem);line-height:.95;
+  text-transform:uppercase; transform:rotate(-1deg);
+}
+.hero-copy h1{
+  margin:.15rem 0 0;
+  font-family:Impact,sans-serif;
+  font-size:clamp(2.4rem,11vw,6rem);
+  line-height:.86;
+  text-transform:uppercase;
+}
+.hero-copy h1 span{color:var(--yellow)}
+.side{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.65rem;
+}
+.card{
+  position:relative;
+  min-height:190px;
+  padding:.55rem;
+  border:3px solid #d8d8ce;
+  box-shadow:5px 5px 0 #000;
+  overflow:hidden;
+  background:#252525;
+}
+.card svg{position:absolute;inset:0;width:100%;height:100%;opacity:.92}
+.card .label{
+  position:relative;z-index:2;
+  display:inline-block;
+  background:var(--yellow);color:#111;
+  font-family:Impact,sans-serif;
+  text-transform:uppercase;
+  padding:.2rem .35rem;
+  transform:rotate(-2deg);
+}
+.card h2{
+  position:absolute;left:.5rem;right:.5rem;bottom:.5rem;z-index:2;
+  margin:0;
+  font-family:Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(1.25rem,5vw,2.2rem);
+  line-height:.95;
+  text-shadow:2px 2px 0 #000;
+}
+.card h2 strong{color:var(--acid)}
+.ticker{
+  background:var(--red); color:#fff;
+  font-family:Impact,sans-serif;
+  text-transform:uppercase;
+  padding:.45rem .7rem;
+  border-block:3px solid #000;
+  letter-spacing:.04em;
+  overflow:hidden; white-space:nowrap;
+}
+.ticker span{display:inline-block;animation:scroll 18s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+.article{
+  color:#161616;
+  background:
+    linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75)),
+    repeating-linear-gradient(0deg,#d9d1b6 0 2px,#cbc2a6 2px 4px);
+  padding:2rem 1rem 3rem;
+}
+.article .inner{max-width:860px;margin:auto}
+.stamp{
+  display:inline-block;
+  border:5px solid var(--red); color:var(--red);
+  font-family:Impact,sans-serif;
+  font-size:1.4rem; padding:.25rem .55rem;
+  transform:rotate(-3deg);
+  text-transform:uppercase;
+}
+.article h2{
+  margin:.8rem 0;
+  font-family:Impact,sans-serif;
+  font-size:clamp(2.5rem,8vw,5rem);
+  line-height:.88;text-transform:uppercase;
+}
+.lead{font-size:1.25rem;font-weight:800;max-width:720px}
+.fake-proof{
+  display:grid;gap:.8rem;margin:1.3rem 0;
+}
+.proof{
+  background:#f9f6e8;border:3px solid #111;
+  padding:.8rem;box-shadow:5px 5px 0 #111;
+}
+.proof b{display:block;text-transform:uppercase;font-size:.8rem}
+.proof .url{font-family:monospace;color:#555;font-size:.78rem;word-break:break-all}
+.proof .quote{font-size:1.1rem;font-weight:900;margin:.35rem 0}
+.same{
+  background:var(--yellow);border:3px solid #111;
+  padding:.7rem;font-weight:900;
+}
+.reveal{
+  background:#050505;color:#fff;
+  padding:4rem 1rem;
+  border-top:10px solid var(--yellow);
+  border-bottom:10px solid var(--red);
+  text-align:center;
+}
+.reveal .inner{max-width:800px;margin:auto}
+.reveal .stop{
+  font-family:Impact,sans-serif;
+  font-size:clamp(5rem,25vw,13rem);
+  color:var(--red);line-height:.75;
+  text-shadow:4px 4px 0 var(--yellow);
+}
+.reveal h2{
+  font-family:Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(2rem,8vw,4rem);
+  margin:1rem 0 .5rem;
+}
+.reveal p{font-size:1.15rem;line-height:1.55}
+.cta{
+  display:inline-block;
+  margin-top:1rem;
+  padding:1rem 1.1rem;
+  background:var(--acid);color:#111;
+  font-family:Impact,sans-serif;
+  font-size:1.4rem;text-transform:uppercase;
+  border:4px solid #fff;
+  box-shadow:6px 6px 0 var(--red);
+  text-decoration:none;
+  transform:rotate(-1deg);
+}
+.foot{
+  padding:1.2rem;
+  color:#aaa;background:#111;
+  font-size:.8rem;line-height:1.5;
+}
+@media (min-width:760px){
+  .cover-grid{grid-template-columns:2fr 1fr;align-items:stretch}
+  .side{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+  .hero{min-height:650px}
+  .card{min-height:0}
+  .issue{top:10rem;right:1.5rem;width:88px;height:88px}
+  .fake-proof{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="top-strip">
+  <span>THE WORLD'S #1 SOURCE FOR THINGS SOMEONE SAID ONLINE</span>
+  <span class="satire">Satirisches Medienexperiment</span>
+</div>
+
+<main class="cover">
+  <div class="wrap">
+    <header class="mast">
+      <div class="kicker">TRUTH • PANIC • EXCLUSIVE • INTERNET</div>
+      <div class="logo">THE INTERNET KNOWS</div>
+      <div class="tagline">If it has three links, it must be true!</div>
+    </header>
+
+    <div class="issue">ISSUE<br>404<br>€ 9,99</div>
+
+    <section class="cover-grid">
+      <article class="hero">
+        <svg viewBox="0 0 900 900" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#09080c"/>
+              <stop offset=".58" stop-color="#3f190e"/>
+              <stop offset="1" stop-color="#111"/>
+            </linearGradient>
+            <radialGradient id="glow">
+              <stop offset="0" stop-color="#fff7a0"/>
+              <stop offset=".18" stop-color="#ffd726"/>
+              <stop offset=".5" stop-color="#ff5a1c" stop-opacity=".7"/>
+              <stop offset="1" stop-color="#ff351c" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="noise">
+              <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="8"/>
+              <feColorMatrix values="1 0 0 0 0
+                                     0 1 0 0 0
+                                     0 0 1 0 0
+                                     0 0 0 .28 0"/>
+            </filter>
+          </defs>
+          <rect width="900" height="900" fill="url(#sky)"/>
+          <circle cx="610" cy="260" r="280" fill="url(#glow)"/>
+          <g transform="translate(585 250) rotate(-8)">
+            <ellipse cx="0" cy="0" rx="160" ry="48" fill="#d6d3c8"/>
+            <ellipse cx="0" cy="-20" rx="68" ry="34" fill="#5f6668"/>
+            <ellipse cx="0" cy="10" rx="105" ry="18" fill="#171717"/>
+            <g fill="#ffe840">
+              <circle cx="-95" cy="15" r="8"/><circle cx="-48" cy="22" r="8"/>
+              <circle cx="0" cy="24" r="8"/><circle cx="48" cy="22" r="8"/><circle cx="95" cy="15" r="8"/>
+            </g>
+          </g>
+          <path d="M0 665 Q75 575 144 654 T310 646 T474 671 T648 630 T900 670 V900 H0Z" fill="#050505"/>
+          <g fill="#121212">
+            <rect x="100" y="580" width="45" height="180"/><polygon points="122,520 68,650 176,650"/>
+            <rect x="756" y="600" width="38" height="170"/><polygon points="775,545 720,655 830,655"/>
+            <rect x="680" y="622" width="30" height="145"/><polygon points="695,565 650,650 740,650"/>
+          </g>
+          <rect width="900" height="900" filter="url(#noise)" opacity=".9"/>
+        </svg>
+        <div class="hero-copy">
+          <div class="eyebrow">BREAKING TRUTH!</div>
+          <h1>UFO über Bremen<br><span>von 5 Quellen bestätigt!</span></h1>
+        </div>
+      </article>
+
+      <aside class="side">
+        <article class="card">
+          <svg viewBox="0 0 500 330" aria-hidden="true">
+            <defs><filter id="blur"><feGaussianBlur stdDeviation="8"/></filter></defs>
+            <rect width="500" height="330" fill="#162019"/>
+            <circle cx="262" cy="170" r="88" fill="#93ab8d" opacity=".55" filter="url(#blur)"/>
+            <ellipse cx="260" cy="168" rx="65" ry="85" fill="#acbca7"/>
+            <ellipse cx="236" cy="155" rx="18" ry="30" fill="#171717" transform="rotate(18 236 155)"/>
+            <ellipse cx="286" cy="155" rx="18" ry="30" fill="#171717" transform="rotate(-18 286 155)"/>
+            <path d="M246 211 Q260 220 276 210" fill="none" stroke="#333" stroke-width="5"/>
+            <rect width="500" height="330" fill="none" stroke="#eee" stroke-width="8"/>
+          </svg>
+          <span class="label">EXKLUSIV</span>
+          <h2>„Sie lesen <strong>unsere Blogs</strong>!“</h2>
+        </article>
+
+        <article class="card">
+          <svg viewBox="0 0 500 330" aria-hidden="true">
+            <rect width="500" height="330" fill="#22150c"/>
+            <g opacity=".9">
+              <rect x="30" y="35" width="440" height="260" fill="#e5d9ad" transform="rotate(-3 250 165)"/>
+              <rect x="55" y="65" width="275" height="18" fill="#242424"/>
+              <rect x="55" y="97" width="360" height="11" fill="#727272"/>
+              <rect x="55" y="121" width="320" height="11" fill="#727272"/>
+              <rect x="55" y="145" width="380" height="11" fill="#727272"/>
+              <circle cx="380" cy="225" r="43" fill="none" stroke="#d52d27" stroke-width="9"/>
+              <path d="M350 225 l20 22 l45 -55" fill="none" stroke="#d52d27" stroke-width="9"/>
+            </g>
+          </svg>
+          <span class="label">BEWEIS?</span>
+          <h2>Drei Artikel. <strong>Eine Pressemitteilung.</strong></h2>
+        </article>
+      </aside>
+    </section>
+
+    <div class="ticker"><span>
+      EXKLUSIV: 97 % ALLER EXPERTEN HABEN IRGENDWAS GESAGT • NEUE STUDIE BESTÄTIGT ALTE STUDIE, DIE EINE ANDERE STUDIE ZITIERT •
+      EXKLUSIV: 97 % ALLER EXPERTEN HABEN IRGENDWAS GESAGT • NEUE STUDIE BESTÄTIGT ALTE STUDIE, DIE EINE ANDERE STUDIE ZITIERT •
+    </span></div>
+  </div>
+</main>
+
+<section class="article">
+  <div class="inner">
+    <span class="stamp">100 % internetgeprüft</span>
+    <h2>Fünf Quellen können eine Quelle sein.</h2>
+    <p class="lead">
+      Unsere Redaktion hat gründlich recherchiert. Also: sehr gründlich im Sinne von
+      „fünf Tabs waren offen“.
+    </p>
+
+    <div class="fake-proof">
+      <div class="proof">
+        <b>Quelle #1</b>
+        <div class="quote">„UFO über Bremen bestätigt.“</div>
+        <div class="url">hypertruth24.example/ufo-bremen</div>
+        <small>Beruft sich auf Quelle #2.</small>
+      </div>
+      <div class="proof">
+        <b>Quelle #2</b>
+        <div class="quote">„Mehrere Berichte sprechen von einem UFO.“</div>
+        <div class="url">dailycosmic.example/bremen</div>
+        <small>Beruft sich auf Quelle #3.</small>
+      </div>
+      <div class="proof">
+        <b>Quelle #3</b>
+        <div class="quote">„Ungewöhnliches Licht am Himmel gemeldet.“</div>
+        <div class="url">presseportal.example/lichterscheinung</div>
+        <small>Ursprung: eine einzige Meldung.</small>
+      </div>
+    </div>
+
+    <div class="same">
+      3 URLs. 1 Ursprung. 0 unabhängige Bestätigungen.
+    </div>
+
+    <p>
+      Sichtbarkeit ist keine Abstimmung über Wahrheit. Wiederholung ist keine zweite Messung.
+      Und ein Link kann korrekt sein, obwohl der Schluss, den wir daraus ziehen, falsch ist.
+    </p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="inner">
+    <div class="stop">STOPP.</div>
+    <h2>Warum hast du dieser Seite überhaupt zugehört?</h2>
+    <p>
+      Weil sie laut aussieht? Weil drei „Quellen“ dort stehen? Weil ein Haken auf einem Dokument ist?
+      Genau darum geht es.
+    </p>
+    <p>
+      Diese Seite ist ein absichtlich überzeichnetes, satirisches Medienexperiment.
+      Die Behauptungen oben sind erfunden. Der Mechanismus dahinter nicht:
+      Mehrere sichtbare Quellen können auf denselben Ursprung zurückgehen.
+    </p>
+    <a class="cta" href="https://benjamin-lam.github.io/quelle-auf/articles/woher-wissen-wir-dass-das-internet-recht-hat/">
+      Zum echten Artikel: Woher wissen wir, dass das Internet recht hat?
+    </a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    Satirisches Medienexperiment für „Quelle auf“. Keine der UFO-Behauptungen auf dieser Seite ist real.
+    Die Seite demonstriert ausschließlich, wie Wiederholung, Gestaltung und scheinbare Quellenfülle Glaubwürdigkeit erzeugen können.
+  </div>
+</footer>
+</body>
+</html>
