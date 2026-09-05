@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Der beste KI-Stack ist kein Stack · Quelle auf.</title>
+  <meta name="description" content="Wie ein Greenfield-KI-Arbeitsplatz für Webentwickler 2026 wirklich aussieht: versionierte Absicht, kleine Aufträge, begrenzte Rechte, reale Verifikation und portable Übergaben.">
+  <link rel="canonical" href="https://benjamin-lam.github.io/quelle-auf/articles/greenfield-ki-setup-fuer-webentwickler/">
+  <link rel="alternate" type="application/rss+xml" title="Quelle auf. RSS" href="../../feed.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Quelle auf.">
+  <meta property="og:title" content="Der beste KI-Stack ist kein Stack">
+  <meta property="og:description" content="Wie ein Greenfield-KI-Arbeitsplatz für Webentwickler 2026 wirklich aussieht: versionierte Absicht, kleine Aufträge, begrenzte Rechte, reale Verifikation und portable Übergaben.">
+  <meta property="og:url" content="https://benjamin-lam.github.io/quelle-auf/articles/greenfield-ki-setup-fuer-webentwickler/">
+  <meta property="article:published_time" content="2026-09-05T08:41:16+02:00">
+  <meta property="article:modified_time" content="2026-09-05T08:41:16+02:00">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Der beste KI-Stack ist kein Stack","description":"Wie ein Greenfield-KI-Arbeitsplatz für Webentwickler 2026 wirklich aussieht: versionierte Absicht, kleine Aufträge, begrenzte Rechte, reale Verifikation und portable Übergaben.","datePublished":"2026-09-05T08:41:16+02:00","dateModified":"2026-09-05T08:41:16+02:00","mainEntityOfPage":"https://benjamin-lam.github.io/quelle-auf/articles/greenfield-ki-setup-fuer-webentwickler/","inLanguage":"de","author":{"@type":"Person","name":"Benjamin Lam"}}</script>
+</head>
+<body>
+<a class="skip-link" href="#content">Zum Inhalt</a>
+<header class="site-header"><a href="../../">Quelle auf.</a></header>
+<main id="content" class="reading-column">
+<article>
+<p><strong>Quelle auf.</strong></p>
+<p>Ich stelle ChatGPT Fragen, bei denen ich selbst nicht weiß, ob meine Ausgangsannahme stimmt. Statt einer schnellen Antwort soll ChatGPT recherchieren, Quellen prüfen und offenlegen, worauf die Antwort beruht.</p>
+<p><strong>Warum ich diesmal frage:</strong>
+Ich war morgens wieder mit dem Hund unterwegs: Leine in der einen Hand, Telefon in der anderen, Daumen im Feed, ein Podcast auf dem Ohr. Swombie-Modus. Beim Scrollen blieb ich an der Frage hängen, was man anders machen würde, wenn man heute noch einmal mit KI anfinge. Entwickler wünschen sich Greenfield sonst gern für ihre Projekte. Warum also nicht einmal für den eigenen Arbeitsplatz? Kein ein Jahr alter Legacy-Workflow, sondern eine ehrliche Inventur dessen, was jetzt sinnvoll ist und für das Nächste offen bleibt.</p>
+<p><strong>Meine Frage:</strong>
+Was ist im September 2026 ein konsequentes KI-Setup für Webentwickler, wenn man vorhandene KI-Legacy für einen Moment ignoriert und den Arbeitsplatz auf der grünen Wiese neu entwirft?</p>
+<p><strong>Hier ist die Antwort von ChatGPT:</strong></p>
+<h1>Der beste KI-Stack ist kein Stack</h1>
+<p>Die kurze Antwort: <strong>Ich würde nicht mit einer Plattform, einem Lieblingsmodell oder einem Rudel Agenten beginnen. Ich würde eine kleine, überprüfbare Arbeitsschleife bauen, in der der Agent austauschbar bleibt.</strong></p>
+<p>Im Repository stehen Code, Projektregeln, Entscheidungen und der gewünschte Zustand. Jede Aufgabe sagt vorab, woran sie als erledigt gilt. Der Agent bekommt nur die Werkzeuge und Rechte, die er dafür braucht. Danach wird die Änderung nicht bloß beschrieben, sondern ausgeführt, getestet und – wo nötig – im Browser oder am wirklichen System beobachtet. Git und eine kurze Übergabe halten fest, was geschah und was offen ist.</p>
+<p>Das klingt weniger futuristisch als ein Agentenbetriebssystem. Die Recherche hat dafür einen eher beruhigenden Grund gefunden: Ein gutes KI-Setup erfindet Softwareentwicklung nicht neu. Es macht alte Grenzen für einen schnelleren, probabilistischen und teilweise autonomen Ausführer wieder deutlich.</p>
+<h2>Greenfield heißt zuerst: keine unsichtbare Arbeit</h2>
+<p>Greenfield meint hier den KI-Arbeitsplatz, nicht zwingend eine neue Codebasis: Die KI-spezifische Mechanik darf neu geordnet werden, die Softwareentwicklung bleibt.</p>
+<p>Mein erster Impuls war, den Arbeitsplatz in Produkte zu zerlegen: Plattform, persönlicher Kontext, Skills, Agent, Tools, vielleicht noch ein Modellrouter. Das ergibt eine hübsche Einkaufsliste. Nur beginnt es am falschen Ende.</p>
+<p>Die haltbarere Frage lautet: <strong>Welche Teile der Arbeit dürfen nicht davon abhängen, welcher Agent gerade im Fenster sitzt?</strong></p>
+<p>Ein Modell darf wechseln. Eine IDE auch. Was nicht verschwinden darf, sind Absicht, Arbeitsstand, Entscheidungsgründe, Rechte und der Nachweis, dass eine Änderung tatsächlich funktioniert. Sobald diese Dinge nur im Chat leben, wird schon der nächste Modellwechsel zur Archäologie.</p>
+<p>Repositorynahe Instruktionen werden inzwischen in mehreren Ökosystemen unterstützt. <code>AGENTS.md</code> beschreibt sich als offenes Markdown-Format; GitHub und Claude Code kennen eigene beziehungsweise zusätzliche Wege für Projektanweisungen.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" role="doc-noteref">1</a></sup> Das ist nützlich, aber es macht die Datei nicht zur Enzyklopädie des Projekts.</p>
+<p>Die Root-Anweisung sollte vor allem sagen, was an diesem Repository anders ist: Wie starte ich es? Wie teste ich? Welche Verzeichnisse oder Regeln sind kritisch? Wo liegen Architekturentscheidungen und Runbooks? Das eigentliche Wissen darf ausführlich sein. Es sollte nur nicht bei jedem Auftrag ungefragt vollständig ins Modell geschoben werden.</p>
+<p>Kontrollierte Langkontextversuche zeigen, dass Modelle relevante Information bei wachsendem Kontext nicht überall gleich zuverlässig nutzen. Hersteller empfehlen ihrerseits knappe, konkrete Projektanweisungen.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" role="doc-noteref">2</a></sup> Daraus folgt keine magische 200-Zeilen-Regel. Es folgt etwas Praktischeres: <strong>Nicht wenig Kontext ist das Ziel, sondern wenig irrelevanter oder dauerhaft injizierter Kontext.</strong></p>
+<h2>Das Repository ist Kontrollpunkt, nicht Weltmodell</h2>
+<p>Es liegt nahe, das Repository zum „System of Record“ zu erklären. Das wäre zu viel.</p>
+<p>Ein Repository kann behaupten, dass eine Migration ausgeführt wurde, der Login funktioniert und die Produktion dieselbe Version ausliefert. Die Welt kann anderer Meinung sein.</p>
+<p>OpenGitOps trennt deshalb zwischen versioniertem gewünschtem Zustand und beobachtetem tatsächlichem Zustand. Softwareagenten gleichen beide ab.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" role="doc-noteref">3</a></sup> Für Coding-Agenten ist das kein direkt übertragener Standard, aber eine brauchbare Denkstütze.</p>
+<p>Das Repository ist der langlebige, versionierte Kontrollpunkt für:</p>
+<ul>
+<li>Code und Konfiguration;</li>
+<li>Projektregeln und Architekturentscheidungen;</li>
+<li>den beabsichtigten Zustand;</li>
+<li>Aufträge, Prüfergebnisse und Übergaben.</li>
+</ul>
+<p>Der tatsächliche Zustand muss dagegen an laufender Software, Browsern, Deployments, Datenbanken, Logs und externen APIs beobachtet werden. Auch diese Signale sind Evidenz, keine unfehlbare Wahrheit. Darum endet ein guter Agentenlauf nicht bei <code>Datei geändert</code> oder <code>Test grün</code>, wenn die Behauptung eigentlich lautet: <code>Der Bestellvorgang funktioniert im Browser</code>.</p>
+<p>Die Schleife ist also nicht <code>Repository → Agent → Repository</code>. Sie lautet:</p>
+<p><strong>Versionierte Absicht → Agent → reale Ausführung → beobachtbare Evidenz → versionierte Entscheidung.</strong></p>
+<p>Das ist meine Synthese aus den Quellen, kein veröffentlichter Architekturstandard.</p>
+<h2>Ein Taskvertrag ist alte Softwaretechnik in klein</h2>
+<p>Die Projektanweisung gilt dauerhaft für das Repository. Ein Taskvertrag gilt nur für den einzelnen Auftrag.</p>
+<p>Auch der Name „Taskvertrag“ klingt neuer, als die Sache ist. NASA verlangt in ihrem Software Engineering Handbook, Akzeptanzkriterien und Bedingungen vor der Abnahme festzulegen. Bei Verifikation nennt sie nicht nur Tests, sondern unter anderem Analyse, Review, Inspektion und Demonstration.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" role="doc-noteref">4</a></sup></p>
+<p>Für normale Webentwicklung braucht es daraus keine Raumfahrtbürokratie. Wie formal der Taskvertrag wird, entscheidet das Risiko; hier reicht ein kleiner Auftrag:</p>
+<pre><code class="language-text">Ziel: Auf schmalen Bildschirmen bleibt der Checkout bedienbar.
+Grenzen: Keine Änderung an Preislogik oder API.
+Fertig, wenn: Tests grün; Checkout bei 320 und 768 Pixeln durchgespielt;
+Screenshots gespeichert; offene Abweichungen genannt.
+</code></pre>
+<p>Der wichtige Teil steht in der letzten Zeile. Der Agent weiß nicht nur, was er erzeugen, sondern was er nachweisen soll.</p>
+<p>Die Prüfmethode folgt dem Risiko. Bei einer Textkorrektur reicht vielleicht der Diff. Bei CSS braucht es den Browser. Bei einer API zusätzlich Integrationstests. Bei Berechtigungen, Zahlungen oder Datenmigrationen gehören negative Fälle, echte Systemsignale und eine qualifizierte menschliche Entscheidung dazu.</p>
+<p>Tests sind dabei unverzichtbar, aber nicht die gesamte Wirklichkeit. Der Praxisleitfaden von Simon Willison illustriert an konkreten Coding-Agent-Workflows, warum reale Ausführung und Browserautomation andere Fehler sichtbar machen als der Testsatz allein.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5" role="doc-noteref">5</a></sup> Ein neuer Benchmark zu langen, iterativen Agentenänderungen fand außerdem häufig wachsende strukturelle Erosion und Redundanz. Er ist ein Preprint mit konstruierten Aufgaben, kein Urteil über jedes Repository. Aber er erinnert daran, dass ein grüner Checkpoint keine dauerhafte Erweiterbarkeit beweist.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6" role="doc-noteref">6</a></sup></p>
+<h2>Ein guter Prompt ist noch keine Tür</h2>
+<p>In vielen Setups liegt die Sicherheitsarchitektur in einem Satz wie: <code>Ändere nichts außerhalb dieses Ordners und deploye niemals selbst.</code></p>
+<p>Das ist eine Verhaltensanweisung. Keine Zugriffskontrolle.</p>
+<p>Claude Code trennt in seiner Dokumentation Modellinstruktionen von Berechtigungsregeln und Sandboxing. Diese können Pfade, Netzwerk und Aktionen technisch begrenzen.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7" role="doc-noteref">7</a></sup> Dahinter steht das viel ältere Least-Privilege-Prinzip: Eine Komponente erhält nur die Ressourcen und Autorisierungen, die sie für ihre Funktion benötigt.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8" role="doc-noteref">8</a></sup></p>
+<p>Für den Greenfield-Arbeitsplatz würde ich deshalb drei technisch durchgesetzte Zonen bauen:</p>
+<ol>
+<li><strong>Autonom im begrenzten Arbeitsraum:</strong> Dateien lesen und ändern, lokale Befehle und Tests ausführen, Diffs erzeugen.</li>
+<li><strong>Gezielt freigeben:</strong> Netzwerkzugriff, neue Abhängigkeiten, externe Dienste, Schreiben außerhalb des Arbeitsraums.</li>
+<li><strong>Explizites menschliches Gate:</strong> Produktion, Secrets, irreversible Datenänderungen, Veröffentlichung und andere folgenreiche Aktionen.</li>
+</ol>
+<p>Die Grenze darf pro Projekt anders liegen. Sandboxing, Hooks und fein abgestufte Freigaben kosten schließlich auch Einrichtung. Eine lokale Landingpage und ein Zahlungssystem brauchen nicht dieselbe Zeremonie. Aber die Grenze sollte technisch existieren und nicht vom guten Benehmen des Modells abhängen.</p>
+<h2>Skills und MCP kommen nach dem Problem</h2>
+<p>Im September 2026 sind einige Begriffe reifer, als sie noch ein Jahr zuvor wirkten.</p>
+<p>Agent Skills besitzen eine offen dokumentierte Formatspezifikation. Eine <code>SKILL.md</code> trägt verpflichtende Metadaten; weitere Anweisungen und Ressourcen können bedarfsweise geladen werden.<sup id="fnref:9"><a class="footnote-ref" href="#fn:9" role="doc-noteref">9</a></sup> So bleibt Zusatzmaterial aus dem Modellkontext, bis die Aufgabe es braucht. Das schafft eine reale Grundlage für Portabilität, beweist aber weder praktische Interoperabilität noch den Nutzen eines bestimmten Skills. In SWE-Skills-Bench verbesserten 39 von 49 untersuchten Skills die Passrate nicht, während wenige spezialisierte Skills deutlicher halfen.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10" role="doc-noteref">10</a></sup> Der Benchmark ist jung und begrenzt, aber gut genug gegen die Annahme, ein Skill sei automatisch die höhere Reifestufe eines Prompts.</p>
+<p>Meine Regel wäre:</p>
+<ul>
+<li>Ist ein Ablauf deterministisch, wird er Script, Test oder CI-Job.</li>
+<li>Braucht eine wiederkehrende Aufgabe situatives Urteil und Zusatzmaterial, kann sie ein Skill werden.</li>
+<li>Ist sie erst einmal aufgetreten, bleibt sie zunächst eine gute Notiz.</li>
+</ul>
+<p>MCP ist ebenfalls mehr als eine Herstelleridee. Die Revision der Spezifikation vom 28. Juli 2026 brachte unter anderem einen stateless Core, ein Extensions-Modell und weitere Härtungen der Autorisierung.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11" role="doc-noteref">11</a></sup> MCP ist damit eine ernsthafte Anschlussfläche für Werkzeuge und Daten. Trotzdem gilt: Ein standardisierter Stecker sagt nichts darüber, ob das angeschlossene Tool vertrauenswürdig ist, ob der Agent es benutzen darf oder ob sein Ergebnis fachlich stimmt.</p>
+<p>Darum würde ich auch hier nicht vorsorglich zehn Server anschließen. Erst wenn ein wiederkehrender Arbeitsweg Daten oder Aktionen außerhalb des vorhandenen Datei-, Shell-, Git- und Browserzugriffs braucht, verdient die Verbindung ihren Platz.</p>
+<h2>Der Arbeitsplatz für Dienstagmorgen</h2>
+<p>Aus den bisherigen Abschnitten ergeben sich für mich fünf langlebige Grenzen: versionierte Absicht, kleiner Auftrag, begrenzte Autorität, beobachtete Wirkung und fortsetzbarer Zustand. Das ist meine Synthese, kein Industriestandard. Würde ich morgen ein Webprojekt auf der grünen Wiese beginnen, würden daraus sieben unspektakuläre Entscheidungen:</p>
+<p><strong>1. Ein Repository, das ohne KI benutzbar bleibt.</strong> Ein dokumentierter Startbefehl, reproduzierbare Abhängigkeiten, Tests, Linting und ein klarer Weg zur lokalen Ausführung. Die KI darf diese Mechanik benutzen; sie ersetzt sie nicht.</p>
+<p><strong>2. Eine kurze Projektanweisung.</strong> Darin stehen nur Einstieg, wichtige Abweichungen, Sicherheitsgrenzen und Links zu den kanonischen Dokumenten. Aufgabenspezifische Instruktionen gehören in den Auftrag, nicht ins ewige Gedächtnis.</p>
+<p><strong>3. Ein Generalisten-Agent mit Datei, Shell, Git und bei UI-Arbeit Browser.</strong> Kein Multi-Agenten-Organigramm am ersten Tag. Ein zweites Modell oder ein spezialisierter Agent kommt hinzu, wenn eine reale Fehlerklasse oder ein Engpass das begründet.</p>
+<p><strong>4. Technisch begrenzte Rechte.</strong> Lokal großzügig, nach außen absichtsvoll. Netzwerk, Produktion, Veröffentlichung und irreversible Schritte bleiben eigene Entscheidungen.</p>
+<p><strong>5. Kleine Taskverträge.</strong> Ziel, Grenzen und Fertignachweis werden vor der Ausführung benannt. Die Form wächst mit dem Risiko, nicht mit der Begeisterung für YAML.</p>
+<p><strong>6. Eine risikobasierte Verifikationsleiter.</strong> Diff, statische Checks und Tests bilden den Boden. Runtime, Browser und externe Systeme kommen hinzu, wenn die Aussage sie betrifft. Der Mensch bewertet nicht jede harmlose Zeile gleich tief, sondern die verbleibende Wirkung und das Restrisiko.</p>
+<p><strong>7. Eine portable Übergabe.</strong> Commit oder klarer Git-Zustand, getroffene Entscheidungen, ausgeführte Checks, offene Risiken und nächster Schritt. Gemini CLI zeigt beispielsweise, dass selbst Gesprächs- und Toolzustand checkpointbar sind.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12" role="doc-noteref">12</a></sup> Toolübergreifend vertraue ich trotzdem zuerst den fachlich lesbaren Artefakten. Dass diese Kombination immer überlegen ist, ist eine begründete Präferenz, kein Studienbefund.</p>
+<p>Mehr würde ich zunächst nicht bauen.</p>
+<p>Bei regulierten, sicherheitskritischen oder von Anfang an teamübergreifenden Vorhaben kann mehr formale Struktur schon am ersten Tag sinnvoll sein. Auch die Architekturkomplexität folgt dem Risiko.</p>
+<p>Kein umfassendes persönliches Memory. Kein automatisches Modellrouting. Keine Providerabstraktion ohne realen Wechselbedarf. Keine Skill-Bibliothek für Arbeit, die noch nie wiederholt wurde. Keine permanente Agentenmannschaft, deren Koordination mehr Kontext verbraucht als die Aufgabe.</p>
+<p>Das ist kein Beweis, dass diese Dinge nutzlos sind. Für ihren allgemeinen Nettowert in typischer Webentwicklung fehlt belastbare Evidenz. Sie gehören in die Kategorie <strong>bei Bedarf ergänzen</strong>, nicht <strong>Greenfield-Grundausstattung</strong>.</p>
+<h2>Produktivität ist keine Eigenschaft des Modells</h2>
+<p>Die Versuchung einer Stack-Empfehlung liegt auch darin, dass sie Produktivität wie eine Produkteigenschaft aussehen lässt.</p>
+<p>METR fand 2025 bei 16 erfahrenen Open-Source-Entwicklern auf vertrauten Repositories eine um 19 Prozent längere Bearbeitungszeit mit damaligen KI-Werkzeugen, obwohl die Teilnehmenden Beschleunigung erwarteten und wahrnahmen. Der spätere Versuch mit neueren Werkzeugen deutete zwar auf stärkere Beschleunigung hin; wegen Auswahl- und Arbeitsweiseeffekten ließ er sich aber nicht als neue allgemeine Zahl lesen.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13" role="doc-noteref">13</a></sup> DORA beschreibt KI auf Organisationsebene zugleich als Verstärker vorhandener Stärken und Schwächen.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14" role="doc-noteref">14</a></sup></p>
+<p>Diese Befunde messen verschiedene Dinge. Für die eigene Werkbank ist deshalb interessanter:</p>
+<ul>
+<li>Bei welchen Aufgabentypen sinkt die gesamte Durchlaufzeit?</li>
+<li>Wie viel menschliche Prüfung und Nacharbeit folgt?</li>
+<li>Welche Fehlversuche und Wartezeiten entstehen?</li>
+<li>Wird die Änderung im Betrieb verständlicher oder nur schneller größer?</li>
+</ul>
+<p>Der beste Agent in einem schlechten Feedbacksystem produziert vor allem früher mehr unfertige Arbeit.</p>
+<h2>Was bleibt, wenn das nächste Modell kommt</h2>
+<p>Es gibt im September 2026 keinen belastbar besten KI-Stack für Webentwickler. Dafür bewegen sich Modelle, Agentenhüllen und ihre Schnittstellen zu schnell, und die Evidenz zu ihrem wirtschaftlichen Nutzen ist zu abhängig von Aufgabe und Umfeld.</p>
+<p>Es gibt aber eine belastbare Richtung. Halte versionierte Absicht, kleine Aufträge, begrenzte Autorität, beobachtete Wirkung und fortsetzbaren Zustand außerhalb des proprietären Gesprächs. Lade Kontext nach Bedarf. Lass den Agenten handeln, aber nur innerhalb technischer Grenzen. Prüfe die Behauptung dort, wo sie wahr oder falsch wird: im Test, im Browser, im laufenden System oder im menschlichen Urteil.</p>
+<p>Vielleicht ist das die eigentliche Greenfield-Entscheidung: nicht alles neu zu erfinden, nur weil der Ausführer neu ist.</p>
+<p>Der Hund bekommt davon nichts mit. Für den nächsten Spaziergang genügt mir aber eine kleinere Einkaufsliste.</p>
+<h2>Quellen</h2>
+<div class="footnotes" role="doc-endnotes"><hr /><ol><li class="footnote" id="fn:1" role="doc-endnote"><p>AGENTS.md, <a href="https://agents.md/">„A simple, open format for guiding coding agents“</a>, abgerufen am 4. September 2026, Abschnitte „Why AGENTS.md?“ und FAQ; GitHub, <a href="https://docs.github.com/en/copilot/concepts/agents/copilot-cli/comparing-cli-features">„Comparing GitHub Copilot CLI features“</a>, Abschnitte „Custom instructions“ und „Skills“, abgerufen am 4. September 2026; Anthropic, <a href="https://code.claude.com/docs/en/memory">„How Claude remembers your project“</a>, abgerufen am 4. September 2026. Belegen Formate und Produktunterstützung, nicht optimale Länge oder Wirksamkeit.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:1" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:2" role="doc-endnote"><p>Nelson F. Liu et al., <a href="https://aclanthology.org/2024.tacl-1.9/">„Lost in the Middle: How Language Models Use Long Contexts“</a>, <em>Transactions of the Association for Computational Linguistics</em>, 2024, S. 157–173; Chroma Research, <a href="https://www.trychroma.com/research/context-rot">„Context Rot: How Increasing Input Tokens Impacts LLM Performance“</a>, 2025; Anthropic, <a href="https://code.claude.com/docs/en/memory">„How Claude remembers your project“</a>, Abschnitt zu knappen Instruktionen. Die Versuche sind keine direkte Coding-Studie und ergeben keine allgemeine Zeilen- oder Tokengrenze.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:2" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:3" role="doc-endnote"><p>OpenGitOps, <a href="https://opengitops.dev/">„OpenGitOps Principles“</a>, Version 1.0, besonders „Versioned and Immutable“ und „Continuously Reconciled“, abgerufen am 4. September 2026. Gilt direkt für GitOps; die Übertragung auf Coding-Agent-Arbeit ist meine Interpretation.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:3" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:4" role="doc-endnote"><p>NASA Software Engineering Handbook, <a href="https://swehb.nasa.gov/spaces/7150/pages/16450634/SWE-034%2B-%2BAcceptance%2BCriteria">SWE-034 „Acceptance Criteria“</a> und <a href="https://swehb.nasa.gov/spaces/7150/pages/16450576/SWE-028%2B-%2BVerification%2BPlanning">SWE-028 „Verification Planning“</a>, abgerufen am 4. September 2026, jeweils „Requirements“, „Rationale“ und „Guidance“. Regulierter Kontext, kein universelles Taskformat für Webentwicklung.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:4" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:5" role="doc-endnote"><p>Simon Willison, <a href="https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/">„Agentic manual testing“</a>, 6. März 2026, Abschnitte zu Tests, Ausführung, Browserautomation und gespeicherten Demonstrationsartefakten. Praxisbericht, keine kontrollierte Vergleichsstudie.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:5" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:6" role="doc-endnote"><p>Zhe et al., <a href="https://arxiv.org/abs/2603.24755">„SlopCodeBench: Evaluating the Lifecycle Structural Degradation of LLM-Generated Code“</a>, Preprint, 2026, Abstract und Ergebnisse. Konstruierter Benchmark; nicht auf jedes reale Repository verallgemeinerbar.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:6" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:7" role="doc-endnote"><p>Anthropic, <a href="https://code.claude.com/docs/en/permissions">„Permissions“</a>, besonders „How permissions interact with sandboxing“ und „Extend permissions with hooks“, abgerufen am 4. September 2026. Produktspezifische Mechanismen, kein Beleg für Sicherheit jeder Konfiguration.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:7" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:8" role="doc-endnote"><p>NIST CSRC, <a href="https://csrc.nist.gov/glossary/term/least_privilege">„least privilege“</a>, Definition aus NIST SP 800-172A Rev. 1, abgerufen am 4. September 2026.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:8" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:9" role="doc-endnote"><p>Agent Skills, <a href="https://agentskills.io/specification">„Specification“</a>, Stand 4. August 2026, Abschnitte „Directory structure“, „Frontmatter“ und „Progressive disclosure“. Belegt das Format, nicht Nutzen oder Adoption eines konkreten Skills.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:9" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:10" role="doc-endnote"><p>Wang et al., <a href="https://arxiv.org/abs/2603.15401">„SWE-Skills-Bench“</a>, Preprint, 2026, Abstract und Ergebnisübersicht. Auf 49 öffentliche Skills und die Benchmarkaufgaben begrenzt.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:10" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:11" role="doc-endnote"><p>Model Context Protocol, <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">„The 2026-07-28 Specification“</a>, 28. Juli 2026. Offizielle Release-Dokumentation; kein Sicherheitsnachweis einzelner Server.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:11" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:12" role="doc-endnote"><p>Gemini CLI, <a href="https://google-gemini.github.io/gemini-cli/docs/cli/checkpointing.html">„Checkpointing“</a>, abgerufen am 4. September 2026. Belegt den konkreten Checkpoint-Mechanismus, nicht die Überlegenheit einer bestimmten toolübergreifenden Übergabe.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:12" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:13" role="doc-endnote"><p>METR, <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">„Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity“</a>, 10. Juli 2025, und <a href="https://metr.org/blog/2026-02-24-uplift-update/">„Update: Measuring AI’s Impact on Experienced Open-Source Developer Productivity“</a>, 24. Februar 2026. Enge Population beziehungsweise methodisch eingeschränkter Folgelauf; keine allgemeine Produktivitätszahl.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:13" role="doc-backlink">↩</a></p></li>
+<li class="footnote" id="fn:14" role="doc-endnote"><p>DORA, <a href="https://dora.dev/research/2025/dora-report/">„State of AI-assisted Software Development 2025“</a>, 2025, Zusammenfassung zur Amplifier-These. Organisationsbefund, nicht kausal auf einzelne Webentwickler übertragbar.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:14" role="doc-backlink">↩</a></p></li></ol></div>
+
+<footer class="article-meta">
+  <p>Von Benjamin Lam. Veröffentlicht <time datetime="2026-09-05T08:41:16+02:00">05.09.2026</time>. Zuletzt geändert <time datetime="2026-09-05T08:41:16+02:00">05.09.2026</time>.</p>
+</footer>
+</article>
+</main>
+<footer class="site-footer"><p>Quellen sind Bewehrung, keine Fassade.</p></footer>
+</body>
+</html>

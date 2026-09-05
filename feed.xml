@@ -4,7 +4,14 @@
   <link>https://benjamin-lam.github.io/quelle-auf/</link>
   <description>Fachartikel mit überprüfbaren Quellen.</description>
   <language>de</language>
-  <lastBuildDate>Fri, 04 Sep 2026 09:36:15 +0200</lastBuildDate>
+  <lastBuildDate>Sat, 05 Sep 2026 08:41:16 +0200</lastBuildDate>
+  <item>
+    <title>Der beste KI-Stack ist kein Stack</title>
+    <link>https://benjamin-lam.github.io/quelle-auf/articles/greenfield-ki-setup-fuer-webentwickler/</link>
+    <guid>https://benjamin-lam.github.io/quelle-auf/articles/greenfield-ki-setup-fuer-webentwickler/</guid>
+    <description>Wie ein Greenfield-KI-Arbeitsplatz für Webentwickler 2026 wirklich aussieht: versionierte Absicht, kleine Aufträge, begrenzte Rechte, reale Verifikation und portable Übergaben.</description>
+    <pubDate>Sat, 05 Sep 2026 08:41:16 +0200</pubDate>
+  </item>
   <item>
     <title>Woher wissen wir, dass das Internet recht hat?</title>
     <link>https://benjamin-lam.github.io/quelle-auf/articles/woher-wissen-wir-dass-das-internet-recht-hat/</link>
